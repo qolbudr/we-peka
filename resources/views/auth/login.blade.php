@@ -3,7 +3,7 @@
 @section('title', 'Login')
 
 @section('content')
-    <div class="flex flex-col items-center justify-center min-h-screen p-6">
+    <div class="flex flex-col items-center justify-center p-6">
         <div class="grid items-center w-full max-w-6xl gap-10 md:grid-cols-2">
             {{-- Content Left --}}
             <div class="max-w-lg max-md:mx-auto max-md:text-center">
@@ -111,32 +111,35 @@
                     'Accept': 'application/json',
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                success: function() {
+                success: function(resp) {
                     iziToast.success({
                         title: 'Success',
-                        message: 'Login berhasil',
+                        message: resp.message || 'Login berhasil',
                         position: 'topRight'
                     });
+                    const to = resp && resp.redirect ? resp.redirect : '/';
+                    window.location.href = to;
                 },
                 error: function(xhr) {
                     if (xhr.status === 422 && xhr.responseJSON?.errors) {
                         Object.values(xhr.responseJSON.errors).flat().forEach(function(msg) {
                             iziToast.error({
                                 title: 'Error',
-                                message: "Email atau Password salah",
+                                message: msg,
                                 position: 'topRight'
                             });
                         });
                     } else {
-                        const msg = xhr.responseJSON?.message || 'Email atau password salah.';
+                        const msg = xhr.responseJSON?.message || 'Terjadi kesalahan. Coba lagi.';
                         iziToast.error({
-                            title: 'Login gagal',
+                            title: 'Gagal',
                             message: msg,
                             position: 'topRight'
                         });
                     }
                 }
             });
+
         });
     </script>
 @endsection
