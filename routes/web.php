@@ -11,6 +11,15 @@ Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
 
+
+route::get('/topiksatu', function () {
+    return view('topiksatu');
+})->name('topiksatu');
+
+route::get('/topikdua', function () {
+    return view('topikdua');
+})->name('topikdua');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
