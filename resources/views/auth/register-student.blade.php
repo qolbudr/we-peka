@@ -79,7 +79,7 @@
                         placeholder="Ulangi password" />
                 </div>
 
-                <!-- Submit + footer -->
+                <!-- Submit & Footer -->
                 <div class="col-span-1 mt-4 space-y-4 md:col-span-2">
                     <button type="submit"
                         class="w-full px-6 py-2 text-base font-semibold text-white transition-all duration-200 shadow-lg rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 focus:outline-none focus:ring-4 focus:ring-violet-300">
@@ -134,24 +134,28 @@
                 e.preventDefault();
 
                 $.ajax({
-                        url: this.action,
-                        method: 'POST',
-                        data: $(this).serialize(),
-                        headers: {
-                            'Accept': 'application/json',
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    })
-                    .done(function() {
+                    url: this.action,
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function() {
                         iziToast.success({
                             title: 'Success',
                             message: 'Registrasi berhasil',
                             position: 'topRight'
                         });
-                    })
-                    .fail(function(xhr) {
+
+                        setTimeout(() => {
+                            window.location.href = "{{ route('home') }}";
+                        }, 2000);
+                    },
+                    error: function(xhr) {
                         if (xhr.status === 422 && xhr.responseJSON?.errors) {
-                            Object.values(xhr.responseJSON.errors).flat().forEach(function(msg) {
+                            Object.values(xhr.responseJSON.errors).flat().forEach(function(
+                                msg) {
                                 iziToast.error({
                                     title: 'Error',
                                     message: msg,
@@ -159,14 +163,16 @@
                                 });
                             });
                         } else {
-                            const msg = xhr.responseJSON?.message || 'Terjadi kesalahan. Coba lagi.';
+                            const msg = xhr.responseJSON?.message ||
+                                'Terjadi kesalahan. Coba lagi.';
                             iziToast.error({
                                 title: 'Gagal',
                                 message: msg,
                                 position: 'topRight'
                             });
                         }
-                    });
+                    }
+                });
             });
         });
     </script>

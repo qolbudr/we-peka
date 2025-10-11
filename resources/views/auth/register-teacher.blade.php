@@ -125,7 +125,7 @@
                     .forEach(function(id) {
                         const el = document.getElementById(id);
                         if (el && (!el.value || (id === 'npwp' && !/^[0-9]{15,16}$/.test(el
-                            .value)))) {
+                                .value)))) {
                             el.setAttribute('aria-invalid', 'true');
                             const msg = id === 'password_confirmation' ?
                                 'Konfirmasi password wajib diisi' :
@@ -146,25 +146,28 @@
                 e.preventDefault();
 
                 $.ajax({
-                        url: this.action,
-                        method: 'POST',
-                        data: $(this).serialize(),
-                        headers: {
-                            'Accept': 'application/json',
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    })
-                    .done(function() {
+                    url: this.action,
+                    method: 'POST',
+                    data: $(this).serialize(),
+                    headers: {
+                        'Accept': 'application/json',
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function() {
                         iziToast.success({
                             title: 'Success',
                             message: 'Registrasi berhasil',
                             position: 'topRight'
                         });
-                        // window.location.href = '/dashboard-guru';
-                    })
-                    .fail(function(xhr) {
+
+                        setTimeout(() => {
+                            window.location.href = "{{ route('admin.dashboard') }}";
+                        }, 2000);
+                    },
+                    error: function(xhr) {
                         if (xhr.status === 422 && xhr.responseJSON?.errors) {
-                            Object.values(xhr.responseJSON.errors).flat().forEach(function(msg) {
+                            Object.values(xhr.responseJSON.errors).flat().forEach(function(
+                                msg) {
                                 iziToast.error({
                                     title: 'Error',
                                     message: msg,
@@ -172,14 +175,16 @@
                                 });
                             });
                         } else {
-                            const msg = xhr.responseJSON?.message || 'Terjadi kesalahan. Coba lagi.';
+                            const msg = xhr.responseJSON?.message ||
+                                'Terjadi kesalahan. Coba lagi.';
                             iziToast.error({
                                 title: 'Gagal',
                                 message: msg,
                                 position: 'topRight'
                             });
                         }
-                    });
+                    }
+                })
             });
         });
     </script>
