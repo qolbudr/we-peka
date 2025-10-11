@@ -2,75 +2,109 @@
     $user = Auth::user();
 @endphp
 
-<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+<nav
+    class="fixed top-0 z-50 w-full border-b shadow-lg bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 border-violet-800/50">
+    <div class="px-4 py-3 lg:px-6">
         <div class="flex items-center justify-between">
-            <div class="flex items-center justify-start rtl:justify-end">
+            <!-- Left Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Toggle Button -->
                 <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
                     type="button"
-                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    class="inline-flex items-center p-2 text-white transition-all duration-200 rounded-lg sm:hidden hover:bg-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-white/30">
                     <span class="sr-only">Open sidebar</span>
-                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                         <path clip-rule="evenodd" fill-rule="evenodd"
                             d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
                         </path>
                     </svg>
                 </button>
-                <a href="{{ route('admin.dashboard') }}" class="flex ms-2 md:me-24">
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">
-                        We Peka
-                    </span>
+
+                <!-- Logo -->
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 group">
+                    <div class="relative">
+                        <svg class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 50 50"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%"
+                                    y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="25" cy="25" r="23" fill="url(#navLogoGrad)" />
+                            <path d="M15,20 L25,15 L35,20 L35,30 L25,35 L15,30 Z" fill="white" opacity="0.9" />
+                            <circle cx="25" cy="25" r="5" fill="url(#navLogoGrad)" />
+                        </svg>
+                    </div>
+                    <div class="">
+                        <h1 class="text-xl font-bold text-white drop-shadow-md">
+                            WE PEKA
+                        </h1>
+                    </div>
                 </a>
             </div>
-            <div class="relative flex items-center">
-                <div class="flex items-center ms-3">
-                    <div>
-                        <button type="button"
-                            class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                            aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                            <span class="sr-only">Open user menu</span>
-                            @if ($user->avatar)
-                                <img src="{{ $user->avatar }}" alt="Foto {{ $user->name }}"
-                                    class="w-10 h-10 rounded-full">
-                            @else
-                                <div
-                                    class="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full bg-violet-600">
-                                    {{ \App\Helpers\GetInitialsHelper::getInitials($user->name) }}
-                                </div>
-                            @endif
-                        </button>
-                    </div>
-                    <div class="absolute z-50 hidden p-4 mt-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow !-left-5 border border-gray-200"
-                        id="dropdown-user">
-                        <div class="px-4 py-3" role="none">
-                            <p class="text-sm text-gray-900 capitalize" role="none">
-                                {{ $user->name }}
-                            </p>
-                            <p class="text-sm font-medium text-gray-900 truncate" role="none">
-                                {{ $user->email }}
+
+            {{--  User Profile --}}
+            <div class="flex items-center space-x-3">
+                <div class="relative flex items-center">
+                    <button type="button"
+                        class="flex items-center justify-center text-white transition-all duration-200 rounded-full md:p-2 md:space-x-3 md:rounded-lg"
+                        data-dropdown-toggle="dropdown-user">
+                        <span class="sr-only">Open user menu</span>
+                        @if ($user->avatar)
+                            <img src="{{ $user->avatar }}" alt="{{ $user->name }}"
+                                class="object-cover w-10 h-10 rounded-full shadow-lg ring-2 ring-white/30">
+                        @else
+                            <div
+                                class="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full shadow-lg bg-gradient-to-br from-violet-500 via-purple-500 to-pink-500 ring-2 ring-white/30">
+                                {{ \App\Helpers\GetInitialsHelper::getInitials($user->name) }}
+                            </div>
+                        @endif
+                        <div class="hidden text-left lg:block">
+                            <p class="text-sm font-semibold text-white capitalize">{{ $user->name }}</p>
+                            <p class="text-xs font-medium capitalize text-violet-300">
+                                {{ $user->roles->pluck('name')->join(', ') }}
                             </p>
                         </div>
-                        <ul class="py-1" role="none">
-                            <li>
-                                <a href="{{ route('profile.edit') }}"
-                                    class="block px-4 py-2 text-sm text-gray-700 rounded-lg hover:bg-violet-800 hover:text-white"
-                                    role="menuitem">Profile</a>
-                            </li>
-                            <li>
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
+                        <svg class="hidden w-4 h-4 text-white transition-transform duration-200 lg:block" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
 
-                                    <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                        this.closest('form').submit();"
-                                        class="block px-4 py-2 text-sm text-gray-700 rounded-lg hover:bg-violet-800 hover:text-white"
-                                        role="menuitem">
-                                        Log Out
-                                    </a>
-                                </form>
-                            </li>
-                        </ul>
+                    {{-- User Dropdown Menu --}}
+                    <div id="dropdown-user"
+                        class="absolute right-0 z-50 hidden w-56 mt-2 bg-white divide-y shadow-2xl top-full rounded-2xl ring-1 ring-violet-200 divide-violet-100">
+                        <div class="px-4 py-3 bg-gradient-to-br from-violet-50 to-purple-50 rounded-t-2xl">
+                            <p class="text-sm font-semibold capitalize text-violet-900">{{ $user->name }}</p>
+                            <p class="text-xs truncate text-violet-600 mt-0.5">{{ $user->email }}</p>
+                        </div>
+                        <div class="py-2">
+                            <a href="{{ route('profile.edit') }}"
+                                class="flex items-center px-4 py-2.5 mx-2 text-sm font-medium transition-all duration-200 rounded-lg text-violet-700 hover:bg-violet-100 hover:text-violet-900 active:bg-violet-200">
+                                <svg class="flex-shrink-0 w-5 h-5 mr-3" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                </svg>
+                                My Profile
+                            </a>
+                        </div>
+                        <div class="py-2">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit"
+                                    class="flex items-center w-full px-4 py-2.5 mx-2 text-sm font-medium text-left text-red-600 transition-all duration-200 rounded-lg hover:bg-red-50 hover:text-red-700 active:bg-red-100">
+                                    <svg class="flex-shrink-0 w-5 h-5 mr-3" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    Sign Out
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

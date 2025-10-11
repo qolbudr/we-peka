@@ -13,11 +13,11 @@ Route::middleware('auth', 'role:guru')->group(function () {
 
 
 route::get('/topiksatu', function () {
-    return view('topiksatu');
+    return view('home.topiksatu');
 })->name('topiksatu');
 
 route::get('/topikdua', function () {
-    return view('topikdua');
+    return view('home.topikdua');
 })->name('topikdua');
 
 Route::middleware('auth')->group(function () {

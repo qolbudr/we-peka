@@ -1,33 +1,99 @@
-    <aside id="logo-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
-        aria-label="Sidebar">
-        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-            <ul class="space-y-2 font-medium">
+<aside id="logo-sidebar"
+    class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full border-r w-72 bg-gradient-to-b from-violet-900 via-purple-900 to-indigo-900 border-violet-800/50 sm:translate-x-0"
+    aria-label="Sidebar">
+
+    <div class="h-[calc(100vh-5rem)] px-4 py-6 overflow-y-auto pb-24">
+        <div class="mb-8">
+            <p class="px-3 mb-3 text-xs font-semibold tracking-wider uppercase text-white/50">Main Menu</p>
+            <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
-                            <path
-                                d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                            <path
-                                d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                    <a href="{{ route('admin.dashboard') }}"
+                        class="flex items-center px-4 py-3 text-white transition-all duration-200 rounded-xl bg-white/20 backdrop-blur-sm group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 22 21">
+                                <path
+                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                                <path
+                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Dashboard</span>
+                        <svg class="w-4 h-4 ml-auto transition-transform group-hover:translate-x-1" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                        <span class="ms-3">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="#"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="w-5 h-5 text-gray-500 transition duration-75 shrink-0 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            viewBox="0 0 20 18">
-                            <path
-                                d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 18">
+                                <path
+                                    d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Users</span>
+                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                        <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Materi</span>
+                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Topik</span>
+                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        <div
+                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">LKPD</span>
+                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
                     </a>
                 </li>
             </ul>
         </div>
-    </aside>
+    </div>
+</aside>
