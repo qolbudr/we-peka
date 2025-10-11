@@ -2,40 +2,84 @@
 
 @section('title', 'Home')
 
-@section('content')
-    
+@section(section: 'content')
+    <div class="w-full bg-violet-400 rounded-2xl overflow-hidden">
+        <div class="flex items-start justify-start w-full p-12">
+            <div class="max-w-xl">
+                <h1 class="text-4xl font-semibold text-white md:text-5xl lg:text-6xl">
+                    WE PEKA
+                </h1>
+                <p class="mt-4 text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.
+                </p>
+            </div>
+        </div>
 
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
-        </li>
-        <li class="me-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
-        </li>
-        <li role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
-        </li>
-    </ul>
-</div>
-<div id="default-tab-content">
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-    </div>
-</div>
+        <div class="flex items-start justify-end w-full p-12">
+            <div class="max-w-xl">
+                <h1 class="text-4xl font-semibold text-white md:text-5xl lg:text-6xl">
+                    TUJUAN WE PEKA
+                </h1>
+                <p class="mt-4 text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-start justify-start w-full p-12">
+            <div class="max-w-xl">
+                <h1 class="text-4xl font-semibold text-white md:text-5xl lg:text-6xl">
+                    ABOUT WE PEKA
+                </h1>
+                <p class="mt-4 text-white/90">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex
+                    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat
+                    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                    mollit
+                    anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <div class="flex items-center justify-center p-12 space-x-4">
+            <a href="{{ route('topiksatu') }}" class="text-white bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 
+                  hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-violet-300 
+                  dark:focus:ring-white font-medium rounded-lg text-xl px-8 py-4 text-center inline-block">
+                Topik 1
+            </a>
 
 
-    
+            <a href="{{ route('topikdua') }}" class="text-white bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 
+                       hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-violet-300 
+                       dark:focus:ring-white font-medium rounded-lg text-xl px-8 py-4 text-center inline-block">
+                Topik 2
+            </a>
+
+            <a href="halaman-lain.html" class="text-white bg-gradient-to-r from-violet-500 via-violet-600 to-violet-700 
+                       hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-violet-300 
+                       dark:focus:ring-white font-medium rounded-lg text-xl px-8 py-4 text-center inline-block">
+                Topik 3
+            </a>
+        </div>
+    </div>
+
+
+
+
 @endsection
