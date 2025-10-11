@@ -26,7 +26,7 @@
                 @include('layouts.partials.app-sidebar')
 
                 {{-- Content --}}
-                <div class="p-4 sm:ml-64">
+                <div class="p-4 sm:ml-72">
                     @yield('content')
                 </div>
             </main>
