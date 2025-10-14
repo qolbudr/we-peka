@@ -8,10 +8,10 @@
             <ul class="space-y-1 font-medium">
                 <li>
                     <a href="{{ route('admin.dashboard') }}"
-                        class="flex items-center px-4 py-3 text-white transition-all duration-200 rounded-xl bg-white/20 backdrop-blur-sm group">
+                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(2) == 'dashboard' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
                         <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 22 21">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
                                 <path
                                     d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
                                 <path
@@ -26,28 +26,44 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#"
-                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                    <button type="button"
+                        class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'users' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
+                        aria-controls="dropdown-users" data-collapse-toggle="dropdown-users">
                         <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 18">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 18">
                                 <path
                                     d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
                             </svg>
                         </div>
                         <span class="font-medium">Users</span>
-                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 ml-auto duration-300 transform rotate-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
-                    </a>
+                    </button>
+                    <ul id="dropdown-users"
+                        class="py-2 space-y-2 {{ request()->segment(1) == 'users' ? '' : 'hidden' }}">
+                        <li>
+                            <a href="{{ route('users.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'all' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">All</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('users.siswa') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'siswa' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Siswa</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('users.guru') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'guru' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Guru</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#"
-                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
                         <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
@@ -61,10 +77,10 @@
                 </li>
                 <li>
                     <a href="#"
-                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
                         <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                             </svg>
@@ -78,10 +94,10 @@
                 </li>
                 <li>
                     <a href="#"
-                        class="flex items-center px-4 py-3 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                        class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
                         <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
