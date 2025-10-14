@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TypeStudyController;
+use App\Http\Controllers\TypeStudyDetailController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,14 +23,15 @@ route::get('/topikdua', function () {
     return view('home.topikdua');
 })->name('topikdua');
 
-Route::prefix('users')->middleware('auth', 'role:guru')->controller(UserController::class)->group(function () {
-    Route::get('all', 'index')->name('users.index');
-    Route::get('siswa', 'siswa')->name('users.siswa');
-    Route::get('guru', 'guru')->name('users.guru');
-});
-
 Route::middleware('auth', 'role:guru')->group(function () {
+    Route::prefix('users')->controller(UserController::class)->group(function () {
+        Route::get('all', 'index')->name('users.index');
+        Route::get('siswa', 'siswa')->name('users.siswa');
+        Route::get('guru', 'guru')->name('users.guru');
+    });
+
     Route::resource('type-study', TypeStudyController::class);
+    Route::resource('study-details', TypeStudyDetailController::class);
 });
 
 Route::middleware('auth')->group(function () {
