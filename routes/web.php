@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramStudyController;
+use App\Http\Controllers\QuotaMabaController;
 use App\Http\Controllers\TypeStudyController;
 use App\Http\Controllers\TypeStudyDetailController;
 use App\Http\Controllers\UniversityController;
@@ -35,6 +38,9 @@ Route::middleware('auth', 'role:guru')->group(function () {
     Route::resource('study-details', TypeStudyDetailController::class);
 
     Route::resource('universitas', UniversityController::class);
+    Route::resource('quota-mabas', QuotaMabaController::class);
+    Route::resource('program-studies', ProgramStudyController::class);
+    Route::resource('alumnis', AlumniController::class);
 });
 
 Route::middleware('auth')->group(function () {
