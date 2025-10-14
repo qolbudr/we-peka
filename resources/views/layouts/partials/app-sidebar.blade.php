@@ -19,10 +19,6 @@
                             </svg>
                         </div>
                         <span class="font-medium">Dashboard</span>
-                        <svg class="w-4 h-4 ml-auto transition-transform group-hover:translate-x-1" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
                     </a>
                 </li>
                 <li>
@@ -69,10 +65,6 @@
                             </svg>
                         </div>
                         <span class="font-medium">Materi</span>
-                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
                     </a>
                 </li>
                 <li>
@@ -86,10 +78,6 @@
                             </svg>
                         </div>
                         <span class="font-medium">Topik</span>
-                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
                     </a>
                 </li>
                 <li>
@@ -103,10 +91,6 @@
                             </svg>
                         </div>
                         <span class="font-medium">LKPD</span>
-                        <svg class="w-4 h-4 ml-auto transition-transform opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
                     </a>
                 </li>
             </ul>
