@@ -54,7 +54,7 @@
                         <div>
                             <label for="remember_me" class="flex items-center">
                                 <input id="remember_me" type="checkbox"
-                                    class="border-gray-300 rounded shadow-sm text-violet-600 focus:ring-violet-500"
+                                    class="border-gray-300 rounded shadow-sm text-blue-600 focus:ring-blue-500"
                                     name="remember">
                                 <span class="text-sm text-gray-600 ms-2">{{ __('Remember me') }}</span>
                             </label>
@@ -63,7 +63,7 @@
                         @if (Route::has('password.request'))
                             <div class="text-sm">
                                 <a href="{{ route('password.request') }}"
-                                    class="font-medium text-violet-600 hover:underline">
+                                    class="font-medium text-blue-600 hover:underline">
                                     Forgot your password?
                                 </a>
                             </div>
@@ -73,7 +73,7 @@
 
                 <div class="mt-12">
                     <button type="submit"
-                        class="w-full shadow-xl py-2 px-6 text-[15px] font-medium rounded-md text-white bg-violet-800 hover:bg-violet-900 focus:outline-0 cursor-pointer">
+                        class="w-full shadow-xl py-2 px-6 text-[15px] font-medium rounded-md text-white bg-blue-700 hover:bg-blue-800 focus:outline-0 cursor-pointer">
                         Sign in
                     </button>
                 </div>

@@ -3,7 +3,7 @@
 @section('title', 'Topik 1')
 
 @section('content')
-    <div class="relative w-full min-h-screen py-16 overflow-hidden bg-gradient-to-br from-violet-50 via-purple-50 to-white">
+    <div class="relative w-full min-h-screen py-16 overflow-hidden bg-gradient-to-br from-blue-50 via-sky-50 to-white">
         <div class="absolute inset-0 opacity-5">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="contentPattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -16,7 +16,7 @@
         <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="mb-8">
                 <a href="/"
-                    class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-violet-600 to-purple-600 hover:shadow-xl hover:scale-105 hover:from-violet-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                    class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-600 to-sky-600 hover:shadow-xl hover:scale-105 hover:from-blue-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -30,14 +30,14 @@
                     <div class="grid items-center gap-8 lg:grid-cols-2">
                         <div class="p-8 lg:p-12">
                             <div
-                                class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-violet-700 bg-violet-100">
+                                class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-blue-700 bg-blue-100">
                                 Konsep Dasar
                             </div>
                             <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
                                 Definisi Efikasi Karir
                             </h1>
                             <p class="mb-4 text-lg leading-relaxed text-gray-700">
-                                <span class="font-bold text-violet-600">Efikasi karir adalah</span> keyakinan diri seseorang
+                                <span class="font-bold text-blue-600">Efikasi karir adalah</span> keyakinan diri seseorang
                                 terhadap kemampuannya untuk berhasil dalam melakukan tugas-tugas yang berkaitan dengan
                                 pengembangan, pilihan, dan penyesuaian karir.
                             </p>
@@ -47,20 +47,20 @@
                             </p>
                         </div>
                         <div
-                            class="flex items-center justify-center p-8 bg-gradient-to-br from-violet-100 to-purple-100 lg:p-12">
+                            class="flex items-center justify-center p-8 bg-gradient-to-br from-nlue-100 to-sky-100 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%"
                                         y2="100%">
-                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
                                 <circle cx="200" cy="150" r="120" fill="url(#grad1)" opacity="0.1" />
                                 <circle cx="200" cy="150" r="90" fill="url(#grad1)" opacity="0.2" />
-                                <path d="M200,80 L240,120 L200,160 L160,120 Z" fill="#8b5cf6" />
+                                <path d="M200,80 L240,120 L200,160 L160,120 Z" fill="#3b82f6" />
                                 <circle cx="200" cy="150" r="30" fill="white" />
-                                <path d="M190,145 L200,155 L220,135" stroke="#8b5cf6" stroke-width="4" fill="none"
+                                <path d="M190,145 L200,155 L220,135" stroke="#3b82f6" stroke-width="4" fill="none"
                                     stroke-linecap="round" />
                             </svg>
                         </div>
@@ -72,13 +72,13 @@
                 <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
                     <div class="grid items-center gap-8 lg:grid-cols-2">
                         <div
-                            class="flex items-center justify-center order-2 p-8 bg-gradient-to-br from-purple-100 to-pink-100 lg:order-1 lg:p-12">
+                            class="flex items-center justify-center order-2 p-8 bg-gradient-to-br from-sky-100 to-cyan-100 lg:order-1 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="grad2" x1="0%" y1="0%" x2="100%"
                                         y2="100%">
-                                        <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                                        <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
                                 <rect x="100" y="80" width="60" height="140" fill="url(#grad2)" opacity="0.3"
@@ -87,21 +87,21 @@
                                     rx="8" />
                                 <rect x="240" y="40" width="60" height="180" fill="url(#grad2)" opacity="0.7"
                                     rx="8" />
-                                <circle cx="200" cy="100" r="40" fill="#a855f7" />
+                                <circle cx="200" cy="100" r="40" fill="#06b6d4" />
                                 <path d="M185,100 L195,110 L215,90" stroke="white" stroke-width="4" fill="none"
                                     stroke-linecap="round" />
                             </svg>
                         </div>
                         <div class="order-1 p-8 lg:order-2 lg:p-12">
                             <div
-                                class="inline-block px-4 py-2 mb-4 text-sm font-medium text-purple-700 bg-purple-100 rounded-full">
+                                class="inline-block px-4 py-2 mb-4 text-sm font-medium text-cyan-700 bg-cyan-100 rounded-full">
                                 Manfaat Utama
                             </div>
                             <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
                                 Pentingnya Efikasi Karir
                             </h2>
                             <p class="mb-4 text-lg leading-relaxed text-gray-700">
-                                <span class="font-bold text-purple-600">Pentingnya efikasi karir</span> adalah untuk
+                                <span class="font-bold text-cyan-600">Pentingnya efikasi karir</span> adalah untuk
                                 meningkatkan kepercayaan diri individu dalam menentukan pilihan karir, mengurangi
                                 kebimbangan dan kesulitan dalam membuat keputusan, serta membantu mengarahkan pada
                                 pengembangan karir yang lebih baik.
@@ -158,11 +158,11 @@
 
             <section>
                 <div
-                    class="overflow-hidden shadow-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-600 rounded-3xl">
+                    class="overflow-hidden shadow-2xl bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-600 rounded-3xl">
                     <div class="p-8 lg:p-12">
                         <div class="max-w-4xl mx-auto">
                             <div
-                                class="inline-block px-4 py-2 mb-6 text-sm font-medium bg-white rounded-full text-violet-900">
+                                class="inline-block px-4 py-2 mb-6 text-sm font-medium bg-white rounded-full text-blue-900">
                                 Faktor Pembentuk
                             </div>
                             <h2 class="mb-8 text-4xl font-bold leading-tight text-white sm:text-5xl">
@@ -175,7 +175,7 @@
                                     <div class="flex items-start space-x-4">
                                         <div class="flex-shrink-0">
                                             <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-violet-600" fill="none" stroke="currentColor"
+                                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -199,7 +199,7 @@
                                     <div class="flex items-start space-x-4">
                                         <div class="flex-shrink-0">
                                             <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor"
+                                                <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

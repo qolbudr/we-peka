@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <div class="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-violet-50 to-white">
+    <div class="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 to-white">
         <div class="absolute inset-0 opacity-5">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -21,7 +21,7 @@
                 <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     <div class="order-2 lg:order-1">
                         <div
-                            class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-violet-700 bg-violet-100">
+                            class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-sky-700 bg-sky-100">
                             ✨ Platform Edukasi Digital
                         </div>
                         <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl">
@@ -33,7 +33,7 @@
                         </p>
                         <div class="flex flex-wrap gap-4">
                             <a href="#tujuan"
-                                class="inline-flex items-center px-6 py-3 text-base font-medium text-white transition-all duration-300 transform rounded-lg shadow-lg bg-violet-600 hover:bg-violet-700 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                                class="inline-flex items-center px-6 py-3 text-base font-medium text-white transition-all duration-300 transform rounded-lg shadow-lg bg-blue-600 hover:bg-blue-700 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
                                 Mulai Eksplorasi
                                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -49,14 +49,14 @@
                                 <defs>
                                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%"
                                         y2="100%">
-                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
                                 <circle cx="250" cy="250" r="200" fill="url(#grad1)" opacity="0.1" />
                                 <circle cx="250" cy="250" r="150" fill="url(#grad1)" opacity="0.2" />
                                 <circle cx="250" cy="250" r="100" fill="url(#grad1)" opacity="0.3" />
-                                <path d="M250,150 L300,200 L250,250 L200,200 Z" fill="#8b5cf6" opacity="0.8" />
+                                <path d="M250,150 L300,200 L250,250 L200,200 Z" fill="#60a5fa" opacity="0.8" />
                                 <circle cx="250" cy="250" r="30" fill="#fff" />
                             </svg>
                         </div>
@@ -67,7 +67,7 @@
             <div class="relative h-16 mb-16">
                 <svg class="absolute inset-x-0 bottom-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,50 C300,80 600,20 900,50 C1050,70 1150,50 1200,40 L1200,120 L0,120 Z" fill="#8b5cf6"
+                    <path d="M0,50 C300,80 600,20 900,50 C1050,70 1150,50 1200,40 L1200,120 L0,120 Z" fill="#3b82f6"
                         opacity="0.1" />
                 </svg>
             </div>
@@ -76,12 +76,12 @@
             <section id="tujuan" class="mb-16 lg:mb-24">
                 <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
                     <div class="flex items-center justify-center">
-                        <div class="relative p-8 bg-violet-100 rounded-3xl">
+                        <div class="relative p-8 bg-blue-100 rounded-3xl">
                             <svg class="w-48 h-48 sm:w-64 sm:h-64" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="100" cy="100" r="80" fill="#8b5cf6" opacity="0.2" />
-                                <path d="M100,40 L130,80 L120,120 L80,120 L70,80 Z" fill="#8b5cf6" />
+                                <circle cx="100" cy="100" r="80" fill="#3b82f6" opacity="0.2" />
+                                <path d="M100,40 L130,80 L120,120 L80,120 L70,80 Z" fill="#3b82f6" />
                                 <circle cx="100" cy="100" r="20" fill="#fff" />
-                                <path d="M100,60 L115,90 L85,90 Z" fill="#6366f1" />
+                                <path d="M100,60 L115,90 L85,90 Z" fill="#3b82f6" />
                             </svg>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                         </p>
                         <ul class="space-y-3">
                             <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mt-1 mr-3 text-violet-600" fill="currentColor"
+                                <svg class="flex-shrink-0 w-6 h-6 mt-1 mr-3 text-blue-600" fill="currentColor"
                                     viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -106,7 +106,7 @@
                                 <span class="text-gray-700">Meningkatkan kesadaran dan pemahaman</span>
                             </li>
                             <li class="flex items-start">
-                                <svg class="flex-shrink-0 w-6 h-6 mt-1 mr-3 text-violet-600" fill="currentColor"
+                                <svg class="flex-shrink-0 w-6 h-6 mt-1 mr-3 text-blue-600" fill="currentColor"
                                     viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -123,8 +123,8 @@
             <section class="mb-16 lg:mb-24">
                 <div class="p-8 bg-white shadow-xl rounded-3xl sm:p-12 lg:p-16">
                     <div class="max-w-3xl mx-auto text-center">
-                        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-violet-100">
-                            <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor"
+                        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-100">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -150,7 +150,7 @@
                     </h3>
                     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <a href="{{ route('topiksatu') }}"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-violet-500 to-violet-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
                             <div
                                 class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
                             </div>
@@ -161,7 +161,7 @@
                         </a>
 
                         <a href="{{ route('topikdua') }}"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-violet-600 to-indigo-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-600 to-sky-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
                             <div
                                 class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
                             </div>
@@ -172,7 +172,7 @@
                         </a>
 
                         <a href="halaman-lain.html"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-indigo-600 to-purple-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 sm:col-span-2 lg:col-span-1">
+                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-600 to-sky-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 sm:col-span-2 lg:col-span-1">
                             <div
                                 class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
                             </div>
@@ -188,7 +188,7 @@
             <div class="relative h-24 mt-16">
                 <svg class="absolute inset-x-0 bottom-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,60 Q300,100 600,60 T1200,60 L1200,120 L0,120 Z" fill="#8b5cf6" opacity="0.05" />
+                    <path d="M0,60 Q300,100 600,60 T1200,60 L1200,120 L0,120 Z" fill="#3b82f6" opacity="0.05" />
                 </svg>
             </div>
         </div>

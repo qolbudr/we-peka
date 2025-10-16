@@ -20,7 +20,7 @@
     </head>
 
     <body class="min-h-screen font-sans antialiased text-gray-900 bg-gray-50">
-        <div class="bg-gradient-to-r from-violet-900 via-violet-800 to-violet-600">
+        <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600">
             <div class="relative flex items-center justify-center min-h-screen p-4 overflow-hidden md:p-6">
                 {{-- Decorative rings --}}
                 <div

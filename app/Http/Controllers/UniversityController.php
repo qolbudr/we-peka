@@ -16,7 +16,7 @@ class UniversityController extends Controller
     public function index()
     {
         $universities = University::with('typeStudy')->orderBy('created_at', 'desc')->get();
-
+        
         return view('admin.universitas.index', compact('universities'));
     }
 
