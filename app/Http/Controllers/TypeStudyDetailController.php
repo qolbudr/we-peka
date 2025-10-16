@@ -17,7 +17,7 @@ class TypeStudyDetailController extends Controller
      */
     public function index()
     {
-        $typeStudyDetails = TypeStudyDetail::orderBy('created_at', 'desc')->get();
+        $typeStudyDetails = TypeStudyDetail::with('typeStudy')->orderBy('created_at', 'desc')->get();
 
         return view('admin.type-study-detail.index', compact('typeStudyDetails'));
     }
