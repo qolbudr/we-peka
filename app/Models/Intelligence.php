@@ -15,4 +15,9 @@ class Intelligence extends Model
     {
         return $this->hasMany(QuizQuestion::class);
     }
+
+    public function jobIntelligences()
+    {
+        return $this->hasMany(JobIntelligence::class);
+    }
 }
