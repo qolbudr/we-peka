@@ -46,10 +46,18 @@
                             <a href="{{ route('quiz.index') }}"
                                 class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'quiz' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Quiz</a>
                         </li>
+                        <li>
+                            <a href="{{ route('intelligence.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'intelligance' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Intelligance</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('question.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'question' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Question</a>
+                        </li>
                     </ul>
                 </li>
                 {{-- End Quizzes --}}
-                
+
                 <li>
                     <button type="button"
                         class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'users' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"

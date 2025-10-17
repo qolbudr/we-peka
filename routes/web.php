@@ -3,9 +3,11 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IntelligenceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramStudyController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizQuestionController;
 use App\Http\Controllers\QuotaMabaController;
 use App\Http\Controllers\TypeStudyController;
 use App\Http\Controllers\TypeStudyDetailController;
@@ -31,6 +33,8 @@ route::get('/topikdua', function () {
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::prefix('quizzes')->group(function () {
         Route::resource('quiz', QuizController::class)->except(['create', 'show', 'edit']);
+        Route::resource('intelligence', IntelligenceController::class)->except(['create', 'show', 'edit']);
+        Route::resource('question', QuizQuestionController::class)->except(['create', 'show', 'edit']);
     });
 
     Route::prefix('users')->controller(UserController::class)->group(function () {
