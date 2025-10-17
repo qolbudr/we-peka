@@ -40,5 +40,6 @@ class DatabaseSeeder extends Seeder
         $guru->assignRole('guru');
 
         $this->call(QuizSeeder::class);
+        $this->call(ResultSeeder::class);
     }
 }

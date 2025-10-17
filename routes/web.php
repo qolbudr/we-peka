@@ -11,6 +11,7 @@ use App\Http\Controllers\ProgramStudyController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizQuestionController;
 use App\Http\Controllers\QuotaMabaController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\TypeStudyController;
 use App\Http\Controllers\TypeStudyDetailController;
 use App\Http\Controllers\UniversityController;
@@ -39,6 +40,9 @@ Route::middleware('auth', 'role:guru')->group(function () {
         Route::resource('question', QuizQuestionController::class)->except(['create', 'show', 'edit']);
         Route::resource('job-intelligence', JobIntelligenceController::class)->except(['create', 'show', 'edit']);
         Route::resource('criteria', EvaluationCriteriaController::class)->except(['create', 'show', 'edit']);
+
+        Route::get('result', [ResultController::class, 'index'])->name('result.index');
+        Route::delete('result/{id}', [ResultController::class, 'destroy'])->name('result.destroy');
     });
 
     Route::prefix('users')->controller(UserController::class)->group(function () {

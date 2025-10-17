@@ -20,4 +20,9 @@ class Intelligence extends Model
     {
         return $this->hasMany(JobIntelligence::class);
     }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }

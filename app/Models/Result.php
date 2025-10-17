@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Models;
+
+use App\Enums\EvalutaionCriteriaCategory;
+use Illuminate\Database\Eloquent\Model;
+
+class Result extends Model
+{
+    protected $fillable = [
+        'user_id',
+        'quiz_id',
+        'intelligence_id',
+        'score',
+        'category'
+    ];
+
+    protected $casts = [
+        'category' => EvalutaionCriteriaCategory::class
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function quiz()
+    {
+        return $this->belongsTo(Quiz::class);
+    }
+
+    public function intelligence()
+    {
+        return $this->belongsTo(Intelligence::class);
+    }
+}

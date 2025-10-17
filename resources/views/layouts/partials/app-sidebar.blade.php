@@ -68,6 +68,7 @@
                 </li>
                 {{-- End Quizzes --}}
 
+                {{-- User --}}
                 <li>
                     <button type="button"
                         class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'users' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
@@ -101,6 +102,26 @@
                         </li>
                     </ul>
                 </li>
+                {{-- End User --}}
+
+                {{-- Result --}}
+                <li>
+                    <a href="{{ route('result.index') }}"
+                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(2) == 'result' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
+                        <div
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
+                                <path
+                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                                <path
+                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Result</span>
+                    </a>
+                </li>
+                {{-- End Result --}}
+
                 <li>
                     <a href="{{ route('type-study.index') }}"
                         class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'type-study' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
