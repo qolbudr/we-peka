@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Quiz')
+@section('title', 'Question')
 
 @section('content')
     <div class="p-4 mt-20 sm:p-6 lg:p-8">
@@ -8,25 +8,25 @@
         <div class="mb-6">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Quiz Management</h1>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Manage your quizzes</p>
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Question Management</h1>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Manage your questions</p>
                 </div>
                 <!-- Button Create -->
                 <button data-modal-target="create-modal" data-modal-toggle="create-modal"
                     class="inline-flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button">
                     <x-icon-plus />
-                    Create Quiz
+                    Create Question
                 </button>
             </div>
 
             {{-- Modal Create --}}
-            @include('admin.quiz.create-modal')
+            @include('admin.question.create-modal')
         </div>
 
         <!-- Table Section -->
         <div class="relative overflow-auto rounded-lg shadow-md">
-            @include('admin.quiz.table-quiz')
+            @include('admin.question.table-question')
         </div>
     </div>
 @endsection
@@ -34,19 +34,49 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
+            // Select quiz & hidden intelligence
+            const quizSelect = document.getElementById('quiz-id');
+            const intelligenceWrapper = document.getElementById('intelligence-wrapper');
+            const intelligenceSelect = document.getElementById('intelligence-id');
+
+            // Hidden and show intelligence (create)
+            function hiddenCreateIntteligence() {
+                const selectedOption = quizSelect.options[quizSelect.selectedIndex];
+
+                if (!selectedOption) return;
+                const category = selectedOption.getAttribute('data-category');
+
+                if (category === 'efikasi_karir') {
+                    intelligenceWrapper.style.display = 'none';
+                    intelligenceSelect.required = false;
+                } else if (category === 'multiple_intelligence') {
+                    intelligenceWrapper.style.display = 'block';
+                    intelligenceSelect.required = true;
+                } else {
+                    intelligenceWrapper.style.display = 'none';
+                    intelligenceSelect.required = false;
+                }
+            }
+
+            quizSelect.addEventListener('change', hiddenCreateIntteligence);
+
+            hiddenCreateIntteligence();
+
             // Create
             $('#formCreate').on('submit', function(e) {
                 if (!this.checkValidity()) {
                     e.preventDefault();
 
-                    if (!this.name.value) iziToast.error({
+                    if (!this.quiz_id.value) iziToast.error({
                         title: 'Error',
-                        message: 'Nama wajib diisi',
+                        message: 'Quiz wajib diisi',
                     });
-                    if (!this.category.value) iziToast.error({
+
+                    if (!this.question.value.trim()) iziToast.error({
                         title: 'Error',
-                        message: 'Kategory wajib diisi',
+                        message: 'Pertanyaan wajib diisi',
                     });
+
                     return;
                 }
 
@@ -98,32 +128,42 @@
             });
 
             // Update
-            $('#formEdit').on('submit', function(e) {
+            $('.form-edit').on('submit', function(e) {
+                const form = this;
+                const modal = $(form).closest('div[id^="edit-modal_"]');
+
+                const questionVal = $(form).find('[name="question"]').val().trim();
+                const intelligenceSelect = $(form).find('[name="intelligence_id"]');
+
                 if (!this.checkValidity()) {
                     e.preventDefault();
 
-                    if (!this.name.value) iziToast.error({
-                        title: 'Error',
-                        message: 'Nama wajib diisi',
-                        position: 'topRight'
-                    });
-                    if (!this.category.value) iziToast.error({
-                        title: 'Error',
-                        message: 'Kategori wajib diisi',
-                        position: 'topRight'
-                    });
-                    return;
+                    if (!questionVal) {
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'Question wajib diisi',
+                        });
+                        return;
+                    }
+
+                    if (intelligenceSelect.length > 0 && intelligenceSelect.is(':visible')) {
+                        const intelligenceVal = intelligenceSelect.val();
+                        if (!intelligenceVal) {
+                            iziToast.error({
+                                title: 'Error',
+                                message: 'Intelligence wajib diisi',
+                            });
+                            return;
+                        }
+                    }
                 }
 
                 e.preventDefault();
 
-                const form = this;
-                const modal = $(form).closest('div[id^="edit-modal_"]');
-
                 $.ajax({
-                    url: this.action,
+                    url: form.action,
                     method: 'POST',
-                    data: $(this).serialize(),
+                    data: $(form).serialize(),
                     headers: {
                         'Accept': 'application/json',
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -134,8 +174,7 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Berhasil',
-                            text: resp.message ||
-                                'Data berhasil diupdate',
+                            text: resp.message || 'Data berhasil diupdate',
                             timer: 1500,
                             showConfirmButton: false
                         }).then(() => {

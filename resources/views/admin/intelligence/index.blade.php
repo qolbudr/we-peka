@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Quiz')
+@section('title', 'Intelligence')
 
 @section('content')
     <div class="p-4 mt-20 sm:p-6 lg:p-8">
@@ -8,25 +8,25 @@
         <div class="mb-6">
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Quiz Management</h1>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Manage your quizzes</p>
+                    <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Intelligence Management</h1>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Manage your intelligences</p>
                 </div>
                 <!-- Button Create -->
                 <button data-modal-target="create-modal" data-modal-toggle="create-modal"
                     class="inline-flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     type="button">
                     <x-icon-plus />
-                    Create Quiz
+                    Create Intelligence
                 </button>
             </div>
 
             {{-- Modal Create --}}
-            @include('admin.quiz.create-modal')
+            @include('admin.intelligence.create-modal')
         </div>
 
         <!-- Table Section -->
         <div class="relative overflow-auto rounded-lg shadow-md">
-            @include('admin.quiz.table-quiz')
+            @include('admin.intelligence.table-intelligence')
         </div>
     </div>
 @endsection
@@ -105,11 +105,6 @@
                     if (!this.name.value) iziToast.error({
                         title: 'Error',
                         message: 'Nama wajib diisi',
-                        position: 'topRight'
-                    });
-                    if (!this.category.value) iziToast.error({
-                        title: 'Error',
-                        message: 'Kategori wajib diisi',
                         position: 'topRight'
                     });
                     return;
