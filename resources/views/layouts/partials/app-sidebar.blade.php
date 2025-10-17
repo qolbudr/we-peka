@@ -22,52 +22,6 @@
                     </a>
                 </li>
 
-                {{-- Quizzes --}}
-                <li>
-                    <button type="button"
-                        class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'quizzes' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
-                        aria-controls="dropdown-quizzes" data-collapse-toggle="dropdown-quizzes">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 18">
-                                <path
-                                    d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Quizzes</span>
-                        <svg class="w-4 h-4 ml-auto duration-300 transform rotate-90" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                    <ul id="dropdown-quizzes"
-                        class="py-2 space-y-2 {{ request()->segment(1) == 'quizzes' ? '' : 'hidden' }}">
-                        <li>
-                            <a href="{{ route('quiz.index') }}"
-                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'quiz' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Quiz</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('criteria.index') }}"
-                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'criteria' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Evaluation
-                                Criteria</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('intelligence.index') }}"
-                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'intelligance' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Intelligance</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('job-intelligence.index') }}"
-                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'job-intelligence' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Job
-                                Intelligence</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('question.index') }}"
-                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'question' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Question</a>
-                        </li>
-                    </ul>
-                </li>
-                {{-- End Quizzes --}}
-
                 {{-- User --}}
                 <li>
                     <button type="button"
@@ -104,41 +58,61 @@
                 </li>
                 {{-- End User --}}
 
-                {{-- Result --}}
+                {{-- Quizzes --}}
                 <li>
-                    <a href="{{ route('result.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(2) == 'result' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
+                    <button type="button"
+                        class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'quizzes' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
+                        aria-controls="dropdown-quizzes" data-collapse-toggle="dropdown-quizzes">
                         <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                    clip-rule="evenodd" />
                             </svg>
-                        </div>
-                        <span class="font-medium">Result</span>
-                    </a>
-                </li>
-                {{-- End Result --}}
 
-                {{-- Answers --}}
-                <li>
-                    <a href="{{ route('answers.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(2) == 'answers' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                            </svg>
                         </div>
-                        <span class="font-medium">Answers</span>
-                    </a>
+                        <span class="font-medium">Quizzes</span>
+                        <svg class="w-4 h-4 ml-auto duration-300 transform rotate-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown-quizzes"
+                        class="py-2 space-y-2 {{ request()->segment(1) == 'quizzes' ? '' : 'hidden' }}">
+                        <li>
+                            <a href="{{ route('quiz.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'quiz' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Quiz</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('criteria.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'criteria' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Evaluation
+                                Criteria</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('intelligence.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'intelligance' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Intelligance</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('job-intelligence.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'job-intelligence' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Job
+                                Intelligence</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('question.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'question' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Question</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('result.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'result' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Result</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('answers.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'answers' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Answers</a>
+                        </li>
+                    </ul>
                 </li>
-                {{-- End Answers --}}
+                {{-- End Quizzes --}}
 
                 <li>
                     <a href="{{ route('type-study.index') }}"

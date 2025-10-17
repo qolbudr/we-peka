@@ -49,12 +49,13 @@
                                 'tinggi' => 'bg-blue-100 text-blue-800',
                                 'sangat_tinggi' => 'bg-green-100 text-green-800',
                             ];
-                            $categoryBadgeClass = $categoryColors[$result->category] ?? 'bg-gray-100 text-gray-800';
+                            $categoryBadgeClass =
+                                $categoryColors[$result->category->value] ?? 'bg-gray-100 text-gray-800';
                         @endphp
 
                         <span
                             class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full {{ $categoryBadgeClass }}">
-                            {{ ucwords(str_replace('_', ' ', $result->category)) }}
+                            {{ ucwords(str_replace('_', ' ', $result->category->value)) }}
                         </span>
                     @else
                         <span class="text-gray-400">-</span>
