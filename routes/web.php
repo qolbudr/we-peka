@@ -33,6 +33,9 @@ route::get('/topiksatu', function () {
 route::get('/topikdua', function () {
     return view('home.topikdua');
 })->name('topikdua');
+Route::get('/home/universitas', function () {
+    return view('home.universitas');
+})->name('home.universitas');
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::prefix('quizzes')->group(function () {
