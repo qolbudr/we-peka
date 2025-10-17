@@ -21,6 +21,35 @@
                         <span class="font-medium">Dashboard</span>
                     </a>
                 </li>
+
+                {{-- Quizzes --}}
+                <li>
+                    <button type="button"
+                        class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'quizzes' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
+                        aria-controls="dropdown-quizzes" data-collapse-toggle="dropdown-quizzes">
+                        <div
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 18">
+                                <path
+                                    d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
+                            </svg>
+                        </div>
+                        <span class="font-medium">Quizzes</span>
+                        <svg class="w-4 h-4 ml-auto duration-300 transform rotate-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown-quizzes"
+                        class="py-2 space-y-2 {{ request()->segment(1) == 'quizzes' ? '' : 'hidden' }}">
+                        <li>
+                            <a href="{{ route('quiz.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'quiz' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">Quiz</a>
+                        </li>
+                    </ul>
+                </li>
+                {{-- End Quizzes --}}
+                
                 <li>
                     <button type="button"
                         class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'users' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"

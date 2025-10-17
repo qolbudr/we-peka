@@ -12,6 +12,12 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        {{-- Jquery --}}
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        {{-- Izitoast --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -40,10 +46,8 @@
         {{-- iziToast --}}
         <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 
-        <script src="https://unpkg.com/flowbite@2.5.1/dist/flowbite.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" defer></script>
-        <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
-
+        {{-- Sweetalert2 --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         @yield('scripts')
     </body>
