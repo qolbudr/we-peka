@@ -38,5 +38,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $guru->assignRole('guru');
+
+        $this->call(QuizSeeder::class);
     }
 }

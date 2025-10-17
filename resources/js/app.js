@@ -1,11 +1,14 @@
 import "./bootstrap";
-import 'flowbite'
+import 'flowbite';
 
 import Alpine from "alpinejs";
+import { DataTable } from 'simple-datatables';
 
+window.simpleDatatables = { DataTable };
 window.Alpine = Alpine;
 
 Alpine.start();
+
 
 // Toggle Mobile Nav
 document.addEventListener("DOMContentLoaded", () => {

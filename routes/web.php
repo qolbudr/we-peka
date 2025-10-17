@@ -5,6 +5,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramStudyController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuotaMabaController;
 use App\Http\Controllers\TypeStudyController;
 use App\Http\Controllers\TypeStudyDetailController;
@@ -28,6 +29,10 @@ route::get('/topikdua', function () {
 })->name('topikdua');
 
 Route::middleware('auth', 'role:guru')->group(function () {
+    Route::prefix('quizzes')->group(function () {
+        Route::resource('quiz', QuizController::class)->except(['create', 'show', 'edit']);
+    });
+
     Route::prefix('users')->controller(UserController::class)->group(function () {
         Route::get('all', 'index')->name('users.index');
         Route::get('siswa', 'siswa')->name('users.siswa');
