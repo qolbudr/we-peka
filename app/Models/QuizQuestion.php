@@ -21,4 +21,9 @@ class QuizQuestion extends Model
     {
         return $this->belongsTo(Intelligence::class);
     }
+
+    public function answers()
+    {
+        return $this->hasMany(Answers::class, 'question_id');
+    }
 }

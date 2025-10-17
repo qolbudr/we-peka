@@ -33,4 +33,9 @@ class Result extends Model
     {
         return $this->belongsTo(Intelligence::class);
     }
+
+    public function answers()
+    {
+        return $this->hasMany(Answers::class);
+    }
 }

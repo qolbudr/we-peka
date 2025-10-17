@@ -41,14 +41,20 @@
                 <!-- Category -->
                 <td class="px-4 py-4 text-gray-900 sm:px-6">
                     @if ($result->category)
+                        @php
+                            $categoryColors = [
+                                'sangat_rendah' => 'bg-red-100 text-red-800',
+                                'rendah' => 'bg-orange-100 text-orange-800',
+                                'sedang' => 'bg-yellow-100 text-yellow-800',
+                                'tinggi' => 'bg-blue-100 text-blue-800',
+                                'sangat_tinggi' => 'bg-green-100 text-green-800',
+                            ];
+                            $categoryBadgeClass = $categoryColors[$result->category] ?? 'bg-gray-100 text-gray-800';
+                        @endphp
+
                         <span
-                            class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full
-                                        @if ($result->category == 'sangat_tinggi') bg-green-100 text-green-800
-                                        @elseif($result->category == 'tinggi') bg-blue-100 text-blue-800
-                                        @elseif($result->category == 'sedang') bg-yellow-100 text-yellow-800
-                                        @elseif($result->category == 'rendah') bg-orange-100 text-orange-800
-                                        @else bg-red-100 text-red-800 @endif">
-                            {{ ucwords(str_replace('_', ' ', $result->category->value)) }}
+                            class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full {{ $categoryBadgeClass }}">
+                            {{ ucwords(str_replace('_', ' ', $result->category)) }}
                         </span>
                     @else
                         <span class="text-gray-400">-</span>

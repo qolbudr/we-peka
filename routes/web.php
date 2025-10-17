@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\AnswersController;
 use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntelligenceController;
@@ -43,6 +44,8 @@ Route::middleware('auth', 'role:guru')->group(function () {
 
         Route::get('result', [ResultController::class, 'index'])->name('result.index');
         Route::delete('result/{id}', [ResultController::class, 'destroy'])->name('result.destroy');
+
+        Route::get('answers', [AnswersController::class, 'index'])->name('answers.index');
     });
 
     Route::prefix('users')->controller(UserController::class)->group(function () {
