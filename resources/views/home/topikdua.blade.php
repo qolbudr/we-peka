@@ -3,7 +3,7 @@
 @section('title', 'Topik 2')
 
 @section('content')
-    <div class="relative w-full min-h-screen py-16 overflow-hidden bg-gradient-to-br from-violet-50 via-purple-50 to-white">
+    <div class="relative w-full min-h-screen py-16 overflow-hidden bg-gradient-to-br from-blue-50 via-sky-50 to-white">
         <div class="absolute inset-0 opacity-5">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="tabPattern" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -16,7 +16,7 @@
         <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="mb-8">
                 <a href="/"
-                    class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-violet-600 to-purple-600 hover:shadow-xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
+                    class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white transition-all duration-300 transform rounded-lg shadow-lg bg-gradient-to-r from-blue-600 to-sky-600 hover:shadow-xl hover:scale-105 hover:from-blue-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -27,7 +27,7 @@
 
             <div class="overflow-hidden bg-white shadow-2xl rounded-3xl">
                 <div class="grid gap-0 lg:grid-cols-12">
-                    <div class="p-6 lg:col-span-3 bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-600">
+                    <div class="p-6 lg:col-span-3 bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-600">
                         <div class="mb-6">
                             <h3 class="text-xl font-bold text-white">Materi Pembelajaran</h3>
                             <p class="mt-1 text-sm text-white/80">Pilih topik untuk dipelajari</p>
@@ -100,14 +100,14 @@
                         <div id="content-penilaian" class="tab-content">
                             <div class="mb-6">
                                 <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-violet-700 bg-violet-100">
+                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-blue-700 bg-blue-100">
                                     Dimensi 1
                                 </div>
                                 <h2 class="text-3xl font-bold text-gray-900">Dimensi Penilaian Diri</h2>
                             </div>
-                            <div class="p-6 bg-gradient-to-br from-violet-50 to-purple-50 rounded-2xl">
+                            <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
                                 <p class="text-lg leading-relaxed text-gray-700">
-                                    <span class="font-bold text-violet-600">Dimensi penilaian diri</span> adalah berbagai
+                                    <span class="font-bold text-blue-600">Dimensi penilaian diri</span> adalah berbagai
                                     aspek yang dievaluasi oleh individu tentang dirinya sendiri, seperti kinerja,
                                     keterampilan, nilai-nilai, kekuatan, kelemahan, dan pencapaian. Dimensi-dimensi ini
                                     digunakan untuk introspeksi guna mendapatkan pemahaman yang lebih baik tentang diri
@@ -120,14 +120,14 @@
                         <div id="content-informasi" class="hidden tab-content">
                             <div class="mb-6">
                                 <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full">
+                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-blue-700 bg-blue-100 rounded-full">
                                     Dimensi 2
                                 </div>
                                 <h2 class="text-3xl font-bold text-gray-900">Informasi Karir</h2>
                             </div>
                             <div class="p-6 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-2xl">
                                 <p class="text-lg leading-relaxed text-gray-700">
-                                    <span class="font-bold text-indigo-600">Dimensi informasi karier</span> adalah aspek
+                                    <span class="font-bold text-blue-600">Dimensi informasi karier</span> adalah aspek
                                     kematangan karier yang mengukur sejauh mana seseorang aktif mencari dan menggunakan
                                     informasi tentang dunia kerja, serta sejauh mana mereka memiliki pengetahuan yang
                                     memadai mengenai pilihan karier. Ini mencakup sikap terhadap sumber informasi (seperti
@@ -140,13 +140,13 @@
                         <div id="content-tujuan" class="hidden space-y-8 tab-content">
                             <div>
                                 <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-purple-700 bg-purple-100 rounded-full">
+                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-blue-700 bg-blue-100 rounded-full">
                                     Dimensi 3
                                 </div>
                                 <h2 class="mb-4 text-3xl font-bold text-gray-900">Pemilihan Tujuan</h2>
-                                <div class="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl">
+                                <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
                                     <p class="text-lg leading-relaxed text-gray-700">
-                                        <span class="font-bold text-purple-600">Dimensi pemilihan tujuan</span> merujuk
+                                        <span class="font-bold text-blue-600">Dimensi pemilihan tujuan</span> merujuk
                                         pada aspek-aspek yang membentuk proses penetapan dan pencapaian tujuan, yang
                                         mencakup jangka waktu (jangka pendek, menengah, panjang), arah (dari atas ke bawah,
                                         bawah ke atas, atau horizontal), dan sifat (misalnya, apakah tujuannya spesifik atau
@@ -157,9 +157,9 @@
 
                             <div>
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Chaos Theory</h3>
-                                <div class="p-6 bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl">
+                                <div class="p-6 bg-gradient-to-br from-indigo-50 to-sky-50 rounded-2xl">
                                     <p class="text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-pink-600">Chaos theory</span> adalah pendekatan
+                                        <span class="font-bold text-indigo-600">Chaos theory</span> adalah pendekatan
                                         pengembangan karier yang melihat karier sebagai proses yang kompleks, dinamis, dan
                                         tidak dapat diprediksi, yang dipengaruhi oleh banyak faktor yang terus berubah.
                                     </p>
@@ -168,9 +168,9 @@
 
                             <div>
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Tujuan Chaos Theory</h3>
-                                <div class="p-6 bg-gradient-to-br from-rose-50 to-orange-50 rounded-2xl">
+                                <div class="p-6 bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl">
                                     <p class="text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-rose-600">Tujuan chaos theory</span> adalah untuk
+                                        <span class="font-bold text-sky-600">Tujuan chaos theory</span> adalah untuk
                                         membantu individu menavigasi ketidakpastian dan kompleksitas karier dengan
                                         menanamkan pola pikir yang adaptif, tangguh, dan fleksibel.
                                     </p>

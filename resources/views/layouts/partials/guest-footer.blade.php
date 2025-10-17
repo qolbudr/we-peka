@@ -1,6 +1,6 @@
-<footer class="relative mt-16 overflow-hidden bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900">
+<footer class="relative mt-16 overflow-hidden bg-gradient-to-br from-blue-700 via-sky-600 to-indigo-900">
     <div class="absolute top-0 left-0 right-0">
-        <svg class="w-full h-16 text-violet-900" viewBox="0 0 1200 120" preserveAspectRatio="none"
+        <svg class="w-full h-16 text-blue-700" viewBox="0 0 1200 120" preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M0,60 Q300,10 600,60 T1200,60 L1200,0 L0,0 Z" fill="white" />
         </svg>

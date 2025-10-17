@@ -40,6 +40,11 @@
         {{-- iziToast --}}
         <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 
+        <script src="https://unpkg.com/flowbite@2.5.1/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" defer></script>
+        <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+
+
         @yield('scripts')
     </body>
 

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\TypeStudy;
 use App\Models\University;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,8 +16,9 @@ class UniversityController extends Controller
     public function index()
     {
         $universities = University::with('typeStudy')->orderBy('created_at', 'desc')->get();
+        $typeStudies = TypeStudy::all();
 
-        return view('admin.universitas.index', compact('universities'));
+    return view('admin.universitas.index', compact('universities', 'typeStudies'));
     }
 
     /**

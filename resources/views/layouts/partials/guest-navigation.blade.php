@@ -12,8 +12,8 @@
                                 <defs>
                                     <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%"
                                         y2="100%">
-                                        <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
                                 <circle cx="25" cy="25" r="23" fill="url(#logoGrad)" />
@@ -21,11 +21,11 @@
                                 <circle cx="25" cy="25" r="5" fill="url(#logoGrad)" />
                             </svg>
                             <div
-                                class="absolute inset-0 transition-opacity rounded-full bg-violet-400 blur-xl opacity-30 group-hover:opacity-50">
+                                class="absolute inset-0 transition-opacity rounded-full bg-blue-400 blur-xl opacity-30 group-hover:opacity-50">
                             </div>
                         </div>
                         <span
-                            class="text-2xl font-bold text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text">
+                            class="text-2xl font-bold text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text">
                             WE PEKA
                         </span>
                     </a>
@@ -108,7 +108,7 @@
             @else
                 <div class="hidden md:block">
                     <a href="{{ route('login') }}"
-                        class="relative inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white overflow-hidden transition-all duration-300 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-lg shadow-lg group hover:shadow-xl hover:scale-105">
+                        class="relative inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white overflow-hidden transition-all duration-300 bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-600 rounded-lg shadow-lg group hover:shadow-xl hover:scale-105">
                         <span
                             class="absolute top-0 right-0 w-12 h-12 transition-all duration-1000 transform translate-x-12 -translate-y-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40"></span>
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
