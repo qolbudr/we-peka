@@ -17,6 +17,11 @@ class Quiz extends Model
         'category' => QuizCategory::class,
     ];
 
+    public function evaluationCriterias()
+    {
+        return $this->hasMany(EvaluationCriteria::class);
+    }
+
     public function questions()
     {
         return $this->hasMany(QuizQuestion::class);

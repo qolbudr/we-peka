@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AlumniController;
+use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntelligenceController;
 use App\Http\Controllers\JobIntelligenceController;
@@ -37,6 +38,7 @@ Route::middleware('auth', 'role:guru')->group(function () {
         Route::resource('intelligence', IntelligenceController::class)->except(['create', 'show', 'edit']);
         Route::resource('question', QuizQuestionController::class)->except(['create', 'show', 'edit']);
         Route::resource('job-intelligence', JobIntelligenceController::class)->except(['create', 'show', 'edit']);
+        Route::resource('criteria', EvaluationCriteriaController::class)->except(['create', 'show', 'edit']);
     });
 
     Route::prefix('users')->controller(UserController::class)->group(function () {
