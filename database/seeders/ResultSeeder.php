@@ -58,6 +58,6 @@ class ResultSeeder extends Seeder
         // Insert data
         DB::table('results')->insert($hasilTesData);
 
-        $this->command->info('Seeder results berhasil dijalankan!');
+        $this->command->info('Seeder results berhasil bos!');
     }
 }
