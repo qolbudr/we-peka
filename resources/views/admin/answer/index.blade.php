@@ -15,7 +15,7 @@
 
         <!-- Table Section -->
         <div class="relative overflow-auto rounded-lg shadow-md">
-            @include('admin.answers.table-answers')
+            @include('admin.answer.table-answers')
         </div>
     </div>
 @endsection
