@@ -54,4 +54,9 @@ class User extends Authenticatable
             'gender' => Gender::class,
         ];
     }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 }
