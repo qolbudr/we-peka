@@ -11,6 +11,6 @@ class AnswersController extends Controller
     {
         $answers = Answers::with(['result.user', 'result.quiz', 'question.intelligence'])->get();
 
-        return view('admin.answers.index', compact('answers'));
+        return view('admin.answer.index', compact('answers'));
     }
 }
