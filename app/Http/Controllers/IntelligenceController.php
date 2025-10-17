@@ -32,7 +32,7 @@ class IntelligenceController extends Controller
 
             DB::commit();
 
-            return redirect()->route('intelligance.index')->with('message', 'Berhasil membuat data');
+            return redirect()->route('intelligence.index')->with('message', 'Berhasil membuat data');
         } catch (\Throwable $e) {
             DB::rollBack();
 
