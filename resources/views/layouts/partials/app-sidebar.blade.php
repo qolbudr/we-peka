@@ -1,5 +1,5 @@
 <aside id="logo-sidebar"
-    class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full border-r w-72 bg-gradient-to-b from-violet-900 via-purple-900 to-indigo-900 border-violet-800/50 sm:translate-x-0"
+    class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full border-r w-72 bg-gradient-to-b from-blue-700 to-indigo-700 border-blue-800/50 sm:translate-x-0"
     aria-label="Sidebar">
 
     <div class="h-[calc(100vh-5rem)] px-4 py-6 overflow-y-auto pb-24">

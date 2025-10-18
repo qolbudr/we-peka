@@ -2,8 +2,7 @@
     $user = Auth::user();
 @endphp
 
-<nav
-    class="fixed top-0 z-50 w-full border-b shadow-lg bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 border-violet-800/50">
+<nav class="fixed top-0 z-50 w-full shadow-lg bg-gradient-to-r from-blue-700 to-indigo-700">
     <div class="px-4 py-3 lg:px-6">
         <div class="flex items-center justify-between">
             <!-- Left Section -->
@@ -28,8 +27,8 @@
                             <defs>
                                 <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%"
                                     y2="100%">
-                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+                                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#0004ff;stop-opacity:1" />
                                 </linearGradient>
                             </defs>
                             <circle cx="25" cy="25" r="23" fill="url(#navLogoGrad)" />
@@ -57,13 +56,13 @@
                                 class="object-cover w-10 h-10 rounded-full shadow-lg ring-2 ring-white/30">
                         @else
                             <div
-                                class="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full shadow-lg bg-gradient-to-br from-violet-500 via-purple-500 to-pink-500 ring-2 ring-white/30">
+                                class="flex items-center justify-center w-10 h-10 font-bold text-white rounded-full shadow-lg bg-gradient-to-br from-blue-500 to-indigo-500">
                                 {{ \App\Helpers\GetInitialsHelper::getInitials($user->name) }}
                             </div>
                         @endif
                         <div class="hidden text-left lg:block">
                             <p class="text-sm font-semibold text-white capitalize">{{ $user->name }}</p>
-                            <p class="text-xs font-medium capitalize text-violet-300">
+                            <p class="text-xs font-medium text-blue-200 capitalize">
                                 {{ $user->roles->pluck('name')->join(', ') }}
                             </p>
                         </div>
@@ -75,14 +74,14 @@
 
                     {{-- User Dropdown Menu --}}
                     <div id="dropdown-user"
-                        class="absolute right-0 z-50 hidden w-56 mt-2 bg-white divide-y shadow-2xl top-full rounded-2xl ring-1 ring-violet-200 divide-violet-100">
-                        <div class="px-4 py-3 bg-gradient-to-br from-violet-50 to-purple-50 rounded-t-2xl">
-                            <p class="text-sm font-semibold capitalize text-violet-900">{{ $user->name }}</p>
-                            <p class="text-xs truncate text-violet-600 mt-0.5">{{ $user->email }}</p>
+                        class="absolute right-0 z-50 hidden w-56 mt-2 bg-white divide-y divide-blue-100 shadow-2xl top-full rounded-2xl ring-1 ring-blue-200">
+                        <div class="px-4 py-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-t-2xl">
+                            <p class="text-sm font-semibold text-blue-900 capitalize">{{ $user->name }}</p>
+                            <p class="text-xs truncate text-blue-600 mt-0.5">{{ $user->email }}</p>
                         </div>
                         <div class="py-2">
                             <a href="{{ route('profile.edit') }}"
-                                class="flex items-center px-4 py-2.5 mx-2 text-sm font-medium transition-all duration-200 rounded-lg text-violet-700 hover:bg-violet-100 hover:text-violet-900 active:bg-violet-200">
+                                class="flex items-center px-4 py-2.5 mx-2 text-sm font-medium transition-all duration-200 rounded-lg text-blue-700 hover:bg-blue-100 hover:text-blue-900 active:bg-blue-200">
                                 <svg class="flex-shrink-0 w-5 h-5 mr-3" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
