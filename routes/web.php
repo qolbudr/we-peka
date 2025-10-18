@@ -34,9 +34,6 @@ route::get('/topiksatu', function () {
     return view('home.topiksatu');
 })->name('topiksatu');
 
-Route::get('/home/universitas', function () {
-    return view('home.universitas');
-})->name('home.universitas');
 route::get('/test-efikasikarir', function () {
     return view('home.test-efikasikarir');
 })->name('test-efikasikarir');
