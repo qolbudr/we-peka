@@ -25,6 +25,7 @@
                 </a>
             </div>
 
+            {{-- Bagian konten utama --}}
             <section class="mb-16">
                 <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
                     <div class="grid items-center gap-8 lg:grid-cols-2">
@@ -46,12 +47,10 @@
                                 tantangan, dan mampu membuat keputusan karir yang lebih rasional dan realistis.
                             </p>
                         </div>
-                        <div
-                            class="flex items-center justify-center p-8 bg-gradient-to-br from-nlue-100 to-sky-100 lg:p-12">
+                        <div class="flex items-center justify-center p-8 bg-gradient-to-br from-blue-100 to-sky-100 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%"
-                                        y2="100%">
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
                                     </linearGradient>
@@ -68,33 +67,28 @@
                 </div>
             </section>
 
+            {{-- Bagian 2 --}}
             <section class="mb-16">
                 <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
                     <div class="grid items-center gap-8 lg:grid-cols-2">
-                        <div
-                            class="flex items-center justify-center order-2 p-8 bg-gradient-to-br from-sky-100 to-cyan-100 lg:order-1 lg:p-12">
+                        <div class="flex items-center justify-center order-2 p-8 bg-gradient-to-br from-sky-100 to-cyan-100 lg:order-1 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%"
-                                        y2="100%">
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
                                         <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
                                         <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
                                     </linearGradient>
                                 </defs>
-                                <rect x="100" y="80" width="60" height="140" fill="url(#grad2)" opacity="0.3"
-                                    rx="8" />
-                                <rect x="170" y="60" width="60" height="160" fill="url(#grad2)" opacity="0.5"
-                                    rx="8" />
-                                <rect x="240" y="40" width="60" height="180" fill="url(#grad2)" opacity="0.7"
-                                    rx="8" />
+                                <rect x="100" y="80" width="60" height="140" fill="url(#grad2)" opacity="0.3" rx="8" />
+                                <rect x="170" y="60" width="60" height="160" fill="url(#grad2)" opacity="0.5" rx="8" />
+                                <rect x="240" y="40" width="60" height="180" fill="url(#grad2)" opacity="0.7" rx="8" />
                                 <circle cx="200" cy="100" r="40" fill="#06b6d4" />
                                 <path d="M185,100 L195,110 L215,90" stroke="white" stroke-width="4" fill="none"
                                     stroke-linecap="round" />
                             </svg>
                         </div>
                         <div class="order-1 p-8 lg:order-2 lg:p-12">
-                            <div
-                                class="inline-block px-4 py-2 mb-4 text-sm font-medium text-cyan-700 bg-cyan-100 rounded-full">
+                            <div class="inline-block px-4 py-2 mb-4 text-sm font-medium text-cyan-700 bg-cyan-100 rounded-full">
                                 Manfaat Utama
                             </div>
                             <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
@@ -116,12 +110,12 @@
                 </div>
             </section>
 
+            {{-- Bagian 3 --}}
             <section class="mb-16">
                 <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
                     <div class="grid items-center gap-8 lg:grid-cols-2">
                         <div class="p-8 lg:p-12">
-                            <div
-                                class="inline-block px-4 py-2 mb-4 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full">
+                            <div class="inline-block px-4 py-2 mb-4 text-sm font-medium text-indigo-700 bg-indigo-100 rounded-full">
                                 Komponen Penting
                             </div>
                             <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
@@ -139,8 +133,7 @@
                                 hingga merencanakan dan mengatasi tantangan di masa depan.
                             </p>
                         </div>
-                        <div
-                            class="flex items-center justify-center p-8 bg-gradient-to-br from-indigo-100 to-blue-100 lg:p-12">
+                        <div class="flex items-center justify-center p-8 bg-gradient-to-br from-indigo-100 to-blue-100 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="200" cy="150" r="80" fill="#6366f1" opacity="0.2" />
                                 <circle cx="200" cy="150" r="60" fill="#6366f1" opacity="0.3" />
@@ -156,119 +149,17 @@
                 </div>
             </section>
 
-            <section>
-                <div
-                    class="overflow-hidden shadow-2xl bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-600 rounded-3xl">
-                    <div class="p-8 lg:p-12">
-                        <div class="max-w-4xl mx-auto">
-                            <div
-                                class="inline-block px-4 py-2 mb-6 text-sm font-medium bg-white rounded-full text-blue-900">
-                                Faktor Pembentuk
-                            </div>
-                            <h2 class="mb-8 text-4xl font-bold leading-tight text-white sm:text-5xl">
-                                Sumber Efikasi Karir
-                            </h2>
-
-                            <div class="grid gap-6 md:grid-cols-2">
-                                <div
-                                    class="p-6 transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="flex-shrink-0">
-                                            <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 class="mb-2 text-lg font-bold text-white">Pengalaman Penguasaan Pribadi
-                                            </h3>
-                                            <p class="text-sm leading-relaxed text-white/90">
-                                                Ini adalah sumber paling kuat dalam membentuk efikasi diri. Individu akan
-                                                memiliki keyakinan yang lebih tinggi terhadap kemampuannya jika mereka telah
-                                                berhasil dalam tugas atau aktivitas sebelumnya.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="flex-shrink-0">
-                                            <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 class="mb-2 text-lg font-bold text-white">Pengalaman Vicarious</h3>
-                                            <p class="text-sm leading-relaxed text-white/90">
-                                                Dengan melihat orang lain yang mirip dengan diri mereka berhasil dalam
-                                                karier, individu dapat merasa bahwa mereka juga mampu mencapai hal yang
-                                                sama.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="flex-shrink-0">
-                                            <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 class="mb-2 text-lg font-bold text-white">Persuasi Verbal</h3>
-                                            <p class="text-sm leading-relaxed text-white/90">
-                                                Ini adalah dorongan dan keyakinan yang diberikan orang lain kepada individu.
-                                                Dukungan dan kata-kata positif dari lingkungan dapat meningkatkan keyakinan
-                                                diri seseorang.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-300 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20">
-                                    <div class="flex items-start space-x-4">
-                                        <div class="flex-shrink-0">
-                                            <div class="flex items-center justify-center w-12 h-12 bg-white rounded-xl">
-                                                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h3 class="mb-2 text-lg font-bold text-white">Afek (Kondisi Emosional)</h3>
-                                            <p class="text-sm leading-relaxed text-white/90">
-                                                Perasaan dan suasana hati individu dapat memengaruhi efikasi diri. Kondisi
-                                                emosional yang positif dapat meningkatkan keyakinan, sementara kecemasan
-                                                dapat menguranginya.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            
+            <div class="flex justify-center mt-20">
+                <a href="{{ route('test-efikasikarir') }}"
+                    class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform rounded-xl shadow-lg bg-gradient-to-r from-blue-600 via-sky-600 to-indigo-600 hover:from-blue-700 hover:via-sky-700 hover:to-indigo-700 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    Lanjut ke Pengukuran Efikasi Karir
+                    <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
 @endsection
