@@ -21,20 +21,19 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    route::get('/topikdua', 'topik2')->name('topikdua');
+});
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
 
-
 route::get('/topiksatu', function () {
     return view('home.topiksatu');
 })->name('topiksatu');
 
-route::get('/topikdua', function () {
-    return view('home.topikdua');
-})->name('topikdua');
 Route::get('/home/universitas', function () {
     return view('home.universitas');
 })->name('home.universitas');
@@ -72,8 +71,6 @@ Route::post('/hasil-efikasikarir', function (Request $request) {
 
     return view('home.hasil-efikasikarir', compact('score', 'level', 'desc'));
 })->name('hasil-efikasikarir');
-
-
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::prefix('quizzes')->group(function () {

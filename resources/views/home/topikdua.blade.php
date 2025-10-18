@@ -100,7 +100,7 @@
                         <div id="content-penilaian" class="tab-content">
                             <div class="mb-6">
                                 <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-blue-700 bg-blue-100">
+                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-blue-700 bg-blue-100 rounded-full">
                                     Dimensi 1
                                 </div>
                                 <h2 class="text-3xl font-bold text-gray-900">Dimensi Penilaian Diri</h2>
@@ -129,61 +129,51 @@
                             </div>
                         </div>
 
-                        <div id="content-informasi" class="hidden tab-content p-4 sm:p-6 lg:p-8">
-
+                        <div id="content-informasi" class="hidden tab-content">
                             <div class="mb-6">
                                 <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-blue-700 bg-blue-100">
+                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium text-blue-700 bg-blue-100 rounded-full">
                                     Dimensi 2
                                 </div>
                                 <h2 class="text-3xl font-bold text-gray-900">Informasi Karir</h2>
                             </div>
 
-                            <div class="grid grid-cols-1 lg:grid-cols-1 gap-6">
-
-                                <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50">
-
-                                    <h3 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
-                                        <svg class="w-6 h-6 me-2 text-blue-700" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M12 6.253v13m0-13C10.832 5.42 9.043 5 7.172 5c-2.432 0-4.47 1.28-4.47 2.873 0 1.248.878 2.062 2.115 2.503L12 11l4.47-1.517c1.237-.441 2.115-1.255 2.115-2.503 0-1.593-2.038-2.873-4.47-2.873S13.168 5.42 12 6.253zM12 11l4.47 1.517c1.237.441 2.115 1.255 2.115 2.503 0 1.593-2.038 2.873-4.47 2.873S13.168 18.58 12 17.747v-13">
-                                            </path>
+                            <div class="space-y-6">
+                                <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
+                                    <h3 class="flex items-center mb-4 text-2xl font-bold text-blue-700">
+                                        <svg class="w-6 h-6 mr-2 text-blue-700" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                         Tentang Dimensi Informasi Karir
                                     </h3>
 
-                                    <p class="text-lg leading-relaxed **text-gray-700**">
+                                    <p class="text-lg leading-relaxed text-gray-700">
                                         <span class="font-bold text-blue-600">Dimensi informasi karier</span> adalah aspek
-                                        kematangan karier yang mengukur sejauh mana seseorang aktif mencari dan
-                                        menggunakan
+                                        kematangan karier yang mengukur sejauh mana seseorang aktif mencari dan menggunakan
                                         informasi tentang dunia kerja, serta sejauh mana mereka memiliki pengetahuan yang
                                         memadai mengenai pilihan karier. Ini mencakup sikap terhadap sumber informasi
-                                        (seperti
-                                        orang tua, guru, atau konselor), motivasi untuk eksplorasi karier, dan pemahaman
-                                        tentang
-                                        berbagai jenis pekerjaan serta tuntutan di dalamnya.
+                                        (seperti orang tua, guru, atau konselor), motivasi untuk eksplorasi karier, dan
+                                        pemahaman tentang berbagai jenis pekerjaan serta tuntutan di dalamnya.
                                     </p>
-
                                 </div>
 
-                                <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50">
-
-                                    <h3 class="text-2xl font-bold **text-blue-700** mb-4 flex items-center">
-                                        <svg class="w-6 h-6 me-2 **text-blue-700**" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            
+                                <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
+                                    <h3 class="flex items-center mb-4 text-2xl font-bold text-blue-700">
+                                        <svg class="w-6 h-6 mr-2 text-blue-700" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                                         </svg>
                                         Eksplorasi Pilihan Studi
                                     </h3>
 
                                     @include('home.universitas')
-
                                 </div>
-
                             </div>
-
                         </div>
+
                         <div id="content-tujuan" class="hidden space-y-8 tab-content">
                             <div>
                                 <div
@@ -453,7 +443,8 @@
                                 <div class="flex justify-center pt-4">
                                     <button type="submit"
                                         class="inline-flex items-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
@@ -487,8 +478,46 @@
             activeBtn.classList.add('bg-white/20', 'backdrop-blur-sm', 'shadow-lg');
         }
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             showTab('penilaian');
+        });
+    </script>
+
+    {{-- Universitas --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.study-tab-btn');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-tabs-target');
+                    const targetPanel = document.querySelector(targetId);
+
+                    // Hide all panels
+                    document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+                        panel.classList.add('hidden');
+                    });
+
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('bg-white', 'text-blue-700', 'shadow-md');
+
+                        btn.classList.add('bg-white/20', 'text-white/90',
+                            'hover:bg-white/40', 'hover:text-white',
+                            'hover:-translate-y-0.5');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+
+                    this.classList.remove('bg-white/20', 'text-white/90', 'hover:bg-white/40',
+                        'hover:text-white', 'hover:-translate-y-0.5');
+
+                    this.classList.add('bg-white', 'text-blue-700', 'shadow-md');
+                    this.setAttribute('aria-selected', 'true');
+                });
+            });
         });
     </script>
 @endsection
