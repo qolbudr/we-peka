@@ -19,23 +19,18 @@ use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    route::get('/topikdua', 'topik2')->name('topikdua');
+});
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
 
-
 route::get('/topiksatu', function () {
     return view('home.topiksatu');
 })->name('topiksatu');
-
-route::get('/topikdua', function () {
-    return view('home.topikdua');
-})->name('topikdua');
-Route::get('/home/universitas', function () {
-    return view('home.universitas');
-})->name('home.universitas');
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::prefix('quizzes')->group(function () {
