@@ -18,6 +18,8 @@ use App\Http\Controllers\TypeStudyDetailController;
 use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -36,6 +38,42 @@ route::get('/topikdua', function () {
 Route::get('/home/universitas', function () {
     return view('home.universitas');
 })->name('home.universitas');
+route::get('/test-efikasikarir', function () {
+    return view('home.test-efikasikarir');
+})->name('test-efikasikarir');
+Route::get('/home/test-multipleintelligent', function () {
+    return view('home.test-multipleintelligent');
+})->name('test-multipleintelligent');
+Route::post('/home/hasil-multipleintelligent', function () {
+    return view('home.hasil-multipleintelligent');
+})->name('hasil-multipleintelligent');
+
+Route::post('/hasil-efikasikarir', function (Request $request) {
+    $total = 0;
+    $count = 25;
+
+    for ($i = 1; $i <= $count; $i++) {
+        $total += intval($request->input("q$i"));
+    }
+
+    $avg = $total / $count;
+    $score = round(($avg / 5) * 100);
+
+    if ($score >= 85) {
+        $level = "Tinggi";
+        $desc = "Anda memiliki efikasi karir yang tinggi...";
+    } elseif ($score >= 60) {
+        $level = "Sedang";
+        $desc = "Efikasi karir Anda berada pada tingkat sedang...";
+    } else {
+        $level = "Rendah";
+        $desc = "Efikasi karir Anda tergolong rendah...";
+    }
+
+    return view('home.hasil-efikasikarir', compact('score', 'level', 'desc'));
+})->name('hasil-efikasikarir');
+
+
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::prefix('quizzes')->group(function () {
