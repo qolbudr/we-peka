@@ -17,7 +17,7 @@ class Alumni extends Model
 
     protected $casts = [
         'gender' => Gender::class,
-        'graduation_year' => 'datetime'
+
     ];
 
     public function university()

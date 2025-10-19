@@ -110,7 +110,7 @@
                 </div>
             </section>
 
-            {{-- Bagian 3 --}}
+            
             <section class="mb-16">
                 <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
                     <div class="grid items-center gap-8 lg:grid-cols-2">

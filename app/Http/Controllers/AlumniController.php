@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Enums\Gender;
 use App\Models\Alumni;
+use App\Models\ProgramStudy;
+use App\Models\University;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -18,7 +20,13 @@ class AlumniController extends Controller
     public function index()
     {
         $alumnis = Alumni::with(['university', 'programStudy'])->orderBy('graduation_year', 'desc')->get();
-        return view('admin.alumni.index', compact('alumnis'));
+        $universities = University::all();
+        $programStudies = ProgramStudy::all();
+        return view('admin.alumni.index', [
+            'alumnis' => $alumnis,
+            'universities' => $universities,
+            'programStudies' => $programStudies,
+        ]);
     }
 
     /**
@@ -39,7 +47,7 @@ class AlumniController extends Controller
             'program_study_id' => ['required', 'integer', Rule::exists('program_studies', 'id')],
             'name' => ['required', 'string', 'max:255'],
             'gender' => ['required', new Enum(Gender::class)],
-            'graduation_year' => ['required', 'date'],
+            'graduation_year' => ['required', 'integer'],
         ]);
 
         try {
@@ -82,7 +90,7 @@ class AlumniController extends Controller
             'program_study_id' => ['required', 'integer', Rule::exists('program_studies', 'id')],
             'name' => ['required', 'string', 'max:255'],
             'gender' => ['required', new Enum(Gender::class)],
-            'graduation_year' => ['required', 'date'],
+            'graduation_year' => ['required', 'integer'],
         ]);
 
         try {

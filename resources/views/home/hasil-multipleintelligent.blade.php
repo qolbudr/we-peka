@@ -6,13 +6,12 @@
 <div class="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-50 py-16">
     <div class="max-w-4xl mx-auto px-6">
 
-        <!-- Judul -->
+        
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold text-gray-800 mb-2">Hasil Tes Multiple Intelligence</h1>
             <p class="text-gray-500 text-sm">Berikut hasil analisis dari jawaban Anda berdasarkan 8 jenis kecerdasan.</p>
         </div>
 
-        <!-- Kartu Hasil -->
         <div class="bg-white rounded-3xl shadow-xl border border-gray-200 p-8 space-y-6">
             @php
                 $intelligences = [
@@ -35,7 +34,7 @@
             @endforeach
         </div>
 
-        <!-- Tombol Kembali -->
+       
         <div class="text-center mt-10">
             <a href="{{ route('test-multipleintelligent') }}"
                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-blue-600 rounded-full shadow-md hover:scale-105 transition duration-300">
