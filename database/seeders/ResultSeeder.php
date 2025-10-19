@@ -24,7 +24,7 @@ class ResultSeeder extends Seeder
         $jenisKecerdasan = Intelligence::all();
 
         if ($users->isEmpty() || !$jenisTesEK || !$jenisTesMI) {
-            $this->command->warn('Data user atau jenis tes belum ada.');
+            $this->command->warn('Data user atau type study belum ada.');
             return;
         }
 
