@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('quota_mabas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('university_id')->constrained('universities')->cascadeOnDelete();
-            $table->date('year');
+            $table->integer('year');
             $table->integer('quota');
             $table->string('link');
-            $table->text('notes');
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

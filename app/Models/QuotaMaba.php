@@ -14,10 +14,6 @@ class QuotaMaba extends Model
         'notes',
     ];
 
-    protected $casts = [
-        'year' => 'datetime',
-    ];
-
     public function university()
     {
         return $this->belongsTo(University::class);
