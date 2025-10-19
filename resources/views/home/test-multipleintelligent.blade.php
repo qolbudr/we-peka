@@ -16,7 +16,7 @@
     </div>
 
     <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        {{-- Header --}}
+ 
         <section class="text-center mb-10">
             <h1 class="text-4xl font-bold text-blue-700 mb-3">Tes Multiple Intelligences</h1>
             <p class="text-gray-600 text-lg">
@@ -24,7 +24,7 @@
             </p>
         </section>
 
-        {{-- Kartu Tes --}}
+       
         <div class="bg-white dark:bg-blue-500 rounded-3xl shadow-xl p-8 sm:p-10">
             <form id="miForm" action="{{ route('hasil-multipleintelligent') }}" method="POST">
                 @csrf
@@ -39,7 +39,7 @@
             </form>
         </div>
 
-        {{-- Footer wave --}}
+      
         <div class="relative h-24 mt-16">
             <svg class="absolute inset-x-0 bottom-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,6 @@
     </div>
 </div>
 
-{{-- Script --}}
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const questions = [
@@ -82,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const container = document.getElementById("questionsContainer");
 
-    // tampilkan pertanyaan dengan jarak antar soal yang rapi
+    
     questions.forEach((text, i) => {
         const questionNum = i + 1;
         const questionDiv = document.createElement("div");
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(questionDiv);
     });
 
-    // kirim tanpa validasi (meskipun ada pertanyaan kosong)
+   
     const form = document.getElementById("miForm");
     form.addEventListener("submit", (e) => {
         e.preventDefault();

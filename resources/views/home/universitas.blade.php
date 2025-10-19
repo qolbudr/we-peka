@@ -38,45 +38,115 @@
                 id="study-{{ $study->id }}" role="tabpanel" aria-labelledby="study-{{ $study->id }}-tab">
 
                 {{-- Study Information --}}
-                <div class="mb-6">
-                    <h3 class="mb-4 text-2xl font-bold text-blue-700">{{ $study->name }}</h3>
-                    <div class="p-5 space-y-3 bg-white shadow-sm rounded-xl">
-                        @forelse ($study->typeStudyDetails as $detailIndex => $detail)
-                            <div class="flex items-start">
-                                <span
-                                    class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[$detailIndex % count($bulletColors)] }} rounded-full"></span>
-                                <div class="flex-1">
-                                    <span class="font-semibold text-gray-800">Spesialisasi Ilmu:</span>
-                                    <span
-                                        class="ml-2 text-gray-700">{{ $detail->science_specialization ?? '-' }}</span>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <span
-                                    class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[($detailIndex + 1) % count($bulletColors)] }} rounded-full"></span>
-                                <div class="flex-1">
-                                    <span class="font-semibold text-gray-800">Jenjang:</span>
-                                    <span class="ml-2 text-gray-700">{{ $detail->level ?? '-' }}</span>
-                                </div>
-                            </div>
-                            <div class="flex items-start">
-                                <span
-                                    class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[($detailIndex + 2) % count($bulletColors)] }} rounded-full"></span>
-                                <div class="flex-1">
-                                    <span class="font-semibold text-gray-800">Tujuan Pendidikan:</span>
-                                    <span class="ml-2 text-gray-700">{{ $detail->purpose ?? '-' }}</span>
-                                </div>
-                            </div>
-                            @if (!$loop->last)
-                                <hr class="my-4 border-gray-200">
-                            @endif
-                        @empty
-                            <div class="flex items-center justify-center py-4 text-gray-500">
-                                <p>Tidak ada detail informasi</p>
-                            </div>
-                        @endforelse
+                <div x-data="{ showModal: false, currentPage: 1, perPage: 10, total: {{ count($study->typeStudyDetails) }} }">
+    <div class="mb-6">
+        <h3 class="mb-4 text-2xl font-bold text-blue-700">{{ $study->name }}</h3>
+
+        <div class="p-5 space-y-3 bg-white shadow-sm rounded-xl">
+            @php
+                $details = $study->typeStudyDetails;
+                $bulletColors = ['bg-blue-500', 'bg-orange-500', 'bg-green-500', 'bg-purple-500', 'bg-pink-500'];
+            @endphp
+
+            {{-- hanya tampilkan 1 data pertama --}}
+            @if ($details->isNotEmpty())
+                @php $detail = $details->first(); @endphp
+                <div class="flex items-start">
+                    <span class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[0] }} rounded-full"></span>
+                    <div class="flex-1">
+                        <span class="font-semibold text-gray-800">Spesialisasi Ilmu:</span>
+                        <span class="ml-2 text-gray-700">{{ $detail->science_specialization ?? '-' }}</span>
                     </div>
                 </div>
+                <div class="flex items-start">
+                    <span class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[1] }} rounded-full"></span>
+                    <div class="flex-1">
+                        <span class="font-semibold text-gray-800">Jenjang:</span>
+                        <span class="ml-2 text-gray-700">{{ $detail->level ?? '-' }}</span>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <span class="flex-shrink-0 w-2 h-2 mt-2 mr-3 {{ $bulletColors[2] }} rounded-full"></span>
+                    <div class="flex-1">
+                        <span class="font-semibold text-gray-800">Tujuan Pendidikan:</span>
+                        <span class="ml-2 text-gray-700">{{ $detail->purpose ?? '-' }}</span>
+                    </div>
+                </div>
+            @else
+                <div class="text-gray-500 text-center py-4">Tidak ada detail informasi</div>
+            @endif
+        </div>
+
+        {{-- Tombol tampilkan modal --}}
+        @if ($details->count() > 1)
+            <div class="mt-4 text-center">
+                <button 
+                    @click="showModal = true; currentPage = 1"
+                    class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition">
+                    Lihat Detail ({{ $details->count() }} data)
+                </button>
+            </div>
+        @endif
+    </div>
+
+    {{-- Modal dengan pagination --}}
+    <template x-if="showModal">
+        <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+             @click.self="showModal = false">
+            <div class="bg-white rounded-2xl shadow-2xl w-11/12 max-w-3xl p-6 relative">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4 text-center">
+                    Detail Studi {{ $study->name }}
+                </h2>
+
+                {{-- Konten --}}
+                <div class="max-h-[70vh] overflow-y-auto space-y-4">
+                    @foreach ($details as $i => $detail)
+                        <div 
+                            x-show="Math.ceil(({{ $i + 1 }}) / perPage) === currentPage"
+                            class="p-4 border border-gray-200 rounded-xl bg-gray-50">
+                            <p><span class="font-semibold text-gray-800">Spesialisasi Ilmu:</span>
+                                {{ $detail->science_specialization ?? '-' }}</p>
+                            <p><span class="font-semibold text-gray-800">Jenjang:</span>
+                                {{ $detail->level ?? '-' }}</p>
+                            <p><span class="font-semibold text-gray-800">Tujuan Pendidikan:</span>
+                                {{ $detail->purpose ?? '-' }}</p>
+                        </div>
+                    @endforeach
+                </div>
+
+                {{-- Pagination Control --}}
+                <div class="flex justify-between items-center mt-6">
+                    <button 
+                        @click="if(currentPage > 1) currentPage--"
+                        :disabled="currentPage === 1"
+                        class="px-4 py-2 bg-gray-200 rounded-lg text-gray-700 font-medium disabled:opacity-40">
+                        Sebelumnya
+                    </button>
+
+                    <span class="text-gray-600 font-semibold">
+                        Halaman <span x-text="currentPage"></span> dari 
+                        <span x-text="Math.ceil(total / perPage)"></span>
+                    </span>
+
+                    <button 
+                        @click="if(currentPage < Math.ceil(total / perPage)) currentPage++"
+                        :disabled="currentPage === Math.ceil(total / perPage)"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium disabled:opacity-40">
+                        Selanjutnya
+                    </button>
+                </div>
+
+                {{-- Tombol Tutup --}}
+                <button 
+                    @click="showModal = false"
+                    class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition">
+                    ✕
+                </button>
+            </div>
+        </div>
+    </template>
+</div>
+
 
                 {{-- Title --}}
                 <div class="relative my-6">

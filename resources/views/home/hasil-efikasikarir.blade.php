@@ -6,18 +6,17 @@
 <div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 py-16">
     <div class="max-w-3xl mx-auto px-6">
 
-        <!-- Judul Halaman -->
+       
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold text-gray-800 mb-2">Hasil Tes Efikasi Karir</h1>
             <p class="text-gray-500 text-sm">Berikut hasil analisis dari jawaban Anda terhadap 25 pernyataan.</p>
         </div>
 
-        <!-- Kartu Hasil -->
+   
         <div class="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
             <div class="p-8 text-center">
                 <h2 class="text-2xl font-bold text-gray-800 mb-3">Tingkat Efikasi Karir Anda</h2>
 
-                <!-- Skor -->
                 <div class="relative w-48 h-48 mx-auto mb-6">
                     <svg class="w-full h-full transform -rotate-90">
                         <circle cx="96" cy="96" r="80" stroke="#E5E7EB" stroke-width="14" fill="none" />
@@ -38,7 +37,7 @@
                     </div>
                 </div>
 
-                <!-- Keterangan Hasil -->
+                
                 @php
                     $level = 'Sedang';
                     $desc = 'Anda memiliki keyakinan yang cukup baik terhadap kemampuan diri dalam mengambil keputusan karir dan menghadapi tantangan.';
@@ -60,7 +59,7 @@
             </div>
         </div>
 
-        <!-- Rekomendasi -->
+       
         <div class="mt-10 bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-600 text-white rounded-3xl shadow-lg p-8">
             <h3 class="text-2xl font-bold mb-4">Saran Pengembangan Diri</h3>
             <ul class="space-y-3 text-white/90 text-sm leading-relaxed">
@@ -71,7 +70,7 @@
             </ul>
         </div>
 
-        <!-- Tombol Kembali -->
+        
        <div class="text-center mt-12">
     <a href="{{ route('test-efikasikarir') }}"
        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-blue-600 

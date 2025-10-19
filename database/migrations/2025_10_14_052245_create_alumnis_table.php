@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('program_study_id')->constrained('program_studies')->cascadeOnDelete();
             $table->string('name');
             $table->string('gender')->default('laki-laki');
-            $table->date('graduation_year');
+            $table->integer('graduation_year');
             $table->timestamps();
         });
     }
