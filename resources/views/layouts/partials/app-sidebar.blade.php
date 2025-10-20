@@ -114,96 +114,78 @@
                 </li>
                 {{-- End Quizzes --}}
 
+                {{-- Academy --}}
                 <li>
-                    <a href="{{ route('type-study.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'type-study' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
+                    <button type="button"
+                        class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white group {{ request()->segment(1) == 'academy' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}"
+                        aria-controls="dropdown-academy" data-collapse-toggle="dropdown-academy">
                         <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="currentColor"
+                                viewBox="0 0 20 20">
                                 <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                                    d="M10.496 2.13a1 1 0 00-.992 0L2.267 6.067a1 1 0 000 1.766l7.237 3.937a1 1 0 00.992 0l7.237-3.937a1 1 0 000-1.766l-7.237-3.937zM4.25 10.757v2.658c0 1.144 2.94 2.585 5.75 2.585s5.75-1.441 5.75-2.585v-2.658l-5.254 2.857a3 3 0 01-2.992 0L4.25 10.757z" />
                             </svg>
                         </div>
-                        <span class="font-medium">Type Study</span>
-                    </a>
+                        <span class="font-medium">Academy</span>
+                        <svg class="w-4 h-4 ml-auto duration-300 transform rotate-90" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <ul id="dropdown-academy"
+                        class="py-2 space-y-2 {{ request()->segment(1) == 'academy' ? '' : 'hidden' }}">
+                        <li>
+                            <a href="{{ route('type-study.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'type-study' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">
+                                Study
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('study-details.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'study-details' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">
+                                Study Detail
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('universitas.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'universitas' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">
+                                Universitas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('program-studies.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'program-studies' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">
+                                Program Study
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('quota-mabas.index') }}"
+                                class="flex items-center w-full px-4 py-2 transition-all duration-200 rounded-xl hover:bg-white/10 hover:text-white pl-11 group {{ request()->segment(2) == 'quota-mabas' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }} ">
+                                Quota Maba
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="{{ route('study-details.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'study-details' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Study Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('universitas.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'universitas' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Universitas</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('quota-mabas.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'quota-mabas' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Quota Maba</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('program-studies.index') }}"
-                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'program-studies' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
-                                <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Program Study</span>
-                    </a>
-                </li>
+                {{-- End Academy --}}
+
+                {{-- Alumni --}}
                 <li>
                     <a href="{{ route('alumnis.index') }}"
                         class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'alumnis' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
                         <div
                             class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 22 21">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="currentColor"
+                                viewBox="0 0 20 20">
                                 <path
-                                    d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
-                                <path
-                                    d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                                    d="M10 2a1 1 0 00-.553.168L3 6l7 4 7-4-6.447-3.832A1 1 0 0010 2zm7 5.618l-7 4-7-4V9l7 4 7-4V7.618zM10 13a3 3 0 00-3 3v2h6v-2a3 3 0 00-3-3z" />
                             </svg>
                         </div>
                         <span class="font-medium">Alumni</span>
                     </a>
                 </li>
+                {{-- End Alumni --}}
+
                 <li>
                     <a href="#"
                         class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">

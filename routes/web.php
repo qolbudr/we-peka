@@ -89,12 +89,15 @@ Route::middleware('auth', 'role:guru')->group(function () {
         Route::get('guru', 'guru')->name('users.guru');
     });
 
-    Route::resource('type-study', TypeStudyController::class);
-    Route::resource('study-details', TypeStudyDetailController::class);
+    Route::prefix('academy')->group(function () {
+        Route::resource('type-study', TypeStudyController::class);
+        Route::resource('study-details', TypeStudyDetailController::class);
 
-    Route::resource('universitas', UniversityController::class);
-    Route::resource('quota-mabas', QuotaMabaController::class);
-    Route::resource('program-studies', ProgramStudyController::class);
+        Route::resource('universitas', UniversityController::class);
+        Route::resource('quota-mabas', QuotaMabaController::class);
+        Route::resource('program-studies', ProgramStudyController::class);
+    });
+
     Route::resource('alumnis', AlumniController::class);
 });
 
