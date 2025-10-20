@@ -12,6 +12,11 @@ class HomeController extends Controller
         return view('home.home');
     }
 
+    public function topik1()
+    {
+        return view('home.topiksatu');
+    }
+
     public function topik2()
     {
         $studies = TypeStudy::with([
