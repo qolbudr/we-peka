@@ -23,16 +23,13 @@ use Illuminate\Http\Request;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
-    route::get('/topikdua', 'topik2')->name('topikdua');
+    route::get('/topiksatu', 'topik1')->name('topiksatu')->middleware('auth');
+    route::get('/topikdua', 'topik2')->name('topikdua')->middleware('auth');
 });
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
-
-route::get('/topiksatu', function () {
-    return view('home.topiksatu');
-})->name('topiksatu');
 
 route::get('/test-efikasikarir', function () {
     return view('home.test-efikasikarir');
