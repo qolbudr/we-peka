@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AnswersController;
+use App\Http\Controllers\EfikasiKarirController;
 use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntelligenceController;
@@ -23,17 +24,23 @@ use Illuminate\Http\Request;
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
-    route::get('/topiksatu', 'topik1')->name('topiksatu')->middleware('auth');
-    route::get('/topikdua', 'topik2')->name('topikdua')->middleware('auth');
+
+    Route::middleware('auth')->group(function () {
+        Route::get('/topiksatu', 'topik1')->name('topiksatu')->middleware('auth');
+        Route::get('/topikdua', 'topik2')->name('topikdua')->middleware('auth');
+    });
+});
+
+Route::middleware('auth')->controller(EfikasiKarirController::class)->group(function () {
+    Route::get('/test-efikasikarir', 'index')->name('test-efikasikarir');
+    Route::post('/submit-efikasi-karir', 'submit')->name('submit.efikasi-karir');
+    Route::get('/hasil-efikasi/{result}', 'show')->name('hasil.efikasikarir');
 });
 
 Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
 
-route::get('/test-efikasikarir', function () {
-    return view('home.test-efikasikarir');
-})->name('test-efikasikarir');
 Route::get('/home/test-multipleintelligent', function () {
     return view('home.test-multipleintelligent');
 })->name('test-multipleintelligent');
