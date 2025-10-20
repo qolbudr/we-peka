@@ -54,7 +54,7 @@
                         @endphp
 
                         <span
-                            class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full {{ $categoryBadgeClass }}">
+                            class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full whitespace-nowrap {{ $categoryBadgeClass }}">
                             {{ ucwords(str_replace('_', ' ', $result->category->value)) }}
                         </span>
                     @else

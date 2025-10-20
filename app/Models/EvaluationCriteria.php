@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\EvalutaionCriteriaCategory;
+use App\Enums\EvaluationCriteriaCategory;
 use Illuminate\Database\Eloquent\Model;
 
 class EvaluationCriteria extends Model
@@ -16,7 +16,7 @@ class EvaluationCriteria extends Model
     ];
 
     protected $casts = [
-        'category' => EvalutaionCriteriaCategory::class,
+        'category' => EvaluationCriteriaCategory::class,
     ];
 
     public function quiz()

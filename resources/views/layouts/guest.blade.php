@@ -58,6 +58,9 @@
         <!-- iziToast -->
         <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 
+        {{-- Sweetalert2 --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
             const btn = document.getElementById('chat-toggle');
             const panel = document.getElementById('chat-panel');
@@ -194,6 +197,5 @@
 
         @yield('scripts')
     </body>
-
 
 </html>

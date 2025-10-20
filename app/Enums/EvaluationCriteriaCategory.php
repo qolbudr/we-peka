@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum EvalutaionCriteriaCategory: string
+enum EvaluationCriteriaCategory: string
 {
     case SANGATRENDAH = 'sangat_rendah';
     case RENDAH = 'rendah';

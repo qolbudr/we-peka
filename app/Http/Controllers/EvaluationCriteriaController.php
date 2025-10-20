@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\EvalutaionCriteriaCategory;
+use App\Enums\EvaluationCriteriaCategory;
 use App\Models\EvaluationCriteria;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
@@ -27,7 +27,7 @@ class EvaluationCriteriaController extends Controller
             'quiz_id' => ['required', 'integer', Rule::exists('quizzes', 'id')],
             'min_score_range' => ['required', 'integer', 'min:1'],
             'max_score_range' => ['required', 'integer', 'min:1', 'gt:min_score_range'],
-            'category' => ['required', new Enum(EvalutaionCriteriaCategory::class)],
+            'category' => ['required', new Enum(EvaluationCriteriaCategory::class)],
             'description' => ['nullable', 'string'],
         ], [
             'quiz_id.required' => 'Nama Quiz wajib diisi',
@@ -60,7 +60,7 @@ class EvaluationCriteriaController extends Controller
             'quiz_id' => ['required', 'integer', Rule::exists('quizzes', 'id')],
             'min_score_range' => ['required', 'integer', 'min:1'],
             'max_score_range' => ['required', 'integer', 'min:1', 'gt:min_score_range'],
-            'category' => ['required', new Enum(EvalutaionCriteriaCategory::class)],
+            'category' => ['required', new Enum(EvaluationCriteriaCategory::class)],
             'description' => ['nullable', 'string'],
         ], [
             'quiz_id.required' => 'Nama Quiz wajib diisi',

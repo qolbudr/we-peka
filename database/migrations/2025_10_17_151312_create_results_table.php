@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('quiz_id')->constrained('quizzes')->cascadeOnDelete();
             $table->foreignId('intelligence_id')->nullable()->constrained('intelligences')->nullOnDelete();
             $table->integer('score');
-            $table->string('category')->default(null);
+            $table->string('category')->nullable();
             $table->timestamps();
         });
     }
