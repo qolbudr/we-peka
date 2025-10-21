@@ -30,21 +30,23 @@
                     <span class="font-semibold text-blue-600">{{ $result->user->name ?? 'Anonim' }}</span>
                 </p>
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Kategori Dominan:</strong>
-                    <span class="font-semibold text-blue-700">
+                    <strong>Kategori Kecerdasan Dominan:</strong>
+                    <span class="font-semibold text-blue-700 capitalize">
+                        {{-- Menggunakan atribut dinamis dari controller --}}
                         {{ $result->dominant_intelligence ?? 'Belum tersedia' }}
                     </span>
                 </p>
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Skor Tertinggi:</strong>
+                    <strong>Skor Tertinggi (Dominan):</strong>
                     <span class="font-semibold text-blue-600">{{ $result->highest_score ?? '0' }}</span>
                 </p>
             </section>
 
-            {{-- Daftar Hasil Kecerdasan (Menggunakan koleksi $results) --}}
+            {{-- Daftar Hasil Kecerdasan (Menggunakan koleksi $results sebagai Detail Analisis) --}}
             <section class="p-8 bg-white border border-blue-200 shadow-lg rounded-xl">
+                {{-- Mengubah Judul agar sesuai dengan konteks MI --}}
                 <h2 class="pb-2 mb-6 text-2xl font-semibold text-blue-800 border-b border-blue-300">
-                    Hasil Analisis per Kecerdasan
+                    Detail Hasil Analisis per Kecerdasan
                 </h2>
 
                 <div class="overflow-x-auto">
@@ -53,7 +55,7 @@
                             <tr class="font-semibold text-blue-900 bg-blue-100">
                                 <th class="px-5 py-3 border border-blue-200">Jenis Kecerdasan</th>
                                 <th class="px-5 py-3 border border-blue-200">Skor</th>
-                                <th class="px-5 py-3 border border-blue-200">Deskripsi</th>
+                                <th class="px-5 py-3 border border-blue-200">Deskripsi/Kategori</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,11 +66,16 @@
                                             {{ $item->intelligence->name ?? 'Tidak Diketahui' }} 
                                         </td>
                                         <td class="px-5 py-3 text-center border border-blue-200">
-                                            {{-- Jika skor 0 atau NULL, tampilkan '-' --}}
+                                            {{-- Menampilkan skor jika > 0, jika tidak tampilkan '-' --}}
                                             {{ $item->score > 0 ? $item->score : '-' }} 
                                         </td>
-                                        <td class="px-5 py-3 border border-blue-200">
-                                            {{ $item->intelligence->description ?? '-' }}
+                                        <td class="px-5 py-3 border border-blue-200 capitalize">
+                                            {{-- Menggunakan kolom 'category' dari model Result (jika terisi) --}}
+                                            @if ($item->category)
+                                                {{ ucwords(str_replace('_', ' ', strtolower($item->category->value))) }}
+                                            @else
+                                                -
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
