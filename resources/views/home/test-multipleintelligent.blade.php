@@ -1,124 +1,137 @@
 @extends('layouts.guest')
 
-@section('title', 'Tes Multiple Intelligences')
+@section('title', 'Kuesioner Multiple Intelligence')
 
 @section('content')
-<div class="relative w-full min-h-screen overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-    <div class="absolute inset-0 opacity-5">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+@php
+    $inputValue = [
+        1 => 'Sangat Tidak Setuju',
+        2 => 'Tidak Setuju',
+        3 => 'Netral',
+        4 => 'Setuju',
+        5 => 'Sangat Setuju',
+    ];
+@endphp
+
+<div class="relative flex flex-col min-h-screen bg-gradient-to-tr from-blue-100 via-white to-blue-50">
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <circle cx="20" cy="20" r="1" fill="#3b82f6" />
+                <pattern id="dots" width="50" height="50" patternUnits="userSpaceOnUse">
+                    <circle cx="25" cy="25" r="1.5" fill="#2563eb" />
                 </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
+            <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
     </div>
 
-    <div class="relative px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
- 
-        <section class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-blue-700 mb-3">Tes Multiple Intelligences</h1>
-            <p class="text-gray-600 text-lg">
-                Pilih tingkat kesesuaian setiap pernyataan dengan diri Anda menggunakan skala 1–5.
+    <main class="relative flex-grow w-full max-w-5xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
+        <section class="px-2 mb-12 text-center sm:px-0">
+            <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-blue-700 sm:text-5xl">
+                {{ $quizFirst->name ?? 'Kuesioner Multiple Intelligence' }}
+            </h1>
+
+            @if (!empty($quizFirst->description))
+                <p class="max-w-3xl mx-auto mt-4 text-lg text-gray-700">
+                    {{ $quizFirst->description }}
+                </p>
+            @endif
+
+            <p class="max-w-lg mx-auto mt-3 font-semibold text-gray-600 text-md sm:text-lg">
+                Jawablah setiap pernyataan sesuai tingkat kesesuaian dengan diri Anda (1–5).
             </p>
         </section>
 
-       
-        <div class="bg-white dark:bg-blue-500 rounded-3xl shadow-xl p-8 sm:p-10">
-            <form id="miForm" action="{{ route('hasil-multipleintelligent') }}" method="POST">
+        <div class="p-8 transition border border-blue-200 shadow-lg bg-white/90 backdrop-blur-lg rounded-3xl hover:shadow-blue-300">
+            <form id="miForm" action="{{ route('submit.multiple-intelligent') }}" method="POST" class="space-y-4">
                 @csrf
-                <div id="questionsContainer" class="space-y-6"></div>
+                <input type="hidden" name="quiz_id" value="{{ $quizFirst->id }}">
 
-                <div class="text-center pt-8">
+                @forelse ($quizFirst->questions as $quest)
+                    <div class="p-6 transition border border-gray-200 rounded-xl hover:border-blue-400">
+                        <p class="mb-5 text-lg font-medium leading-snug text-gray-900 sm:text-xl">
+                            {{ $loop->iteration }}. {{ $quest->question ?? 'Pertanyaan tidak ditemukan' }}
+                        </p>
+                        <div class="grid grid-cols-1 gap-4 text-center md:grid-cols-5">
+                            @foreach ($inputValue as $val => $label)
+                                <label for="{{ $quest->id }}-{{ $val }}"
+                                    class="flex items-center cursor-pointer md:flex-col group">
+                                    <input type="radio" id="{{ $quest->id }}-{{ $val }}"
+                                        name="answers[{{ $quest->id }}]" value="{{ $val }}" class="sr-only peer">
+                                    <div
+                                        class="w-5 h-5 transition-colors border-2 border-gray-300 rounded-full md:mb-2 peer-checked:border-blue-600 peer-checked:bg-blue-600 group-hover:border-blue-400">
+                                    </div>
+                                    <span class="ml-2 text-xs text-gray-700 select-none md:ml-0 group-hover:text-blue-600">
+                                        {{ $label }}
+                                    </span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-center text-gray-500">Tidak ada pertanyaan untuk kuis ini.</p>
+                @endforelse
+
+                <div class="text-center mt-6">
                     <button type="submit"
-                        class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-base px-6 py-3 transition duration-300">
+                        class="px-10 py-2 font-semibold text-white transition bg-blue-600 rounded-full hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                         Kirim Jawaban
                     </button>
                 </div>
             </form>
         </div>
 
-      
-        <div class="relative h-24 mt-16">
-            <svg class="absolute inset-x-0 bottom-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,60 Q300,100 600,60 T1200,60 L1200,120 L0,120 Z" fill="#3b82f6" opacity="0.05" />
-            </svg>
-        </div>
-    </div>
+        <footer class="mt-16 text-sm text-center text-gray-500 select-none">
+            <p>Terima kasih telah berpartisipasi dengan jujur.</p>
+        </footer>
+    </main>
 </div>
+@endsection
 
+@section('scripts')
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const questions = [
-        "Saya senang menulis cerita, puisi, atau jurnal pribadi.",
-        "Saya mudah memahami makna kata-kata dan suka bermain dengan bahasa.",
-        "Saya sering memecahkan masalah atau teka-teki logika.",
-        "Saya suka berhitung atau bermain dengan angka.",
-        "Saya merasa mudah mengingat pola atau urutan.",
-        "Saya menikmati kegiatan fisik seperti olahraga, menari, atau membuat sesuatu dengan tangan.",
-        "Saya lebih mudah memahami sesuatu dengan praktik langsung.",
-        "Saya sering mengetuk meja, bernyanyi, atau bersenandung tanpa sadar.",
-        "Saya mudah mengingat lirik lagu dan irama musik.",
-        "Saya merasa nyaman bekerja sama dengan orang lain.",
-        "Saya dapat memahami perasaan dan kebutuhan orang lain.",
-        "Saya menikmati waktu sendiri untuk berpikir dan merenung.",
-        "Saya mengenal dengan baik kelebihan dan kekurangan diri saya.",
-        "Saya senang berada di alam terbuka atau memelihara hewan.",
-        "Saya tertarik dengan tanaman, cuaca, dan lingkungan sekitar.",
-        "Saya mudah mengingat tempat dan arah jalan.",
-        "Saya suka menggambar, melukis, atau membuat desain visual.",
-        "Saya suka menganalisis situasi dan membuat perencanaan langkah demi langkah.",
-        "Saya merasa mudah mengatur sesuatu agar berjalan sistematis.",
-        "Saya senang membantu teman dalam memecahkan masalah mereka.",
-        "Saya merasa lebih produktif saat bekerja dalam kelompok.",
-        "Saya senang mencari tahu tentang fenomena alam atau eksperimen sains.",
-        "Saya sering membayangkan atau membuat visualisasi dalam pikiran.",
-        "Saya sering mengatur waktu dengan disiplin dan mandiri.",
-        "Saya percaya diri dalam membuat keputusan berdasarkan pertimbangan diri sendiri."
-    ];
-
-    const container = document.getElementById("questionsContainer");
-
-    
-    questions.forEach((text, i) => {
-        const questionNum = i + 1;
-        const questionDiv = document.createElement("div");
-        questionDiv.className = `
-            p-6 border border-gray-200 dark:border-white rounded-xl bg-white dark:bg-blue-600 
-            hover:bg-gray-50 dark:hover:bg-blue-700 shadow-sm transition
-        `;
-        questionDiv.innerHTML = `
-            <p class="font-semibold text-gray-800 dark:text-white mb-4">${questionNum}. ${text}</p>
-            <div class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-5 text-center">
-                ${[
-                    { val: 1, label: "Sangat Tidak Sesuai" },
-                    { val: 2, label: "Tidak Sesuai" },
-                    { val: 3, label: "Netral" },
-                    { val: 4, label: "Sesuai" },
-                    { val: 5, label: "Sangat Sesuai" },
-                ].map(opt => `
-                    <div class="flex items-center justify-center w-full">
-                        <input id="q${questionNum}_${opt.val}" type="radio" value="${opt.val}" name="q${questionNum}"
-                            class="w-4 h-4 appearance-none border-2 border-gray-400 rounded-full bg-white 
-                                   checked:border-orange-500 checked:bg-orange-500 focus:ring-2 focus:ring-orange-400 
-                                   transition duration-200 cursor-pointer">
-                        <label for="q${questionNum}_${opt.val}" 
-                            class="ml-2 text-sm font-medium text-gray-700 dark:text-white">${opt.label}</label>
-                    </div>
-                `).join("")}
-            </div>
-        `;
-        container.appendChild(questionDiv);
-    });
-
-   
-    const form = document.getElementById("miForm");
-    form.addEventListener("submit", (e) => {
+    $('#miForm').on('submit', function(e) {
         e.preventDefault();
-        form.submit();
+
+        $.ajax({
+            url: this.action,
+            method: 'POST',
+            data: $(this).serialize(),
+            headers: {
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            },
+            success: function(resp) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: resp.message || 'Jawaban berhasil dikirim.',
+                    timer: 1500,
+                    showConfirmButton: false
+                }).then(() => {
+                    if (resp.redirect_url) {
+                        window.location.href = resp.redirect_url;
+                    }
+                });
+            },
+            error: function(xhr) {
+                if (xhr.status === 422 && xhr.responseJSON?.errors) {
+                    Object.values(xhr.responseJSON.errors).flat().forEach(function(msg) {
+                        iziToast.error({
+                            title: 'Error',
+                            message: msg,
+                            position: 'topRight'
+                        });
+                    });
+                } else {
+                    iziToast.error({
+                        title: 'Gagal',
+                        message: xhr.responseJSON?.message || 'Terjadi kesalahan. Coba lagi.',
+                        position: 'topRight'
+                    });
+                }
+            }
+        });
     });
-});
 </script>
 @endsection

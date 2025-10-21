@@ -33,28 +33,25 @@ class QuizController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => ['required', 'string'],
-            'description' => ['nullable', 'string'],
-            'category' => ['required', new Enum(QuizCategory::class)],
-        ]);
+{
+    $userId = Auth::id();
+    $quizId = $request->quiz_id;
 
-        DB::beginTransaction();
-        try {
-            Quiz::create($validated);
-
-            DB::commit();
-
-            return redirect()->route('quiz.index')->with('message', 'Berhasil membuat data');
-        } catch (\Throwable $e) {
-            DB::rollBack();
-
-            Log::error("Gagal store data Quiz" . $e->getMessage());
-
-            return redirect()->back()->with('error', 'Gagal menyimpan data.');
-        }
+    foreach ($request->scores as $intelligenceId => $score) {
+        Result::updateOrCreate(
+            [
+                'user_id' => $userId,
+                'quiz_id' => $quizId,
+                'intelligence_id' => $intelligenceId
+            ],
+            [
+                'score' => $score
+            ]
+        );
     }
+
+    return redirect()->route('hasil')->with('success', 'Hasil tes berhasil disimpan.');
+}
 
     /**
      * Display the specified resource.
@@ -113,4 +110,7 @@ class QuizController extends Controller
 
         return redirect()->route('quiz.index')->with('message', 'data berhasil dihapus');
     }
+
+
+    
 }
