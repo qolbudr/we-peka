@@ -20,6 +20,7 @@ use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\MultipleIntelligentController;
 
 
 Route::controller(HomeController::class)->group(function () {
@@ -41,12 +42,23 @@ Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 });
 
-Route::get('/home/test-multipleintelligent', function () {
-    return view('home.test-multipleintelligent');
-})->name('test-multipleintelligent');
-Route::post('/home/hasil-multipleintelligent', function () {
-    return view('home.hasil-multipleintelligent');
-})->name('hasil-multipleintelligent');
+Route::get('/home/test-multipleintelligent', [MultipleIntelligentController::class, 'index'])
+    ->name('test.multiple-intelligent');
+    
+
+Route::post('/home/test-multipleintelligent/submit', [MultipleIntelligentController::class, 'submit'])
+    ->name('submit.multiple-intelligent');
+
+Route::get('/home/hasil-multipleintelligent', [MultipleIntelligentController::class, 'hasil'])
+    ->name('hasil-multipleintelligent');
+
+
+Route::get('/multiple-intelligent', [QuizController::class, 'showMultipleIntelligent'])
+    ->name('multiple-intelligent');
+
+Route::post('/multiple-intelligent/submit', [QuizController::class, 'submitMultipleIntelligent'])
+    ->name('submit.multiple-intelligent');
+Route::get('/hasil/{id}', [ResultController::class, 'show'])->name('hasil.show');
 
 Route::post('/hasil-efikasikarir', function (Request $request) {
     $total = 0;

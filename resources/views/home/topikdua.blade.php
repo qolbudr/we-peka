@@ -115,7 +115,7 @@
                                     organisasi.
                                 </p>
                                 <div class="text-center mt-6">
-                <a href="{{ route('test-multipleintelligent') }}"
+                <a href="{{ route('test.multiple-intelligent') }}"
                    class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-blue-600 
                           rounded-full shadow-md hover:scale-105 hover:shadow-lg transition duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
