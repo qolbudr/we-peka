@@ -46,7 +46,7 @@ Route::middleware('auth')->controller(MultipleIntelligentController::class)->gro
 });
 
 // Admin
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'role:guru')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('quizzes')->group(function () {
@@ -79,17 +79,18 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('alumnis', AlumniController::class);
 
-    // Route::get('/chat/{userId}', [ChatController::class, 'index'])->name('chat.index');
+    // Chat
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
-
-    Route::get('/chat/messages/{userId}', [ChatController::class, 'getMessages'])->name('chat.messages');
-    Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Chat
+    Route::get('/chat/messages/{userId}', [ChatController::class, 'getMessages'])->name('chat.messages');
+    Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 });
 
 require __DIR__ . '/auth.php';
