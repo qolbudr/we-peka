@@ -8,6 +8,7 @@ use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntelligenceController;
 use App\Http\Controllers\JobIntelligenceController;
+use App\Http\Controllers\MultipleIntelligentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramStudyController;
 use App\Http\Controllers\QuizController;
@@ -19,9 +20,6 @@ use App\Http\Controllers\TypeStudyDetailController;
 use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use App\Http\Controllers\MultipleIntelligentController;
-
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
@@ -32,60 +30,24 @@ Route::controller(HomeController::class)->group(function () {
     });
 });
 
+// Efikasi Karir
 Route::middleware('auth')->controller(EfikasiKarirController::class)->group(function () {
     Route::get('/test-efikasikarir', 'index')->name('test-efikasikarir');
     Route::post('/submit-efikasi-karir', 'submit')->name('submit.efikasi-karir');
     Route::get('/hasil-efikasi/{result}', 'show')->name('hasil.efikasikarir');
 });
 
-Route::middleware('auth', 'role:guru')->group(function () {
-    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+// Multiple Intelligence
+Route::middleware('auth')->controller(MultipleIntelligentController::class)->group(function () {
+    Route::get('/test-multiple-intelligent', 'index')->name('test.intelligence');
+    Route::post('/submit-multiple-intelligent', 'submit')->name('submit.intelligence');
+    Route::get('/hasil-multiple-intelligent/{result}', 'show')->name('hasil.intelligence');
 });
 
-Route::get('/home/test-multipleintelligent', [MultipleIntelligentController::class, 'index'])
-    ->name('test.multiple-intelligent');
-    
-
-Route::post('/home/test-multipleintelligent/submit', [MultipleIntelligentController::class, 'submit'])
-    ->name('submit.multiple-intelligent');
-
-Route::get('/home/hasil-multipleintelligent', [MultipleIntelligentController::class, 'hasil'])
-    ->name('hasil-multipleintelligent');
-
-
-Route::get('/multiple-intelligent', [QuizController::class, 'showMultipleIntelligent'])
-    ->name('multiple-intelligent');
-
-Route::post('/multiple-intelligent/submit', [QuizController::class, 'submitMultipleIntelligent'])
-    ->name('submit.multiple-intelligent');
-Route::get('/hasil/{id}', [ResultController::class, 'show'])->name('hasil.show');
-
-Route::post('/hasil-efikasikarir', function (Request $request) {
-    $total = 0;
-    $count = 25;
-
-    for ($i = 1; $i <= $count; $i++) {
-        $total += intval($request->input("q$i"));
-    }
-
-    $avg = $total / $count;
-    $score = round(($avg / 5) * 100);
-
-    if ($score >= 85) {
-        $level = "Tinggi";
-        $desc = "Anda memiliki efikasi karir yang tinggi...";
-    } elseif ($score >= 60) {
-        $level = "Sedang";
-        $desc = "Efikasi karir Anda berada pada tingkat sedang...";
-    } else {
-        $level = "Rendah";
-        $desc = "Efikasi karir Anda tergolong rendah...";
-    }
-
-    return view('home.hasil-efikasikarir', compact('score', 'level', 'desc'));
-})->name('hasil-efikasikarir');
-
+// Admin
 Route::middleware('auth', 'role:guru')->group(function () {
+    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+
     Route::prefix('quizzes')->group(function () {
         Route::resource('quiz', QuizController::class)->except(['create', 'show', 'edit']);
         Route::resource('intelligence', IntelligenceController::class)->except(['create', 'show', 'edit']);

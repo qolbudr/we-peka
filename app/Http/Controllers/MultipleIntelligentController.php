@@ -2,72 +2,102 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\QuizCategory;
+use App\Models\Answers;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Intelligence;
-use Illuminate\View\View;
+use App\Models\QuizQuestion;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MultipleIntelligentController extends Controller
 {
     public function index()
     {
-        // Ambil data quiz pertama kategori Multiple Intelligence
-        $quizFirst = Quiz::with('questions')
-            ->where('category', 'multiple_intelligence')
-            ->first();
+        $quizzes = Quiz::with('questions')->where('category', QuizCategory::MULTIPLEINTELLIGENCE)->get();
 
-        if (!$quizFirst) {
-            return abort(404, 'Kuesioner Multiple Intelligence tidak ditemukan.');
-        }
+        $quizFirst = $quizzes->first();
 
-        return view('home.test-multipleintelligent', compact('quizFirst'));
+        return view('intelligence.test-intelligence', [
+            'quizzes' => $quizzes,
+            'quizFirst' => $quizFirst,
+        ]);
     }
 
     public function submit(Request $request)
     {
-        // Di sini kamu bisa olah jawaban, untuk sekarang cukup return JSON
-        return response()->json([
-            'message' => 'Jawaban berhasil dikirim!',
-            'redirect_url' => route('hasil-multipleintelligent')
-        ]);
+        $user = Auth::user();
+        $quizId = $request->input('quiz_id');
+
+        $answers = collect($request->except(['_token', 'quiz_id']))
+            ->mapWithKeys(fn($value, $key) => [(int)$key => (int)$value]);
+
+        DB::beginTransaction();
+        try {
+            $result = Result::create([
+                'user_id' => $user->id,
+                'quiz_id' => $quizId,
+                'category' => QuizCategory::MULTIPLEINTELLIGENCE->value,
+                'score' => 0,
+                'intelligence_id' => null,
+            ]);
+
+            foreach ($answers as $quizQuestionId => $score) {
+                Answers::updateOrCreate(
+                    ['user_id' => $user->id, 'question_id' => $quizQuestionId, 'result_id' => $result->id],
+                    ['answer_value' => $score]
+                );
+            }
+
+            $intelligenceScores = QuizQuestion::select('intelligence_id')
+                ->selectRaw('AVG(answers.answer_value) as average_score')
+                ->join('answers', 'answers.question_id', '=', 'quiz_questions.id')
+                ->where('answers.result_id', $result->id)
+                ->groupBy('intelligence_id')
+                ->get();
+
+            $topIntelligence = $intelligenceScores->sortByDesc('average_score')->first();
+
+            if ($topIntelligence) {
+                $result->update([
+                    'intelligence_id' => $topIntelligence->intelligence_id,
+                    'score' => round($topIntelligence->average_score, 2),
+                ]);
+            }
+
+            DB::commit();
+
+            return response()->json([
+                'message' => 'Tes berhasil disubmit!',
+                'redirect_url' => route('hasil.intelligence', ['result' => $result->id]),
+            ]);
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            Log::error('Gagal submit tes Multiple Intelligence: ' . $e->getMessage());
+            return response()->json(['message' => 'Terjadi kesalahan.'], 500);
+        }
     }
 
-public function hasil()
+    public function show()
     {
-        // Ambil user yang sedang login
-        $userId = Auth::id(); // ✅ gunakan Auth::id() bukan auth()->id()
+        $user = Auth::user();
 
-        // Ambil hasil terakhir user
-        $result = Result::with('user', 'intelligence')
-            ->where('user_id', $userId)
+        $result = Result::with('user')
+            ->where('user_id', $user->id)
+            ->where('category', 'multiple_intelligence')
             ->latest()
             ->first();
 
-        // Jika belum ada hasil
-        if (!$result) {
-            return redirect()->route('home')->with('error', 'Belum ada hasil tes ditemukan.');
-        }
+        $results = Result::with('intelligence')
+            ->where('user_id', $user->id)
+            ->where('category', 'multiple_intelligence')
+            ->get();
 
-        // Ambil semua jenis kecerdasan
-        $intelligences = Intelligence::with(['results' => function ($query) use ($userId, $result) {
-            $query->where('user_id', $userId)
-                  ->where('quiz_id', $result->quiz_id);
-        }])->get();
-
-        // Tentukan kecerdasan dominan (skor tertinggi)
-        $highest = $intelligences->map(function ($i) {
-            return [
-                'name' => $i->name,
-                'score' => $i->results->first()->score ?? 0
-            ];
-        })->sortByDesc('score')->first();
-
-        $result->dominant_intelligence = $highest['name'] ?? 'Tidak diketahui';
-        $result->highest_score = $highest['score'] ?? 0;
-
-        // Kirim data ke view
-        return view('home/hasil-multipleintelligent', compact('result', 'intelligences'));
+        return view('intelligence.hasil-intelligence', [
+            'result' => $result,
+            'results' => $results
+        ]);
     }
 }

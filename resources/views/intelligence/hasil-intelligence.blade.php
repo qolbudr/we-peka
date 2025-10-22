@@ -8,7 +8,7 @@
         <h1 class="text-4xl font-extrabold tracking-tight text-center text-blue-700">
             Hasil Tes Multiple Intelligence
         </h1>
-        
+
         @if (session('success'))
             <div class="p-4 mb-8 text-green-900 bg-green-100 rounded-lg shadow-md">
                 {{ session('success') }}
@@ -26,7 +26,7 @@
                     Ringkasan Hasil
                 </h2>
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Nama Peserta:</strong> 
+                    <strong>Nama Peserta:</strong>
                     <span class="font-semibold text-blue-600">{{ $result->user->name ?? 'Anonim' }}</span>
                 </p>
                 <p class="mb-3 text-lg text-gray-800">
@@ -63,16 +63,16 @@
                                 @foreach ($results as $item)
                                     <tr class="transition-colors duration-200 even:bg-gray-50 hover:bg-blue-50">
                                         <td class="px-5 py-3 font-semibold text-blue-700 border border-blue-200">
-                                            {{ $item->intelligence->name ?? 'Tidak Diketahui' }} 
+                                            {{ $item->intelligence->name ?? 'Tidak Diketahui' }}
                                         </td>
                                         <td class="px-5 py-3 text-center border border-blue-200">
                                             {{-- Menampilkan skor jika > 0, jika tidak tampilkan '-' --}}
-                                            {{ $item->score > 0 ? $item->score : '-' }} 
+                                            {{ $item->score > 0 ? $item->score : '-' }}
                                         </td>
-                                        <td class="px-5 py-3 border border-blue-200 capitalize">
+                                        <td class="px-5 py-3 capitalize border border-blue-200">
                                             {{-- Menggunakan kolom 'category' dari model Result (jika terisi) --}}
                                             @if ($item->category)
-                                                {{ ucwords(str_replace('_', ' ', strtolower($item->category->value))) }}
+                                                {{ ucwords(str_replace('_', ' ', strtolower($item->category))) }}
                                             @else
                                                 -
                                             @endif

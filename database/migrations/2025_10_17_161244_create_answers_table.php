@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('result_id')->constrained('results')->cascadeOnDelete();
             $table->foreignId('question_id')->constrained('quiz_questions')->cascadeOnDelete();
             $table->integer('answer_value');
