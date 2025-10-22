@@ -25,7 +25,7 @@
             <p class="mb-3 text-lg text-gray-800">
                 <strong>Kategori Efikasi Karier:</strong>
                 <span class="font-semibold text-blue-700 capitalize">
-                    {{ ucwords(str_replace('_', ' ', strtolower($result->category->value))) }}
+                    {{ ucwords(str_replace('_', ' ', strtolower($result->category))) }}
                 </span>
             </p>
         </section>
