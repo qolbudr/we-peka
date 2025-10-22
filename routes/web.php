@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\AnswersController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\EfikasiKarirController;
 use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
@@ -45,7 +46,7 @@ Route::middleware('auth')->controller(MultipleIntelligentController::class)->gro
 });
 
 // Admin
-Route::middleware('auth', 'role:guru')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('quizzes')->group(function () {
@@ -77,6 +78,12 @@ Route::middleware('auth', 'role:guru')->group(function () {
     });
 
     Route::resource('alumnis', AlumniController::class);
+
+    // Route::get('/chat/{userId}', [ChatController::class, 'index'])->name('chat.index');
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+
+    Route::get('/chat/messages/{userId}', [ChatController::class, 'getMessages'])->name('chat.messages');
+    Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 });
 
 Route::middleware('auth')->group(function () {

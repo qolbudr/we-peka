@@ -9,7 +9,6 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-
 // Toggle Mobile Nav
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
