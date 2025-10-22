@@ -2,7 +2,7 @@
     $user = Auth::user();
 @endphp
 
-<nav class="fixed top-0 z-50 w-full shadow-lg bg-gradient-to-r from-blue-700 to-indigo-700">
+<nav class="fixed top-0 z-50 w-full shadow-lg bg-gradient-to-r from-blue-700 via-blue-800 to-indigo-900">
     <div class="px-4 py-3 lg:px-6">
         <div class="flex items-center justify-between">
             <!-- Left Section -->
