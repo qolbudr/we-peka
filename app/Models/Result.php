@@ -15,10 +15,6 @@ class Result extends Model
         'category'
     ];
 
-    protected $casts = [
-        'category' => EvaluationCriteriaCategory::class
-    ];
-
     public function user()
     {
         return $this->belongsTo(User::class);

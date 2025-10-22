@@ -62,6 +62,7 @@ class EfikasiKarirController extends Controller
             }
 
             Answers::create([
+                'user_id' => $user->id,
                 'result_id' => $result->id,
                 'question_id' => $questionId,
                 'answer_value' => $answerValue,
