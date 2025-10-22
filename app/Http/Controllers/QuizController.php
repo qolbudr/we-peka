@@ -21,57 +21,30 @@ class QuizController extends Controller
         return view('admin.quiz.index', compact('quizzes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
-{
-    $userId = Auth::id();
-    $quizId = $request->quiz_id;
-
-    foreach ($request->scores as $intelligenceId => $score) {
-        Result::updateOrCreate(
-            [
-                'user_id' => $userId,
-                'quiz_id' => $quizId,
-                'intelligence_id' => $intelligenceId
-            ],
-            [
-                'score' => $score
-            ]
-        );
-    }
-
-    return redirect()->route('hasil')->with('success', 'Hasil tes berhasil disimpan.');
-}
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'string'],
+            'description' => ['nullable', 'string'],
+            'category' => ['required', new Enum(QuizCategory::class)],
+        ]);
+
+        DB::beginTransaction();
+        try {
+            Quiz::create($validated);
+
+            DB::commit();
+
+            return redirect()->route('quiz.index')->with('message', 'Berhasil memperbarui data');
+        } catch (\Throwable $e) {
+            DB::rollBack();
+
+            Log::error("Gagal update data Quiz: " . $e->getMessage());
+
+            return redirect()->back()->with('error', 'Gagal memperbarui data.');
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -98,10 +71,6 @@ class QuizController extends Controller
         }
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $quiz = Quiz::findOrFail($id);
@@ -110,7 +79,4 @@ class QuizController extends Controller
 
         return redirect()->route('quiz.index')->with('message', 'data berhasil dihapus');
     }
-
-
-    
 }
