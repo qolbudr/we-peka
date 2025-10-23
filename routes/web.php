@@ -9,6 +9,7 @@ use App\Http\Controllers\EvaluationCriteriaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IntelligenceController;
 use App\Http\Controllers\JobIntelligenceController;
+use App\Http\Controllers\LkpdAnswerController;
 use App\Http\Controllers\MultipleIntelligentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProgramStudyController;
@@ -43,6 +44,13 @@ Route::middleware('auth')->controller(MultipleIntelligentController::class)->gro
     Route::get('/test-multiple-intelligent', 'index')->name('test.intelligence');
     Route::post('/submit-multiple-intelligent', 'submit')->name('submit.intelligence');
     Route::get('/hasil-multiple-intelligent/{result}', 'show')->name('hasil.intelligence');
+});
+
+// LKPD Answers\
+Route::middleware('auth')->controller(LkpdAnswerController::class)->group(function () {
+    Route::get('/lkpd', 'index')->name('lkpd.index')->middleware('role:guru');
+    Route::post('/lkpd/submit', 'store')->name('lkpd.store');
+    Route::get('/lkpd/{id}/pdf', 'downloadPdf')->name('lkpd.pdf')->middleware('role:guru');
 });
 
 // Admin

@@ -74,4 +74,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Chat::class, 'to_user_id');
     }
+
+    public function lkpdAnswer()
+    {
+        return $this->hasOne(LkpdAnswer::class);
+    }
 }

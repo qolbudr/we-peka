@@ -205,7 +205,7 @@
 
                 {{-- LKPD --}}
                 <li>
-                    <a href="#"
+                    <a href="{{ route('lkpd.index') }}"
                         class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
                         <div
                             class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
