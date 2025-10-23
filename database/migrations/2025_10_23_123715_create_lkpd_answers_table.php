@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('answers', function (Blueprint $table) {
+        Schema::create('lkpd_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->foreignId('result_id')->constrained('results')->cascadeOnDelete();
-            $table->foreignId('question_id')->constrained('quiz_questions')->cascadeOnDelete();
-            $table->integer('answer_value');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->json('answers');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('answers');
+        Schema::dropIfExists('lkpd_answers');
     }
 };

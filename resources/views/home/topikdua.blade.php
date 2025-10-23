@@ -3,6 +3,24 @@
 @section('title', 'Topik 2')
 
 @section('content')
+    <style>
+        @keyframes slide-in {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slide-in 0.3s ease-out;
+        }
+    </style>
+
     <div class="relative w-full min-h-screen py-16 overflow-hidden bg-gradient-to-br from-blue-50 via-sky-50 to-white">
         <div class="absolute inset-0 opacity-5">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -114,18 +132,17 @@
                                     sendiri, mendorong pertumbuhan pribadi, dan menyelaraskan tujuan pribadi dengan tujuan
                                     organisasi.
                                 </p>
-                                <div class="text-center mt-6">
-                <a href="{{ route('test.multiple-intelligent') }}"
-                   class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-blue-600 
-                          rounded-full shadow-md hover:scale-105 hover:shadow-lg transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                    Mulai Tes Multiple Intelligence
-                </a>
-            </div>
+                                <div class="mt-6 text-center">
+                                    <a href="{{ route('test.intelligence') }}"
+                                        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white transition duration-300 rounded-full shadow-md bg-gradient-to-r from-orange-500 to-blue-600 hover:scale-105 hover:shadow-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                        Mulai Tes Multiple Intelligence
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
@@ -358,101 +375,7 @@
                             </div>
                         </div>
 
-                        <div id="content-lkpd" class="hidden tab-content">
-                            <div class="mb-8">
-                                <div
-                                    class="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full text-emerald-700 bg-emerald-100">
-                                    Latihan
-                                </div>
-                                <h2 class="mb-2 text-3xl font-bold text-gray-900">LKPD Perencanaan Karier (SMART)</h2>
-                                <p class="text-gray-600">Lengkapi form berikut untuk merencanakan karier menggunakan metode
-                                    SMART</p>
-                            </div>
-
-                            <form class="space-y-6">
-                                <div
-                                    class="p-6 transition-all duration-200 border-2 border-gray-200 rounded-2xl hover:border-violet-300 focus-within:border-violet-500 focus-within:shadow-lg">
-                                    <label for="specific" class="block mb-3 text-base font-semibold text-gray-900">
-                                        <span class="flex items-center">
-                                            <span
-                                                class="flex items-center justify-center w-8 h-8 mr-2 text-white rounded-lg bg-violet-600">1</span>
-                                            Apa tujuan karier yang ingin kamu capai secara jelas?
-                                        </span>
-                                    </label>
-                                    <textarea id="specific" name="specific" rows="3"
-                                        class="block w-full p-4 text-sm text-gray-900 transition-all border-0 rounded-xl bg-gray-50 focus:ring-2 focus:ring-violet-500 focus:bg-white"
-                                        placeholder="Contoh: Saya ingin menjadi..."></textarea>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-200 border-2 border-gray-200 rounded-2xl hover:border-indigo-300 focus-within:border-indigo-500 focus-within:shadow-lg">
-                                    <label for="measurable" class="block mb-3 text-base font-semibold text-gray-900">
-                                        <span class="flex items-center">
-                                            <span
-                                                class="flex items-center justify-center w-8 h-8 mr-2 text-white bg-indigo-600 rounded-lg">2</span>
-                                            Bagaimana kamu bisa mengukur kemajuan menuju tujuan tersebut?
-                                        </span>
-                                    </label>
-                                    <textarea id="measurable" name="measurable" rows="3"
-                                        class="block w-full p-4 text-sm text-gray-900 transition-all border-0 rounded-xl bg-gray-50 focus:ring-2 focus:ring-indigo-500 focus:bg-white"
-                                        placeholder="Contoh: Menyelesaikan 3 kursus, membangun portofolio..."></textarea>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-200 border-2 border-gray-200 rounded-2xl hover:border-blue-300 focus-within:border-blue-500 focus-within:shadow-lg">
-                                    <label for="achievable" class="block mb-3 text-base font-semibold text-gray-900">
-                                        <span class="flex items-center">
-                                            <span
-                                                class="flex items-center justify-center w-8 h-8 mr-2 text-white bg-blue-600 rounded-lg">3</span>
-                                            Apakah tujuan ini realistis? Langkah apa yang akan dilakukan?
-                                        </span>
-                                    </label>
-                                    <textarea id="achievable" name="achievable" rows="3"
-                                        class="block w-full p-4 text-sm text-gray-900 transition-all border-0 rounded-xl bg-gray-50 focus:ring-2 focus:ring-blue-500 focus:bg-white"
-                                        placeholder="Contoh: Belajar 2 jam setiap malam, mendaftar magang..."></textarea>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-200 border-2 border-gray-200 rounded-2xl hover:border-purple-300 focus-within:border-purple-500 focus-within:shadow-lg">
-                                    <label for="relevant" class="block mb-3 text-base font-semibold text-gray-900">
-                                        <span class="flex items-center">
-                                            <span
-                                                class="flex items-center justify-center w-8 h-8 mr-2 text-white bg-purple-600 rounded-lg">4</span>
-                                            Mengapa tujuan ini penting bagimu?
-                                        </span>
-                                    </label>
-                                    <textarea id="relevant" name="relevant" rows="3"
-                                        class="block w-full p-4 text-sm text-gray-900 transition-all border-0 rounded-xl bg-gray-50 focus:ring-2 focus:ring-purple-500 focus:bg-white"
-                                        placeholder="Contoh: Sesuai dengan minat saya di bidang..."></textarea>
-                                </div>
-
-                                <div
-                                    class="p-6 transition-all duration-200 border-2 border-gray-200 rounded-2xl hover:border-pink-300 focus-within:border-pink-500 focus-within:shadow-lg">
-                                    <label for="timebound" class="block mb-3 text-base font-semibold text-gray-900">
-                                        <span class="flex items-center">
-                                            <span
-                                                class="flex items-center justify-center w-8 h-8 mr-2 text-white bg-pink-600 rounded-lg">5</span>
-                                            Kapan kamu menargetkan tujuan ini tercapai?
-                                        </span>
-                                    </label>
-                                    <textarea id="timebound" name="timebound" rows="3"
-                                        class="block w-full p-4 text-sm text-gray-900 transition-all border-0 rounded-xl bg-gray-50 focus:ring-2 focus:ring-pink-500 focus:bg-white"
-                                        placeholder="Contoh: Dalam 3 bulan, 6 bulan, 1 tahun..."></textarea>
-                                </div>
-
-                                <div class="flex justify-center pt-4">
-                                    <button type="submit"
-                                        class="inline-flex items-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
-                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        Kirim Jawaban
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        @include('home.lkpd-content')
 
                     </div>
                 </div>
@@ -516,6 +439,86 @@
 
                     this.classList.add('bg-white', 'text-blue-700', 'shadow-md');
                     this.setAttribute('aria-selected', 'true');
+                });
+            });
+        });
+    </script>
+
+    {{-- LKPD --}}
+    <script>
+        $(document).ready(function() {
+            $('#lkpd-form').on('submit', function(e) {
+                e.preventDefault();
+
+                const submitBtn = $('#submit-btn');
+                const btnText = $('#btn-text');
+                submitBtn.prop('disabled', true).addClass('opacity-50 cursor-not-allowed');
+                btnText.html(
+                    '<svg class="inline w-5 h-5 mr-2 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Menyimpan...'
+                );
+
+                const formData = $(this).serialize();
+
+                $.ajax({
+                    url: "{{ route('lkpd.store') }}",
+                    type: "POST",
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        submitBtn.prop('disabled', false).removeClass(
+                            'opacity-50 cursor-not-allowed');
+                        btnText.html(
+                            'Kirim Jawaban'
+                        );
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Berhasil!',
+                            text: response.message,
+                            confirmButtonColor: '#8b5cf6',
+                            confirmButtonText: 'OK'
+                        });
+
+                        $('#lkpd-form')[0].reset();
+                    },
+                    error: function(xhr) {
+                        submitBtn.prop('disabled', false).removeClass(
+                            'opacity-50 cursor-not-allowed');
+                        btnText.html(
+                            'Kirim Jawaban'
+                        );
+
+                        if (xhr.status === 422) {
+                            const errors = xhr.responseJSON.errors;
+
+                            if (errors) {
+                                Object.values(errors).forEach(function(errorArray) {
+                                    errorArray.forEach(function(errorMessage) {
+                                        iziToast.error({
+                                            title: 'Error',
+                                            message: errorMessage,
+                                            position: 'topRight',
+                                            timeout: 5000
+                                        });
+                                    });
+                                });
+                            } else {
+                                iziToast.error({
+                                    title: 'Error',
+                                    message: 'Mohon lengkapi semua field yang wajib diisi!',
+                                    position: 'topRight',
+                                    timeout: 5000
+                                });
+                            }
+                        } else {
+                            iziToast.error({
+                                title: 'Error',
+                                message: 'Terjadi kesalahan. Silakan coba lagi!',
+                                position: 'topRight',
+                                timeout: 5000
+                            });
+                        }
+                    }
                 });
             });
         });

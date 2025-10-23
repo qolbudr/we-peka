@@ -31,7 +31,7 @@
                     Ringkasan Hasil
                 </h2>
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Nama Peserta:</strong> 
+                    <strong>Nama Peserta:</strong>
                     <span class="font-semibold text-blue-600">{{ $firstResult->user->name ?? 'Anonim' }}</span>
                 </p>
                 <p class="mb-3 text-lg text-gray-800">
@@ -68,7 +68,7 @@
                                     <td class="px-5 py-3 text-center border border-blue-200">
                                         {{ $item->score > 0 ? $item->score : '-' }}
                                     </td>
-                                    <td class="px-5 py-3 border border-blue-200 capitalize">
+                                    <td class="px-5 py-3 capitalize border border-blue-200">
                                         @if ($item->category)
                                             {{ ucwords(str_replace('_', ' ', strtolower($item->category->value))) }}
                                         @else

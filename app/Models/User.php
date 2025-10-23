@@ -55,8 +55,28 @@ class User extends Authenticatable
         ];
     }
 
+    public function answers()
+    {
+        return $this->hasMany(Answers::class);
+    }
+
     public function results()
     {
         return $this->hasMany(Result::class);
+    }
+
+    public function sentChats()
+    {
+        return $this->hasMany(Chat::class, 'from_user_id');
+    }
+
+    public function receivedChats()
+    {
+        return $this->hasMany(Chat::class, 'to_user_id');
+    }
+
+    public function lkpdAnswer()
+    {
+        return $this->hasOne(LkpdAnswer::class);
     }
 }

@@ -14,12 +14,25 @@ class QuizSeeder extends Seeder
      */
     public function run(): void
     {
-        Quiz::create([
-            'name' => 'Tes Efikasi Karier',
-            'description' => 'Tes untuk mengukur tingkat keyakinan diri peserta didik dalam merencanakan dan mengembangkan karier mereka',
-            'category' => QuizCategory::EFIKASIKARIR,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        $quizzes = [
+            [
+                'name' => 'Tes Efikasi Karier',
+                'description' => 'Tes Multiple Intelligence',
+                'category' => QuizCategory::EFIKASIKARIR,
+            ],
+            [
+                'name' => 'Logical-Mathematical',
+                'description' => 'Kuat dalam logika, perhitungan, dan pemecahan masalah.',
+                'category' => QuizCategory::MULTIPLEINTELLIGENCE,
+            ],
+        ];
+
+        foreach ($quizzes as $quiz) {
+            Quiz::create([
+                'name' => $quiz['name'],
+                'description' => $quiz['description'],
+                'category' => $quiz['category'],
+            ]);
+        }
     }
 }

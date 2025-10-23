@@ -44,8 +44,7 @@
                         </label>
                         <textarea name="description" id="quiz-description" rows="4"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                            placeholder="Enter quiz description">{{ $quiz->description }}
-                        </textarea>
+                            placeholder="Enter quiz description">{{ $quiz->description }}</textarea>
                     </div>
 
                     <!-- Category -->
@@ -53,12 +52,16 @@
                         <label for="quiz-category" class="block mb-2 text-sm font-medium text-gray-900">
                             Category <span class="text-red-500">*</span>
                         </label>
-                        <select name="category" id="quiz-category" value="{{ $quiz->category }}"
+                        <select name="category" id="quiz-category" value="{{ $quiz->category->value }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            <option value="" {{ $quiz->category ? '' : 'selected' }} disabled>Choose a category
+                            <option value="" {{ $quiz->category->value ? '' : 'selected' }} disabled>Choose a
+                                category
                             </option>
-                            <option value="efikasi_karir">Efikasi</option>
-                            <option value="multiple_intelligence">Multiple Intelligence</option>
+                            <option value="efikasi_karir"
+                                {{ $quiz->category->value === 'efikasi_karir' ? 'selected' : '' }}>Efikasi</option>
+                            <option value="multiple_intelligence"
+                                {{ $quiz->category->value === 'multiple_intelligence' ? 'selected' : '' }}>Multiple
+                                Intelligence</option>
                         </select>
                     </div>
                 </div>

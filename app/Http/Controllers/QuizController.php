@@ -21,17 +21,6 @@ class QuizController extends Controller
         return view('admin.quiz.index', compact('quizzes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -46,35 +35,16 @@ class QuizController extends Controller
 
             DB::commit();
 
-            return redirect()->route('quiz.index')->with('message', 'Berhasil membuat data');
+            return redirect()->route('quiz.index')->with('message', 'Berhasil memperbarui data');
         } catch (\Throwable $e) {
             DB::rollBack();
 
-            Log::error("Gagal store data Quiz" . $e->getMessage());
+            Log::error("Gagal update data Quiz: " . $e->getMessage());
 
-            return redirect()->back()->with('error', 'Gagal menyimpan data.');
+            return redirect()->back()->with('error', 'Gagal memperbarui data.');
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -101,10 +71,6 @@ class QuizController extends Controller
         }
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $quiz = Quiz::findOrFail($id);
@@ -113,7 +79,4 @@ class QuizController extends Controller
 
         return redirect()->route('quiz.index')->with('message', 'data berhasil dihapus');
     }
-
-
-    
 }

@@ -1,5 +1,5 @@
 <aside id="logo-sidebar"
-    class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full border-r w-72 bg-gradient-to-b from-blue-700 to-indigo-700 border-blue-800/50 sm:translate-x-0"
+    class="fixed top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full border-r w-72 bg-gradient-to-b from-blue-700 via-blue-800 to-indigo-900 border-blue-800/30 sm:translate-x-0"
     aria-label="Sidebar">
 
     <div class="h-[calc(100vh-5rem)] px-4 py-6 overflow-y-auto pb-24">
@@ -186,34 +186,26 @@
                 </li>
                 {{-- End Alumni --}}
 
+                {{-- Chat --}}
                 <li>
-                    <a href="#"
-                        class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
+                    <a href="{{ route('chat.index', Auth::id()) }}"
+                        class="flex items-center px-4 py-2 transition-all duration-200 hover:text-white rounded-xl group {{ request()->segment(1) == 'chats' ? 'text-white bg-white/20 backdrop-blur-sm' : 'text-white/80' }}">
                         <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
+                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/10 group-hover:bg-white/20">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                </path>
                             </svg>
                         </div>
-                        <span class="font-medium">Materi</span>
+                        <span class="font-medium">Chat</span>
                     </a>
                 </li>
+                {{-- End Chat --}}
+
+                {{-- LKPD --}}
                 <li>
-                    <a href="#"
-                        class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
-                        <div
-                            class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                            </svg>
-                        </div>
-                        <span class="font-medium">Topik</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"
+                    <a href="{{ route('lkpd.index') }}"
                         class="flex items-center px-4 py-2 transition-all duration-200 text-white/80 rounded-xl hover:bg-white/10 hover:text-white group">
                         <div
                             class="flex items-center justify-center w-8 h-8 mr-3 rounded-lg bg-white/5 group-hover:bg-white/10">
@@ -225,6 +217,7 @@
                         <span class="font-medium">LKPD</span>
                     </a>
                 </li>
+                {{-- End LKPD --}}
             </ul>
         </div>
     </div>
