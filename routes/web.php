@@ -49,16 +49,13 @@ Route::get('/home/test-multipleintelligent', [MultipleIntelligentController::cla
 Route::post('/home/test-multipleintelligent/submit', [MultipleIntelligentController::class, 'submit'])
     ->name('submit.multiple-intelligent');
 
-Route::get('/home/hasil-multipleintelligent', [MultipleIntelligentController::class, 'hasil'])
-    ->name('hasil-multipleintelligent');
+Route::prefix('multiple-intelligent')->group(function () {
+    Route::get('/', [QuizController::class, 'showMultipleIntelligent'])->name('multiple-intelligent.show');
+    Route::post('/submit', [QuizController::class, 'submitMultipleIntelligent'])->name('multiple-intelligent.submit');
+    Route::get('/hasil', [MultipleIntelligentController::class, 'hasil'])->name('multiple-intelligent.hasil');
+    Route::get('/hasil/{id}', [ResultController::class, 'show'])->name('multiple-intelligent.hasil.show');
+});
 
-
-Route::get('/multiple-intelligent', [QuizController::class, 'showMultipleIntelligent'])
-    ->name('multiple-intelligent');
-
-Route::post('/multiple-intelligent/submit', [QuizController::class, 'submitMultipleIntelligent'])
-    ->name('submit.multiple-intelligent');
-Route::get('/hasil/{id}', [ResultController::class, 'show'])->name('hasil.show');
 
 Route::post('/hasil-efikasikarir', function (Request $request) {
     $total = 0;

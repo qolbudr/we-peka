@@ -44,7 +44,8 @@
 
         <div class="p-8 transition border border-blue-200 shadow-lg bg-white/90 backdrop-blur-lg rounded-3xl hover:shadow-blue-300">
             <form id="miForm" action="{{ route('submit.multiple-intelligent') }}" method="POST" class="space-y-4">
-                @csrf
+    @csrf
+
                 <input type="hidden" name="quiz_id" value="{{ $quizFirst->id }}">
 
                 @forelse ($quizFirst->questions as $quest)
@@ -135,3 +136,4 @@
     });
 </script>
 @endsection
+
