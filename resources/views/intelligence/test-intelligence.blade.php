@@ -38,6 +38,12 @@
                 </p>
             </section>
 
+            @if ($quizFirst->questions->isEmpty())
+                <div
+                    class="p-6 text-center text-yellow-800 bg-yellow-100 border border-yellow-300 rounded-lg">
+                    <p class="text-lg font-semibold">Maaf, belum ada pertanyaan yang tersedia untuk kuis ini.</p>
+                </div>
+            @else
             <div
                 class="p-8 transition border border-blue-200 shadow-lg bg-white/90 backdrop-blur-lg rounded-3xl hover:shadow-blue-300">
                 <form id="careerForm" action="{{ route('submit.intelligence') }}" method="POST" class="space-y-4">
@@ -74,10 +80,14 @@
                     </div>
                 </form>
             </div>
+            @endif
 
+            
+            @if (!$quizFirst->questions->isEmpty())
             <footer class="mt-16 text-sm text-center text-gray-500 select-none">
                 <p>Terima kasih telah berpartisipasi dengan jujur.</p>
             </footer>
+            @endif
         </main>
     </div>
 @endsection

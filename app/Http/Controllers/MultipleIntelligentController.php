@@ -90,7 +90,7 @@ class MultipleIntelligentController extends Controller
             ->latest()
             ->first();
 
-        $results = Result::with('intelligence')
+        $results = Result::with('intelligence.jobIntelligences')
             ->where('user_id', $user->id)
             ->where('category', 'multiple_intelligence')
             ->get();
