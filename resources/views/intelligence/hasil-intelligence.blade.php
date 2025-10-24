@@ -51,6 +51,18 @@
                         {{ $result->category ? ucwords(str_replace('_', ' ', strtolower($result->category))) : '-' }}
                     </span>
                 </p>
+                 <p class="mb-3 text-lg text-gray-800">
+                    <strong>Nama Pekerjaan:</strong>
+                    <span class="font-semibold text-blue-600">
+                        @foreach ( $result->intelligence->jobIntelligences as $job )
+                            {{ $job->name }}
+                            @if (!$loop->last)
+                                , 
+                            @endif
+                        
+                        @endforeach
+                    </span>
+                </p>
             </section>
         @endif
 

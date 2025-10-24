@@ -143,47 +143,66 @@
             </section>
 
             {{-- Button CTA --}}
-            <section class="py-12">
-                <div class="max-w-4xl mx-auto">
-                    <h3 class="mb-8 text-2xl font-bold text-center text-gray-900 sm:text-3xl">
-                        Pilih Topik Pembelajaran
-                    </h3>
-                    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        <a href="{{ route('topiksatu') }}"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
-                            <div
-                                class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
-                            </div>
-                            <div class="relative">
-                                <div class="mb-2 text-3xl">📚</div>
-                                <span class="text-lg font-semibold">Topik 1</span>
-                            </div>
-                        </a>
+            <section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <h3 class="mb-10 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Pilih Topik Pembelajaran
+        </h3>
 
-                        <a href="{{ route('topikdua') }}"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-600 to-sky-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2">
-                            <div
-                                class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
-                            </div>
-                            <div class="relative">
-                                <div class="mb-2 text-3xl">🎯</div>
-                                <span class="text-lg font-semibold">Topik 2</span>
-                            </div>
-                        </a>
-
-                        <a href="halaman-lain.html"
-                            class="relative px-8 py-6 overflow-hidden text-center text-white transition-all duration-300 shadow-lg group bg-gradient-to-br from-blue-600 to-sky-700 rounded-xl hover:shadow-2xl hover:scale-105 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 sm:col-span-2 lg:col-span-1">
-                            <div
-                                class="absolute top-0 right-0 w-20 h-20 transition-transform duration-300 transform translate-x-8 -translate-y-8 bg-white rounded-full opacity-10 group-hover:scale-150">
-                            </div>
-                            <div class="relative">
-                                <div class="mb-2 text-3xl">💡</div>
-                                <span class="text-lg font-semibold">Topik 3</span>
-                            </div>
-                        </a>
-                    </div>
+        <div class="grid gap-8 sm:grid-cols-2 justify-center">
+            <!-- Topik 1 -->
+            <a href="{{ route('topiksatu') }}"
+                class="relative px-10 py-8 overflow-hidden text-center text-white shadow-lg group 
+                       bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-700 
+                       rounded-2xl hover:shadow-2xl hover:scale-105 
+                       transition-all duration-300 ease-out transform w-full sm:w-72 mx-auto">
+                
+                <div
+                    class="absolute top-0 right-0 w-24 h-24 transition-transform duration-300 transform 
+                           translate-x-10 -translate-y-10 bg-white rounded-full opacity-10 
+                           group-hover:scale-150">
                 </div>
-            </section>
+                
+                <div class="relative">
+                    <div
+                        class="mb-3 text-4xl transform transition-transform duration-300 group-hover:-translate-y-1">
+                        📚
+                    </div>
+                    <span class="text-xl font-semibold tracking-wide">Topik 1</span>
+                    <p class="mt-2 text-sm opacity-90 text-blue-100">
+                        Pelajari dasar-dasar pengetahuan menarik.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Topik 2 -->
+            <a href="{{ route('topikdua') }}"
+                class="relative px-10 py-8 overflow-hidden text-center text-white shadow-lg group 
+                       bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 
+                       rounded-2xl hover:shadow-2xl hover:scale-105 
+                       transition-all duration-300 ease-out transform w-full sm:w-72 mx-auto">
+                
+                <div
+                    class="absolute top-0 right-0 w-24 h-24 transition-transform duration-300 transform 
+                           translate-x-10 -translate-y-10 bg-white rounded-full opacity-10 
+                           group-hover:scale-150">
+                </div>
+                
+                <div class="relative">
+                    <div
+                        class="mb-3 text-4xl transform transition-transform duration-300 group-hover:-translate-y-1">
+                        🎯
+                    </div>
+                    <span class="text-xl font-semibold tracking-wide">Topik 2</span>
+                    <p class="mt-2 text-sm opacity-90 text-blue-100">
+                        Fokus pada aplikasi dan penerapan nyata.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
 
             <div class="relative h-24 mt-16">
                 <svg class="absolute inset-x-0 bottom-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
