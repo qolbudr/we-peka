@@ -25,70 +25,32 @@
                 <h2 class="pb-2 mb-6 text-2xl font-semibold text-blue-800 border-b border-blue-300">
                     Ringkasan Hasil
                 </h2>
+
                 <p class="mb-3 text-lg text-gray-800">
                     <strong>Nama Peserta:</strong>
                     <span class="font-semibold text-blue-600">{{ $result->user->name ?? 'Anonim' }}</span>
                 </p>
+
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Kategori Kecerdasan Dominan:</strong>
+                    <strong>Jenis Kecerdasan:</strong>
                     <span class="font-semibold text-blue-700 capitalize">
-                        {{-- Menggunakan atribut dinamis dari controller --}}
-                        {{ $result->dominant_intelligence ?? 'Belum tersedia' }}
+                        {{ $result->intelligence->name ?? 'Tidak Diketahui' }}
                     </span>
                 </p>
+
                 <p class="mb-3 text-lg text-gray-800">
-                    <strong>Skor Tertinggi (Dominan):</strong>
-                    <span class="font-semibold text-blue-600">{{ $result->highest_score ?? '0' }}</span>
+                    <strong>Skor:</strong>
+                    <span class="font-semibold text-blue-600">
+                        {{ $result->score ?? '0' }}
+                    </span>
                 </p>
-            </section>
 
-            {{-- Daftar Hasil Kecerdasan (Menggunakan koleksi $results sebagai Detail Analisis) --}}
-            <section class="p-8 bg-white border border-blue-200 shadow-lg rounded-xl">
-                {{-- Mengubah Judul agar sesuai dengan konteks MI --}}
-                <h2 class="pb-2 mb-6 text-2xl font-semibold text-blue-800 border-b border-blue-300">
-                    Detail Hasil Analisis per Kecerdasan
-                </h2>
-
-                <div class="overflow-x-auto">
-                    <table class="w-full text-gray-700 border-collapse table-auto">
-                        <thead>
-                            <tr class="font-semibold text-blue-900 bg-blue-100">
-                                <th class="px-5 py-3 border border-blue-200">Jenis Kecerdasan</th>
-                                <th class="px-5 py-3 border border-blue-200">Skor</th>
-                                <th class="px-5 py-3 border border-blue-200">Deskripsi/Kategori</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (isset($results) && $results->isNotEmpty())
-                                @foreach ($results as $item)
-                                    <tr class="transition-colors duration-200 even:bg-gray-50 hover:bg-blue-50">
-                                        <td class="px-5 py-3 font-semibold text-blue-700 border border-blue-200">
-                                            {{ $item->intelligence->name ?? 'Tidak Diketahui' }}
-                                        </td>
-                                        <td class="px-5 py-3 text-center border border-blue-200">
-                                            {{-- Menampilkan skor jika > 0, jika tidak tampilkan '-' --}}
-                                            {{ $item->score > 0 ? $item->score : '-' }}
-                                        </td>
-                                        <td class="px-5 py-3 capitalize border border-blue-200">
-                                            {{-- Menggunakan kolom 'category' dari model Result (jika terisi) --}}
-                                            @if ($item->category)
-                                                {{ ucwords(str_replace('_', ' ', strtolower($item->category))) }}
-                                            @else
-                                                -
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            @else
-                                <tr>
-                                    <td colspan="3" class="px-5 py-3 text-center text-gray-500">
-                                        Data hasil analisis per kecerdasan belum tersedia.
-                                    </td>
-                                </tr>
-                            @endif
-                        </tbody>
-                    </table>
-                </div>
+                <p class="mb-3 text-lg text-gray-800">
+                    <strong>Kategori:</strong>
+                    <span class="font-semibold text-blue-600 capitalize">
+                        {{ $result->category ? ucwords(str_replace('_', ' ', strtolower($result->category))) : '-' }}
+                    </span>
+                </p>
             </section>
         @endif
 

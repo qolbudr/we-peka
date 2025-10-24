@@ -22,19 +22,9 @@
                 <!-- Logo -->
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 group">
                     <div class="relative">
-                        <svg class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 50 50"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="navLogoGrad" x1="0%" y1="0%" x2="100%"
-                                    y2="100%">
-                                    <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#0004ff;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <circle cx="25" cy="25" r="23" fill="url(#navLogoGrad)" />
-                            <path d="M15,20 L25,15 L35,20 L35,30 L25,35 L15,30 Z" fill="white" opacity="0.9" />
-                            <circle cx="25" cy="25" r="5" fill="url(#navLogoGrad)" />
-                        </svg>
+                        <img src="{{ asset('images/wepeka-logo.png') }}"
+             alt="Logo WE PEKA"
+             class="w-10 h-10 rounded-full object-cover transition-transform duration-300 group-hover:scale-110 shadow-md">
                     </div>
                     <div class="">
                         <h1 class="text-xl font-bold text-white drop-shadow-md">
