@@ -66,6 +66,8 @@ jobs:
             mkdir -p $DEPLOY_PATH
             cd $DEPLOY_PATH
 
+            sudo su
+
             echo "📦 Extracting files..."
             # Ekstrak tanpa menimpa .env (gunakan .env di server)
             tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH --exclude=.env
