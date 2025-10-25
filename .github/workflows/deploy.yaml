@@ -1,0 +1,93 @@
+name: Deploy Laravel to aaPanel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --- 1️⃣ Checkout kode ---
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # --- 2️⃣ Setup PHP environment ---
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, bcmath, intl, pdo, pdo_mysql
+          tools: composer
+
+      # --- 3️⃣ Install dependencies & optimisasi ---
+      - name: Install dependencies
+        run: |
+          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+          php artisan config:cache
+          php artisan route:cache
+          php artisan view:cache
+
+      # --- 4️⃣ Buat file .env dari GitHub Secret (opsional tapi aman) ---
+      # Pastikan kamu sudah menambahkan secret ENV_FILE di repo (isi seluruh isi file .env)
+      - name: Create .env file from secret
+        run: echo "${{ secrets.ENV_FILE }}" > .env
+
+      # --- 5️⃣ Buat paket deployment ---
+      - name: Create deployment package
+        run: |
+          tar -czf deploy.tar.gz \
+            --exclude=".git" \
+            --exclude=".github" \
+            --exclude="node_modules" \
+            --exclude="tests" \
+            --exclude="storage/logs/*" \
+            .
+
+      # --- 6️⃣ Upload file ke server via SCP ---
+      - name: Copy files to server via SSH
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_KEY }}
+          source: "deploy.tar.gz"
+          target: "/tmp"
+
+      # --- 7️⃣ SSH dan deploy di server ---
+      - name: SSH and deploy on server
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_KEY }}
+          script: |
+            DEPLOY_PATH=${{ secrets.DEPLOY_PATH }}
+            mkdir -p $DEPLOY_PATH
+            cd $DEPLOY_PATH
+
+            echo "📦 Extracting files..."
+            # Ekstrak tanpa menimpa .env (gunakan .env di server)
+            tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH --exclude=.env
+            rm /tmp/deploy.tar.gz
+
+            # Jika .env belum ada (pertama kali deploy), ambil dari paket
+            if [ ! -f "$DEPLOY_PATH/.env" ] && [ -f ".env" ]; then
+              mv .env $DEPLOY_PATH/.env
+            fi
+
+            echo "⚙️ Installing composer dependencies..."
+            composer install --no-dev --optimize-autoloader
+
+            echo "🧩 Running Laravel optimizations..."
+            php artisan migrate --force
+            php artisan cache:clear
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+
+            echo "🔒 Setting permissions..."
+            chown -R www:www $DEPLOY_PATH
+            chmod -R 755 storage bootstrap/cache
+
+            echo "✅ Deployment complete!"
