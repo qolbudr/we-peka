@@ -28,10 +28,11 @@ jobs:
           php artisan route:cache
           php artisan view:cache
 
-      # --- 4️⃣ Buat file .env dari GitHub Secret (opsional tapi aman) ---
-      # Pastikan kamu sudah menambahkan secret ENV_FILE di repo (isi seluruh isi file .env)
+      # --- 4️⃣ Buat file .env dari GitHub Secret ---
       - name: Create .env file from secret
-        run: echo "${{ secrets.ENV_FILE }}" > .env
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+          echo "✅ .env file created from secret"
 
       # --- 5️⃣ Buat paket deployment ---
       - name: Create deployment package
@@ -42,7 +43,7 @@ jobs:
             --exclude="node_modules" \
             --exclude="tests" \
             --exclude="storage/logs/*" \
-            . || true
+            .
 
       # --- 6️⃣ Upload file ke server via SCP ---
       - name: Copy files to server via SSH
@@ -63,17 +64,15 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           script: |
             DEPLOY_PATH=${{ secrets.DEPLOY_PATH }}
+            NODE_PATH="/www/server/nodejs/v20.19.5/bin"
+
+            echo "📁 Preparing deployment directory..."
             sudo mkdir -p $DEPLOY_PATH
             cd $DEPLOY_PATH
 
             echo "📦 Extracting files..."
-            sudo tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH --exclude=.env
+            sudo tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH
             sudo rm /tmp/deploy.tar.gz
-
-            # Pastikan .env tetap ada
-            if [ ! -f "$DEPLOY_PATH/.env" ] && [ -f ".env" ]; then
-              sudo mv .env $DEPLOY_PATH/.env
-            fi
 
             echo "⚙️ Installing composer dependencies..."
             cd $DEPLOY_PATH
@@ -86,9 +85,12 @@ jobs:
             sudo php artisan route:cache
             sudo php artisan view:cache
 
-            echo "⚙️ Building frontend..."
-            sudo npm install
-            sudo npm run build
+            echo "⚙️ Building frontend (with Node.js)..."
+            export PATH="$NODE_PATH:$PATH"
+            node -v
+            npm -v
+            npm install
+            npm run build
 
             echo "🔒 Setting permissions..."
             sudo chown -R www:www $DEPLOY_PATH
