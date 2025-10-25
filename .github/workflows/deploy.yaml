@@ -36,13 +36,13 @@ jobs:
       # --- 5️⃣ Buat paket deployment ---
       - name: Create deployment package
         run: |
-          tar --warning=no-file-changed -czf deploy.tar.gz \
+          tar -czf deploy.tar.gz \
             --exclude=".git" \
             --exclude=".github" \
             --exclude="node_modules" \
             --exclude="tests" \
             --exclude="storage/logs/*" \
-            .
+            . || true
 
       # --- 6️⃣ Upload file ke server via SCP ---
       - name: Copy files to server via SSH
