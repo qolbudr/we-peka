@@ -36,7 +36,7 @@ jobs:
       # --- 5️⃣ Buat paket deployment ---
       - name: Create deployment package
         run: |
-          tar -czf deploy.tar.gz \
+          tar --warning=no-file-changed -czf deploy.tar.gz \
             --exclude=".git" \
             --exclude=".github" \
             --exclude="node_modules" \
@@ -86,6 +86,7 @@ jobs:
             php artisan route:cache
             php artisan view:cache
             
+            npm install
             npm run build
 
             echo "🔒 Setting permissions..."
