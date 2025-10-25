@@ -143,19 +143,19 @@
             </section>
 
             {{-- Button CTA --}}
-            <section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+            <section class="py-16 bg-gradient-to-b from-blue-50 px-8 to-white">
     <div class="max-w-4xl mx-auto text-center">
         <h3 class="mb-10 text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Pilih Topik Pembelajaran
         </h3>
 
-        <div class="grid gap-8 sm:grid-cols-2 justify-center">
+        <div class="flex flex-col space-y-4 lg:space-y-0 lg:flex-row space-x-0 lg:space-x-8 justify-center">
             <!-- Topik 1 -->
             <a href="{{ route('topiksatu') }}"
                 class="relative px-10 py-8 overflow-hidden text-center text-white shadow-lg group 
                        bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-700 
                        rounded-2xl hover:shadow-2xl hover:scale-105 
-                       transition-all duration-300 ease-out transform w-full sm:w-72 mx-auto">
+                       transition-all duration-300 ease-out transform w-full mx-auto">
                 
                 <div
                     class="absolute top-0 right-0 w-24 h-24 transition-transform duration-300 transform 
@@ -180,7 +180,7 @@
                 class="relative px-10 py-8 overflow-hidden text-center text-white shadow-lg group 
                        bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 
                        rounded-2xl hover:shadow-2xl hover:scale-105 
-                       transition-all duration-300 ease-out transform w-full sm:w-72 mx-auto">
+                       transition-all duration-300 ease-out transform w-full mx-auto">
                 
                 <div
                     class="absolute top-0 right-0 w-24 h-24 transition-transform duration-300 transform 

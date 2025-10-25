@@ -366,7 +366,7 @@
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Video Motivasi</h3>
                                 <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
                                     <iframe class="w-full h-full"
-                                        src="https://www.youtube.com/embed/Il7wvSC6xvs?si=cdxKDZaKAPm269Wl"
+                                        src="https://www.youtube.com/embed/_yWOP6xs7RE?si=cdxKDZaKAPm269Wl"
                                         title="YouTube video player" frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         allowfullscreen>
