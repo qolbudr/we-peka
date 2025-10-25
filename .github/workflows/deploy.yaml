@@ -91,9 +91,9 @@ jobs:
             npm -v
 
             # Pastikan npm punya izin tulis
-            mkdir -p node_modules
-            chmod -R 777 node_modules
-            chmod -R 777 $DEPLOY_PATH
+            sudo mkdir -p node_modules
+            sudo chmod -R 777 node_modules
+            sudo chmod -R 777 $DEPLOY_PATH
 
             npm install --no-audit --no-fund
             npm run build
