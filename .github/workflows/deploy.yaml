@@ -85,11 +85,17 @@ jobs:
             sudo php artisan route:cache
             sudo php artisan view:cache
 
-            echo "⚙️ Building frontend (with Node.js)..."
+            echo "⚙️ Building frontend..."
             export PATH="$NODE_PATH:$PATH"
             node -v
             npm -v
-            npm install
+
+            # Pastikan npm punya izin tulis
+            mkdir -p node_modules
+            chmod -R 777 node_modules
+            chmod -R 777 $DEPLOY_PATH
+
+            npm install --no-audit --no-fund
             npm run build
 
             echo "🔒 Setting permissions..."
