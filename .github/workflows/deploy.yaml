@@ -63,36 +63,35 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           script: |
             DEPLOY_PATH=${{ secrets.DEPLOY_PATH }}
-            mkdir -p $DEPLOY_PATH
+            sudo mkdir -p $DEPLOY_PATH
             cd $DEPLOY_PATH
 
-            sudo su
-
             echo "📦 Extracting files..."
-            # Ekstrak tanpa menimpa .env (gunakan .env di server)
-            tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH --exclude=.env
-            rm /tmp/deploy.tar.gz
+            sudo tar -xzf /tmp/deploy.tar.gz -C $DEPLOY_PATH --exclude=.env
+            sudo rm /tmp/deploy.tar.gz
 
-            # Jika .env belum ada (pertama kali deploy), ambil dari paket
+            # Pastikan .env tetap ada
             if [ ! -f "$DEPLOY_PATH/.env" ] && [ -f ".env" ]; then
-              mv .env $DEPLOY_PATH/.env
+              sudo mv .env $DEPLOY_PATH/.env
             fi
 
             echo "⚙️ Installing composer dependencies..."
-            composer install --no-dev --optimize-autoloader
+            cd $DEPLOY_PATH
+            sudo composer install --no-dev --optimize-autoloader
 
             echo "🧩 Running Laravel optimizations..."
-            php artisan migrate --force
-            php artisan cache:clear
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-            
-            npm install
-            npm run build
+            sudo php artisan migrate --force
+            sudo php artisan cache:clear
+            sudo php artisan config:cache
+            sudo php artisan route:cache
+            sudo php artisan view:cache
+
+            echo "⚙️ Building frontend..."
+            sudo npm install
+            sudo npm run build
 
             echo "🔒 Setting permissions..."
-            chown -R www:www $DEPLOY_PATH
-            chmod -R 755 storage bootstrap/cache
+            sudo chown -R www:www $DEPLOY_PATH
+            sudo chmod -R 755 storage bootstrap/cache
 
             echo "✅ Deployment complete!"
