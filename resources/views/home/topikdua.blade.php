@@ -166,13 +166,40 @@
                                         Tentang Dimensi Informasi Karir
                                     </h3>
 
-                                    <p class="text-lg leading-relaxed text-gray-700">
-                                        <span class="font-bold text-blue-600">Dimensi informasi karier</span> adalah aspek
-                                        kematangan karier yang mengukur sejauh mana seseorang aktif mencari dan menggunakan
-                                        informasi tentang dunia kerja, serta sejauh mana mereka memiliki pengetahuan yang
-                                        memadai mengenai pilihan karier. Ini mencakup sikap terhadap sumber informasi
-                                        (seperti orang tua, guru, atau konselor), motivasi untuk eksplorasi karier, dan
-                                        pemahaman tentang berbagai jenis pekerjaan serta tuntutan di dalamnya.
+                                    <p class="text-justify leading-relaxed text-gray-700">
+                                        <span class="font-bold text-blue-600">Dimensi informasi karier</span> mengukur pada
+                                        keyakinan individu terhadap pemahaman
+                                        informasi yang berkaitan dengan jenis,
+                                        persyaratan, peluang karier, serta keterampilan
+                                        yang dibutuhkan dalam sebuah pekerjaan.
+                                        Pemahaman terhadap informasi-informasi tersebut
+                                        akan meningkatkan self-efficacy karier individu.
+                                        Sedangkan individu yang tidak berusaha
+                                        mendalami informasi seputar karier pekerjaan
+                                        akan mengalami ketidakyakinan terhadap
+                                        perencanaan karier kedepannya.
+                                    </p>
+                                </div>
+
+                                <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
+                                    <h3 class="flex items-center mb-4 text-2xl font-bold text-blue-700">
+                                        <svg class="w-6 h-6 mr-2 text-blue-700" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Tentang Perguruan Tinggi Negeri
+                                    </h3>
+
+                                    <p class="text-justify leading-relaxed text-gray-700">
+                                        <span class="font-bold text-blue-600">Pendidikan Tinggi</span> merupakan lembaga yang
+                                        menawarkan tingkat pendidikan lanjutan setelah
+                                        menyelesaikan sekolah tingkat menengah. Perguruan
+                                        tinggi mencakup program studi diploma, sarjana,
+                                        magister, spesialis, serta doctor. Perguruan tinggi negeri
+                                        yang diselenggarakan di negara Indonesia ada
+                                        beberapa jenis, seperti universitas, institute, politeknik,
+                                        sekolah tinggi dan akademi.
                                     </p>
                                 </div>
 
@@ -200,11 +227,15 @@
                                 <h2 class="mb-4 text-3xl font-bold text-gray-900">Pemilihan Tujuan</h2>
                                 <div class="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
                                     <p class="text-lg leading-relaxed text-gray-700">
-                                        <span class="font-bold text-blue-600">Dimensi pemilihan tujuan</span> merujuk
-                                        pada aspek-aspek yang membentuk proses penetapan dan pencapaian tujuan, yang
-                                        mencakup jangka waktu (jangka pendek, menengah, panjang), arah (dari atas ke bawah,
-                                        bawah ke atas, atau horizontal), dan sifat (misalnya, apakah tujuannya spesifik atau
-                                        umum).
+                                        <span class="font-bold text-blue-600">Dimensi pemilihan tujuan</span> 
+                                        ini mengarah kepada
+                                        keyakinan individu terhadap kemampuan
+                                        penentuan tujuan karier yang sesuai dengan
+                                        potensi dirinya. Dimensi ini meliputi kemampuan
+                                        dalam menentukan jenjang karier dengan tepat,
+                                        serta menentukan tujuan yang ingin diraih dalam
+                                        proses perencanaan kariernya.
+
                                     </p>
                                 </div>
                             </div>
@@ -241,10 +272,19 @@
                                 <h2 class="mb-4 text-3xl font-bold text-gray-900">Dimensi Perencanaan</h2>
                                 <div class="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl">
                                     <p class="text-lg leading-relaxed text-gray-700">
-                                        <span class="font-bold text-blue-600">Dimensi perencanaan dalam efikasi
-                                            karir</span> merujuk pada tiga dimensi utama dari keyakinan individu terhadap
-                                        kemampuan mereka untuk melakukan tugas-tugas yang diperlukan dalam perencanaan
-                                        karir.
+                                        <span class="font-bold text-blue-600">Dimensi perencanaan dalam self-efficacy karier </span> 
+                                        mengarah pada keyakinan individu terhadap
+                                        kemampuan individu dalam merancang
+                                        perencanaan karier mereka serta mengikuti
+                                        prosedur dalam mencapai tujuan kariernya.
+                                        Individu dengan self-efficacy karier yang tinggi
+                                        akan merasa percaya diri terhadap menhadapi
+                                        tugas-tugas yang akan dihadapi dalam
+                                        perencanaan karienya. Berbalik dengan individu
+                                        yang self-efficacynya rendah akan mersa takut dan
+                                        tidak percaya diri dalam menhadapi tugas-tugas
+                                        atau hambatan dalam perencanaan kariernya.
+
                                     </p>
                                 </div>
                             </div>
@@ -253,19 +293,96 @@
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Metode SMART</h3>
                                 <div class="p-6 mb-6 bg-gradient-to-br from-cyan-50 to-teal-50 rounded-2xl">
                                     <p class="mb-4 text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-cyan-600">Metode SMART</span> adalah kerangka kerja
-                                        perencanaan yang menguraikan tujuan menjadi kriteria: Specific (Spesifik),
-                                        Measurable (Terukur), Achievable (Dapat Dicapai), Relevant (Relevan), dan Time-bound
-                                        (Terikat Waktu).
+                                        <span class="font-bold text-cyan-600">Metode SMART</span> 
+                                        merupakan metode perencanaan sasaran atau
+                                        tujuan yang jelas dan dapat diukur, yang juga bisa
+                                        dicapai dengan realistis, serta memiliki relevansi dan
+                                        batas waktu tertentu. Metode perencanaan SMART
+                                        memiliki 5 karakteristik perencanaan, sebagai berikut:
+                                        <ol class="list-decimal list-inside space-y-4">
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Specific (Spesifik)
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Penulisan tujuan yang ingin dicapai harus jelas dan
+                                                    juga terperinci. Hindari menulis tujuan yang terlalu
+                                                    umum agar perencanaan kita lebih efektif.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Measurable (Terukur)
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Penulisan tujuan harus dapat diukur agar kita
+                                                    mengetahui tujuan-tujuan apa saja yang sudah bisa
+                                                    dinyatakan berhasil dan belum berhasil kita capai.
+                                                    Dengan kita melihat ketercapaian tujuan kita akan
+                                                    mempermudah diri kita untuk mengetahui kemajuan
+                                                    apa saja yang sudah kita lakukan.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Achievable (Dapat Dicapai)
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Penulisan tujuan haruslah realistis dengan kemampuan
+                                                    serta waktu yang kita miliki. Dengan kita memiliki
+                                                    tujuan yang realistis tentu saja akan menambah
+                                                    keyakinan diri kita untuk dapat mencapai tujuan yang
+                                                    telah kita buat.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Relevant (Relevan)
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Penulisan tujuan harus sesuai dengan kebutuhan
+                                                    jangka panjang kita kedepannya pula. Dengan kita
+                                                    menuliskan tujuan yang relevan sejalan dengan
+                                                    kebutuhan jangka panjang kita akan membuat diri kita
+                                                    semakin termotivasi dalam mencapai tujuan
+                                                    perencanaan yang telah kita buat.
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Time Bound (Terikat Waktu)
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Penulisan tujuan harus disertai dengan tenggat waktu
+                                                    atau batas waktu yang jelas. Dengan kita menyertakan
+                                                    tenggat waktu dalam perencanaan kita akan membuat
+                                                    kita terdorong untuk segera mencapai tujuan-tujuan
+                                                    yang kita buat. Sedangkan jika kita tidak menyertakan
+                                                    tenggat waktu kita bisa terus menunda-nunda.
+                                                </p>
+                                            </li>
+                                        </ol>
                                     </p>
                                 </div>
 
+                                <div class="p-4 bg-teal-50 rounded-xl">
+                                        <p class="mb-2 font-bold text-teal-800">Tujuan :</p>
+                                        <p class="text-gray-700">
+                                            Tujuan dari perencanaan karier dengan metode SMART
+                                            dibuat untuk membuat rencana karier menjadi lebih
+                                            jelas, dapat diukur, realistis, relevan, dan memiliki
+                                            waktu yang ditentukan, guna memastikan pencapaian
+                                            karir yang nyata dan terarah. Dengan menggunakan
+                                            metode SMART ini, peserta didik yang dibantu oleh
+                                            guru BK dapat merancang langkah-langkah karier
+                                            dengan cara yang teratur, melihat perkembangan, dan
+                                            menyesuaikan rencana dengan baik.
+                                        </p>
+                                    </div>
+
                                 <h4 class="mb-4 text-xl font-bold text-gray-900">Contoh Penerapan Metode SMART</h4>
                                 <div class="p-6 space-y-4 bg-white border-2 border-teal-200 rounded-2xl">
-                                    <div class="p-4 bg-teal-50 rounded-xl">
-                                        <p class="mb-2 font-bold text-teal-800">Tujuan Awal:</p>
-                                        <p class="text-gray-700">Ingin menjadi profesional di bidang digital marketing</p>
-                                    </div>
+                                    
 
                                     <div class="space-y-3">
                                         <div class="flex items-start p-3 space-x-3 rounded-lg bg-violet-50">
@@ -342,37 +459,214 @@
                                 <h2 class="mb-4 text-3xl font-bold text-gray-900">Pemecahan Masalah</h2>
                                 <div class="p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl">
                                     <p class="text-lg leading-relaxed text-gray-700">
-                                        <span class="font-bold text-orange-600">Dimensi pemecahan masalah</span> dalam
-                                        efikasi karir merujuk pada keyakinan individu terhadap kemampuannya untuk mengatasi
-                                        tugas-tugas karier yang bervariasi tingkat kesulitannya.
+                                        <span class="font-bold text-orange-600">Dimensi pemecahan masalah</span>  ini mengarah pada
+                                            keyakinan individu dalam menghadapi dan
+                                            menyelesaikan segala tantangan yang muncul
+                                            dalam perencanaan karier mereka. Individu
+                                            dengan self-efficacy yang tinggi akan mampu
+                                            menganalisis dan menentukan solusi yang tepat
+                                            dalam menghadapi hambatan dan tidak mudah
+                                            menyerah dalam perencanaan karier. Berbalik
+                                            dengan individu yang self-efficacy rendah akan
+                                            mengalami kesusahan dalam menghadapi
+                                            hambatan dan banyak keraguan dalam
+                                            perencanaan kariernya.
                                     </p>
                                 </div>
                             </div>
 
                             <div>
-                                <h3 class="mb-4 text-2xl font-bold text-gray-900">Contoh Tantangan dalam Merencanakan Karir
+                                <h3 class="mb-4 text-2xl font-bold text-gray-900">
+                                    Contoh Tantangan dalam Merencanakan Karir
                                 </h3>
+
                                 <div class="p-6 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl">
-                                    <p class="text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-amber-600">Contoh tantangan</span> meliputi kurangnya
-                                        keterampilan yang relevan, tidak adanya tujuan karir yang jelas, lingkungan kerja
-                                        yang tidak mendukung, perubahan industri yang cepat, serta kesulitan menyeimbangkan
-                                        antara karir dan kehidupan pribadi.
-                                    </p>
+                                    <ul class="space-y-3 list-disc list-inside text-base leading-relaxed text-gray-700">
+                                        <ol class="list-decimal list-inside space-y-4">
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Ketidakpastian yang mengelilingi pasar kerja
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Dengan adanya perubahan cepat dalam dunia
+                                                    teknologi, ekonomi, dan industri, banyak pekerjaan
+                                                    mengalami perubahan atau bahkan lenyap, sementara
+                                                    pekerjaan baru yang memerlukan keterampilan yang
+                                                    berbeda mulai bermunculan. Ketidakpastian ini
+                                                    menimbulkan kekhawatiran bagi orang-orang
+                                                    mengenai seberapa sesuai keterampilan yang mereka
+                                                    miliki.
+                                                    <br>
+                                                    <br>
+                                                    Untuk menghadapi ketidakstabilan di pasar kerja yang
+                                                    disebabkan oleh perubahan dalam teknologi, ekonomi,
+                                                    dan sektor industri, penting untuk melakukan
+                                                    pembelajaran terus-menerus. Identifikasi keterampilan
+                                                    yang akan diperlukan di masa depan, seperti
+                                                    kecerdasan buatan (AI), analisis data, atau
+                                                    keterampilan interpersonal yang fleksibel, melalui
+                                                    kursus online gratis yang tersedia di platform seperti
+                                                    Coursera dan LinkedIn Learning. Perluas pilihan karir
+                                                    dengan membuat portofolio tambahan, menjalin
+                                                    hubungan di komunitas profesional seperti LinkedIn
+                                                    atau asosiasi psikologi perilaku, serta menjalani rotasi
+                                                    pekerjaan sementara untuk mengeksplorasi dan
+                                                    mengasah keterampilan baru. Terapkan metode
+                                                    SMART untuk merumuskan rencana karier cadangan.
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Kesulitan dalam mengidentifikasi potensi, minat serta keterampilan diri
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Banyak orang mengalami kesulitan mengenai apa yang
+                                                    mereka inginkan dari karir. Akibatnya, mereka bisa
+                                                    terjebak dalam pekerjaan yang tidak memuaskan atau
+                                                    tidak sesuai dengan minat mereka. Ketidakpahaman
+                                                    tentang diri ini sering kali diperburuk oleh tekanan dari
+                                                    sekitar, seperti harapan dari keluarga, teman, atau
+                                                    masyarakat. Tanpa pemahaman yang baik tentang diri
+                                                    sendiri, orang sering merasa tidak puas dalam
+                                                    pekerjaan mereka, yang bisa mempengaruhi kesehatan
+                                                    mental mereka.
+                                                    <br>
+                                                    <br>
+                                                    Untuk membantu menghadapi tantangan dalam
+                                                    mengetahui potensi, minat, potensi serta keahlian diri,
+                                                    lakukan penilaian diri secara berkala dengan
+                                                    menggunakan alat yang tepat seperti tes MBTI, tes
+                                                    Multiple Intelligence atau Holland Code. Ini akan
+                                                    membantu Anda memahami pilihan karier secara lebih
+                                                    objektif.
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Kurangnya dukungan dalam pengembangan sumber daya manusia
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Dalam sistem pendidikan di negara Indonesia tidak
+                                                    memiliki cara yang terstruktur, teratur dan jelas untuk
+                                                    mengembangkan potensi, minat serta keterampilan
+                                                    untuk perencanaan karier dari usia dini. Situasi ini
+                                                    dapat membuat seseorang merasa diabaikan atau tidak
+                                                    memiliki kesempatan untuk maju. Mempersiapkan diri
+                                                    untuk karier tujuan adalah proses yang panjang jadi
+                                                    sebaiknya pemberian latihan dapat diolah dari usia
+                                                    dini. Tidak melulu membicarakan teori namun
+                                                    pendidikan juga sebaiknya memberikan pelatihan
+                                                    keterampilan praktik juga. Tentu saja hal ini akan
+                                                    mengurangi keyakinan dalam diri seseorang dalam
+                                                    merencanakan atau menuju karier yang akan dipilih.
+                                                    <br>
+                                                    <br>
+                                                    Untuk mengatasi masalah kurangnya dukungan dalam
+                                                    pengembangan sumber daya manusia di sistem
+                                                    pendidikan Indonesia yang tidak teratur, diperlukan
+                                                    inisiatif mandiri. Ini bisa dilakukan melalui program
+                                                    ekstrakurikuler atau workshop di sekolah yang
+                                                    menggabungkan minat, bakat, serta potensi peserta
+                                                    didik dengan pelatihan praktis. Contohnya adalah
+                                                    simulasi wawancara kerja atau proyek magang kecil
+                                                    yang dimulai dari sekolah dasar hingga sekolah
+                                                    menengah. Selain itu, kerjasama dengan komunitas
+                                                    atau platform daring, seperti Prakerja dan Ruangguru
+                                                    Karier, sangat penting untuk menawarkan kursus
+                                                    keterampilan praktis.
+                                                </p>
+                                            </li>
+
+                                            <li>
+                                                <span class="font-semibold">
+                                                    Kurangnya akses terhadap bimbingan karier yang memadai
+                                                </span>
+                                                <p class="mt-2 text-justify leading-relaxed">
+                                                    Banyak orang tidak dapat menjangkau tenaga
+                                                    profesional yang bisa memberikan saran dan wawasan
+                                                    berguna tentang perkembangan karier. Di era digital
+                                                    saat ini, meskipun terdapat banyak data yang bisa
+                                                    diakses, tidak semua informasi tersebut sesuai atau
+                                                    membantu. Oleh karena itu, orang perlu memiliki
+                                                    kemampuan literasi informasi yang baik untuk
+                                                    memilah informasi yang mereka terima.
+                                                    <br>
+                                                    <br>
+                                                    Untuk mengatasi masalah terbatasnya akses pada
+                                                    bimbingan karir serta perolehan informasi yang beredar
+                                                    di zaman digital, kita dapat memanfaatkan berbagai
+                                                    platform gratis yang memang sudah terpercaya seperti
+                                                    LinkedIn Learning, Coursera Career Guidance, atau
+                                                    saluran YouTube yang dapat dipercaya (seperti TED
+                                                    Talks tentang karir).
+                                                </p>
+                                            </li>
+                                        </ol>
+                                    </ul>
                                 </div>
                             </div>
 
-                            <div>
-                                <h3 class="mb-4 text-2xl font-bold text-gray-900">Video Motivasi</h3>
-                                <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
-                                    <iframe class="w-full h-full"
-                                        src="https://www.youtube.com/embed/_yWOP6xs7RE?si=cdxKDZaKAPm269Wl"
-                                        title="YouTube video player" frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen>
-                                    </iframe>
+
+                           <div>
+                                <h3 class="mb-6 text-2xl font-bold text-gray-900">
+                                    Video Motivasi
+                                </h3>
+
+                                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                    
+                                    <!-- Video 1 -->
+                                    <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/cBjLhHfvdfY"
+                                            title="Video Motivasi 1" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+
+                                    <!-- Video 2 -->
+                                    <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/57UxnHwuzEE?si=9c0Oup4BqsLCVzKE"
+                                            title="Video Motivasi 2" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+
+                                    <!-- Video 3 -->
+                                    <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/Jvzzo4jpd4s?si=7ozBaLMgRIKgT8T"
+                                            title="Video Motivasi 3" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+
+                                    <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/iiEjl6dCuoo?si=nzuKUO5AiosEvP"
+                                            title="Video Motivasi 4" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+
+                                    <div class="overflow-hidden bg-gray-900 shadow-2xl rounded-2xl aspect-video">
+                                        <iframe class="w-full h-full"
+                                            src="https://www.youtube.com/embed/sdZVBETg7OM?si=8XDJLNPq3KZGCnhz"
+                                            title="Video Motivasi 5" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen>
+                                        </iframe>
+                                    </div>
+
                                 </div>
                             </div>
+
                         </div>
 
                         @include('home.lkpd-content')

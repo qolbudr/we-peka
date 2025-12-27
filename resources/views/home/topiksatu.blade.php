@@ -38,14 +38,10 @@
                                 Definisi Efikasi Karir
                             </h1>
                             <p class="mb-4 text-lg leading-relaxed text-gray-700">
-                                <span class="font-bold text-blue-600">Efikasi karir adalah</span> keyakinan diri seseorang
-                                terhadap kemampuannya untuk berhasil dalam melakukan tugas-tugas yang berkaitan dengan
-                                pengembangan, pilihan, dan penyesuaian karir.
+                                <span class="font-bold text-blue-600">Self-efficacy</span> dalam konteks karier dapat diartikan
+                                sebagai keyakinan seseorang terhadap kepercayaan dirinya dalam menghadapi tugas-tugas perkembangan bidang kariernya
                             </p>
-                            <p class="text-base leading-relaxed text-gray-600">
-                                Seseorang dengan efikasi karir yang tinggi akan lebih termotivasi, berani menghadapi
-                                tantangan, dan mampu membuat keputusan karir yang lebih rasional dan realistis.
-                            </p>
+                            
                         </div>
                         <div class="flex items-center justify-center p-8 bg-gradient-to-br from-blue-100 to-sky-100 lg:p-12">
                             <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
@@ -94,17 +90,13 @@
                             <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
                                 Pentingnya Efikasi Karir
                             </h2>
-                            <p class="mb-4 text-lg leading-relaxed text-gray-700">
-                                <span class="font-bold text-cyan-600">Pentingnya efikasi karir</span> adalah untuk
-                                meningkatkan kepercayaan diri individu dalam menentukan pilihan karir, mengurangi
-                                kebimbangan dan kesulitan dalam membuat keputusan, serta membantu mengarahkan pada
-                                pengembangan karir yang lebih baik.
+                            <p class="mb-4 text-justify leading-relaxed text-gray-700">
+                                <span class="font-bold text-cyan-600">Pentingnya efikasi karir</span> Seseorang yang memiliki keyakinan tinggi dalam kemampuan dirinya akan dapat menghadapi kesulitan,
+                                mengatasi rintangan, serta tetap bertahan dalam menjalankan tantangan yang diperlukan untuk meraih tujuan kariernya. Sedangkan seseorang yang memiliki
+                                self-efficacy karier yang rendah akan dihadapkan pada tantangan berat dalam pengembangan karier mereka, mereka cepat merasa putus asa dalam berusaha dan memilih untuk menyerah, mereka juga lambat untuk meningkatkan kemampuan atau memulihkan keyakinan pada kemampuan mereka saat mengalami kegagalan.Oleh karena itu, indikator dari keyakinan dalam karier ini menjadi ukuran penting untuk menilai seberapa tinggi keyakinan seseorang dalam karier dan bagaimana hal itu berperan dalam pencapaian sukses di bidang karier.
+
                             </p>
-                            <p class="text-base leading-relaxed text-gray-600">
-                                Individu dengan efikasi karir yang tinggi cenderung memiliki kejelasan tujuan, lebih
-                                terfokus pada kegiatan relevan, dan lebih mampu mengelola diri dalam menapaki jenjang karir
-                                mereka.
-                            </p>
+                           
                         </div>
                     </div>
                 </div>
@@ -119,18 +111,48 @@
                                 Komponen Penting
                             </div>
                             <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
-                                Aspek Efikasi Karir
+                                Dimensi Efikasi Karier
                             </h2>
-                            <p class="mb-4 text-lg leading-relaxed text-gray-700">
-                                <span class="font-bold text-indigo-600">Aspek efikasi karir menurut Taylor dan Betz
-                                    (1983)</span> meliputi penilaian diri yang akurat, pengumpulan informasi tentang
-                                pekerjaan, pemilihan tujuan karir, perencanaan masa depan, dan pemecahan masalah terkait
-                                karir.
+                            <p class="mb-4 text-justify leading-relaxed text-gray-700">
+                                <span class="font-bold text-indigo-600">Taylor dan Betz membangun 5 dimensi self-efficacy
+                                    </span> karier berdasarkan teori self-efficacy Albert Bandura. Taylor dan Betz menjabarkan 5 dimensi self-efficacy karier (Betz dan Hacket, 2006 dalam Putri. M, F. 2025):
                             </p>
                             <p class="text-base leading-relaxed text-gray-600">
-                                Aspek-aspek ini mencakup keyakinan individu akan kemampuannya untuk melakukan tugas-tugas
-                                yang diperlukan dalam proses pengambilan keputusan karir, mulai dari memahami diri sendiri
-                                hingga merencanakan dan mengatasi tantangan di masa depan.
+                                <li>
+                                    Dimensi Self-Appraisal (Penilaian Diri)
+                                    <p class="text-justify leading-relaxed">
+                                        Dimensi penilaian diri ini bertujuan untuk mengukur kekuatan serta kelemahan terhadap kemampuan diri individu. Dengan mengetahui kekuatan serta kelemahan diri hal ini berguna dalam kegiatan
+                                        perencanaan karier, di mana seorang individu dinilai dapat menentukan pilihan kariernya dengan mempertimbangkan apa yang menjadi kekuatan individu tersebut. Individu yang mengetahui kekuatan serta kelemahannya dinilai memiliki self-efficacy karier yang tinggi, karena individu tersebut dapat mengetahui batasan dirinya dan mencoba untuk memperbaiki kelemahannya.
+
+                                    </p>
+                                </li>
+                                <li>
+                                    Dimensi Gathering Occupational Information (Pengumpulan Informasi Karier atau Pekerjaan)
+                                    <p class="text-justify leading-relaxed">
+                                        Dimensi informasi karier mengukur pada keyakinan individu terhadap pemahaman informasi yang berkaitan dengan jenis, persyaratan, peluang karier, serta keterampilan yang dibutuhkan dalam sebuah pekerjaan. Pemahaman terhadap informasi-informasi tersebut akan meningkatkan self-efficacy karier individu. Sedangkan individu yang tidak berusaha mendalami informasi seputar karier pekerjaan akan mengalami ketidakyakinan terhadap perencanaan karier kedepannya.
+                                    </p>
+                                </li>
+                                <li>
+                                    Dimensi Goal Selection (Pemilihan Tujuan)
+                                    <p class="text-justify leading-relaxed">
+                                        Dimensi pemilihan tujuan ini mengarah kepada keyakinan individu terhadap kemampuan penentuan tujuan karier yang sesuai dengan potensi dirinya.
+                                        Dimensi ini meliputi kemampuan dalam menentukan jenjang karier dengan tepat, serta menentukan tujuan yang ingin diraih dalam proses perencanaan kariernya.
+                                    </p>
+                                </li>
+                                <li>
+                                    Dimensi Planning for the Future (Perencanaan Masa Depan)
+                                    <p class="text-justify leading-relaxed">
+                                        Dimensi perencanaan dalam self-efficacy karier mengarah pada keyakinan individu terhadap kemampuan individu dalam merancang perencanaan karier mereka serta mengikuti prosedur dalam
+                                        mencapai tujuan kariernya. Individu dengan self-efficacy karier yang tinggi akan merasa percaya diri terhadap menhadapi tugas-tugas yang akan dihadapi dalam perencanaan karienya. Berbalik dengan individu yang self-efficacynya rendah akan mersa takut dan tidak percaya diri dalam menhadapi tugas-tugas atau hambatan dalam perencanaan kariernya.
+                                    </p>
+                                </li>
+                                <li>
+                                    Dimensi Problem Solving (Pemecahan Masalah)
+                                    <p class="text-justify leading-relaxed">
+                                        Dimensi pemecahan masalah ini mengarah pada keyakinan individu dalam menghadapi dan menyelesaikan segala tantangan yang muncul dalam perencanaan karier mereka. Individu dengan self-efficacy yang tinggi akan mampu menganalisis dan menentukan solusi yang tepat dalam menghadapi hambatan dan tidak mudah menyerah dalam
+                                        perencanaan karier. Berbalik dengan individu yang self-efficacy rendah akan mengalami kesusahan dalam menghadapi hambatan dan banyak keraguan dalam perencanaan kariernya.
+                                    </p>
+                                </li>
                             </p>
                         </div>
                         <div class="flex items-center justify-center p-8 bg-gradient-to-br from-indigo-100 to-blue-100 lg:p-12">
@@ -144,6 +166,101 @@
                                 <circle cx="120" cy="150" r="20" fill="#6366f1" />
                                 <circle cx="200" cy="150" r="25" fill="#4f46e5" />
                             </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="mb-16">
+                <div class="overflow-hidden bg-white shadow-xl rounded-3xl">
+                    <div class="grid items-center gap-8 lg:grid-cols-2">
+                        <div class="flex items-center justify-center order-2 p-8 bg-gradient-to-br from-sky-100 to-cyan-100 lg:order-1 lg:p-12">
+                            <svg class="w-full h-auto max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#0ea5e9;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <rect x="100" y="80" width="60" height="140" fill="url(#grad2)" opacity="0.3" rx="8" />
+                                <rect x="170" y="60" width="60" height="160" fill="url(#grad2)" opacity="0.5" rx="8" />
+                                <rect x="240" y="40" width="60" height="180" fill="url(#grad2)" opacity="0.7" rx="8" />
+                                <circle cx="200" cy="100" r="40" fill="#06b6d4" />
+                                <path d="M185,100 L195,110 L215,90" stroke="white" stroke-width="4" fill="none"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="order-1 p-8 lg:order-2 lg:p-12">
+                            <div class="inline-block px-4 py-2 mb-4 text-sm font-medium text-cyan-700 bg-cyan-100 rounded-full">
+                                Manfaat Utama
+                            </div>
+                            <h2 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl">
+                                Sumber Utama Efikasi Karier
+                            </h2>
+                            <p class="mb-4 text-justify leading-relaxed text-gray-700">
+                                <span class="font-bold text-cyan-600">Self-efficacy dalam konteks karier</span> mengacu pada
+                                keyakinan peserta didik terhadap kemampuan diri dalam penyelesaian tugas kariernya. Maka dari itu peserta didik perlu meningkatkan self-efficacy karier
+                                mereka agar mereka dapat mencapai hasil karier yang sempurna. Bandura (1997) menjabarkan adanya 5 sumber utama yang dapat meningkatkan self-efficacy karier (Lianto, 2019):
+                                <li>
+                                    Melalui Pengalaman Keberhasilan Langsung
+                                    <p class="text-justify leading-relaxed">
+                                        Peningkatan self-efficacy melalui keberhasilan langsung
+                                        merupakan sumber yang paling kuat diantara yang
+                                        lainnya. Di mana ketika individu mengalami
+                                        keberhasilan dalam suatu hal maka hal tersebut akan
+                                        meningkatkan self-efficacy dari individu. Berbalik
+                                        dengan ketika individu yang mengalami kegagalan
+                                        dalam suatu hal akan mengakibatkan self-efficacy
+                                        individu tersebut bisa menurun.
+                                    </p>
+                                </li>
+                                <li>
+                                    Melalui Pengalaman Orang lain
+                                    <p class="text-justify leading-relaxed">
+                                        Peningkatan self-efficacy melalui keberhasilan orang
+                                        lain, seorang individu akan cenderung melakukan
+                                        perbandingan dirinya dengan keberhasilan orang lain
+                                        yang ada di sekitarnya. Ketika orang disekitarnya yang
+                                        dianggap memiliki kesetaraan dengannya mengalami
+                                        keberhasilan maka individu tersebut akan ikut
+                                        termotivasi dan yakin juga terhadap kemampuan
+                                        dirinya dalam penyelesaian tugas yang sama. Berbalik
+                                        dengan ketika individu melihat orang disekitarnya
+                                        yang dianggap memiliki kesetaraan dengannya
+                                        mengalami kegagalan self-efficacy atau keyakinan
+                                        terhadap kemampuan individu tersebut akan
+                                        menurun.
+                                    </p>
+                                </li>
+                                <li>
+                                    Melalui Persuasi Verbal
+                                    <p class="text-justify leading-relaxed">
+                                        Peningkatan self-efficacy melalui persuasi verbal,
+                                        seorang individu akan meningkat self-efficacynya
+                                        ketika ada orang disekitarnya dapat menunjukan
+                                        bahwasannya individu tersebut mampu melakukan
+                                        penyelesaian tugas. Namun ketika orang disekitarnya
+                                        mempertanyakan kemampuannya hal tersebut akan
+                                        semakin menurunkan self-efficacy individu tersebut.
+                                    </p>
+                                </li>
+                                <li>
+                                    Melalui Kondisi Fisiologis
+                                    <p class="text-justify leading-relaxed">
+                                        Peningkatan self-efficacy melalui kondisi fisiologis
+                                        berarti keyakinan seorang individu dipengaruhi oleh
+                                        keadaan fisik maupun emosionalnya. Ketika seorang
+                                        individu mengalami kondisi fisik dan emosional yang
+                                        kurang baik seperti sedang sakit, merasa cemas, tidak
+                                        dalam mood yang baik hal ini dapat menurunkan
+                                        keyakinan individu dalam penyelesaian tugasnya
+                                        karena ketidak seimbangan kondisik fisiologis dat
+                                        menghambat motivasi individu untuk berkembang.
+                                    </p>
+                                </li>
+                            </p>
+                           
                         </div>
                     </div>
                 </div>

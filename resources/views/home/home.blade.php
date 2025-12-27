@@ -28,8 +28,8 @@
                             WE PEKA
                         </h1>
                         <p class="mb-8 text-lg leading-relaxed text-gray-600 sm:text-xl">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                            Pengembangan media berbasis Interaktif Web-based ini berjudul WE PEKA di mana judul tersebut merupakan akronim dari Website Peningkatan Efikasi Karier, jika
+                            judul dan akronimnya digabungkan akan menghasilkan arti bahwasannya kita harus peka terhadap peningkatan efikasi karier peserta didik. Dengan dikembangkannya website peningkat efikasi karier untuk tingkat SMA
                         </p>
                         <div class="flex flex-wrap gap-4">
                             <a href="#tujuan"
@@ -91,9 +91,8 @@
                             Tujuan WE PEKA
                         </h2>
                         <p class="mb-6 text-lg leading-relaxed text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris.
+                            Tujuan dari website WE PEKA ini diharapkan guru BK dapat memanfaatkan website WE PEKA sebagai sumber materi tambahan saat pemberian layanan bimbingan karier dan konseling :karier serta dapat menjadi media yang membantu peserta didik dalam pengambilan keputusan karier.
+
                         </p>
                         <ul class="space-y-3">
                             <li class="flex items-start">
@@ -121,26 +120,78 @@
 
             {{-- About Section --}}
             <section class="mb-16 lg:mb-24">
-                <div class="p-8 bg-white shadow-xl rounded-3xl sm:p-12 lg:p-16">
-                    <div class="max-w-3xl mx-auto text-center">
-                        <div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-100">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h2 class="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
-                            About WE PEKA
-                        </h2>
-                        <p class="text-lg leading-relaxed text-gray-600">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="p-8 bg-white shadow-xl rounded-3xl sm:p-12 lg:p-16">
+                <div class="max-w-4xl mx-auto text-center">
+
+                    <!-- Icon -->
+                    <div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-blue-100">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+
+                    <!-- Title -->
+                    <h2 class="mb-6 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+                        Informasi Pengembang Website “WE PEKA”
+                    </h2>
+
+                    <!-- Description -->
+                    <p class="mb-12 text-lg leading-relaxed text-gray-600">
+                        Website WE PEKA dikembangkan untuk menghadirkan solusi digital yang informatif,
+                        aman, dan mudah digunakan dengan fokus pada kualitas dan pengalaman pengguna.
+                    </p>
+
+                    <!-- Identity Card -->
+                    <div class="p-8 bg-gray-50 rounded-2xl shadow-sm">
+            <div class="grid gap-8 md:grid-cols-3 items-start">
+
+                <!-- Photos -->
+                <div class="flex justify-center gap-4 md:justify-start">
+                    <img src="foto1.jpg" alt="Foto Profile"
+                        class="object-cover w-32 h-32 rounded-2xl shadow-md">
+                    <img src="{{ asset('images/UNESA-Logo.png') }}" alt="Foto UNESA"
+                        class="object-contain w-32 h-32 p-2 bg-white rounded-2xl shadow-md">
+                </div>
+
+                <!-- Identity Info -->
+                <div class="md:col-span-2 text-center md:text-left">
+                    <h3 class="mb-2 text-2xl font-semibold text-gray-900">
+                        Rizky Selsyah Billah
+                    </h3>
+
+                    <p class="mb-6 text-sm leading-relaxed text-gray-600">
+                        Rizky Selsyah Billah, lahir di Kota Sidoarjo pada hari Minggu tanggal 01 Juni 2003.
+                        Mahasiswa Program Studi Bimbingan dan Konseling, Fakultas Ilmu Pendidikan,
+                        Universitas Negeri Surabaya. Pengembangan media website <span class="font-medium text-gray-700">WE PEKA
+                        (Website Peningkatan Efikasi Karier)</span> diperuntukkan sebagai pemenuhan tugas akhir
+                        jenjang pendidikan S1 guna memperoleh gelar Sarjana Pendidikan (S.Pd.).
+                    </p>
+
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p>
+                            📧 <span class="font-medium">Email:</span>
+                            <a href="mailto:rizkyselsyahbillah@gmail.com"
+                                class="text-blue-600 hover:underline">
+                                rizkyselsyahbillah@gmail.com
+                            </a>
                         </p>
+                        <p>
+                            📞 <span class="font-medium">Telepon:</span> +62 823-3996-6321
+                        </p>
+                        
                     </div>
                 </div>
-            </section>
+
+            </div>
+</div>
+
+
+        </div>
+    </div>
+</section>
+
 
             {{-- Button CTA --}}
             <section class="py-16 bg-gradient-to-b from-blue-50 px-8 to-white">
