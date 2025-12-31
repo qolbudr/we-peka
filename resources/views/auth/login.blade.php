@@ -7,15 +7,15 @@
         <div class="grid items-center w-full max-w-6xl gap-10 md:grid-cols-2">
             {{-- Content Left --}}
             <div class="max-w-lg max-md:mx-auto max-md:text-center">
-                <a href="/" class="text-5xl font-semibold !leading-tight text-white italic">
-                    We Peka
+                <a href="/" class="text-5xl font-semibold !leading-tight text-white">
+                    WE PEKA
                 </a>
                 <h1 class="text-4xl font-semibold !leading-tight text-white">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Website Peningkatan Efikasi Karier.
                 </h1>
                 <p class="text-[15px] mt-6 text-white leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi nemo obcaecati vero
-                    dolores consequatur officiis ab libero error, at iste!
+                    We Peka adalah platform yang dirancang untuk membantu individu dalam meningkatkan efikasi karier
+                    mereka melalui berbagai sumber daya, alat, dan dukungan yang relevan dengan perkembangan profesional.
                 </p>
                 <p class="text-[15px] mt-12 text-white">
                     Don't have an account

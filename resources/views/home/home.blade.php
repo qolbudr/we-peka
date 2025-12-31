@@ -149,7 +149,7 @@
 
                 <!-- Photos -->
                 <div class="flex justify-center gap-4 md:justify-start">
-                    <img src="foto1.jpg" alt="Foto Profile"
+                    <img src="{{ asset('images/user.png') }}" alt="Foto Profile"
                         class="object-cover w-32 h-32 rounded-2xl shadow-md">
                     <img src="{{ asset('images/UNESA-Logo.png') }}" alt="Foto UNESA"
                         class="object-contain w-32 h-32 p-2 bg-white rounded-2xl shadow-md">

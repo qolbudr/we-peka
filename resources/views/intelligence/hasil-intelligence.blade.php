@@ -39,6 +39,13 @@
                 </p>
 
                 <p class="mb-3 text-lg text-gray-800">
+                    <strong>Deskripsi Kecerdasan:</strong>
+                    <span class="font-semibold text-blue-700 capitalize">
+                        {{ $result->intelligence->description ?? 'Tidak Diketahui' }}
+                    </span>
+                </p>
+
+                <p class="mb-3 text-lg text-gray-800">
                     <strong>Skor:</strong>
                     <span class="font-semibold text-blue-600">
                         {{ $result->score ?? '0' }}

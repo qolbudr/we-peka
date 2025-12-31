@@ -244,9 +244,10 @@
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Chaos Theory</h3>
                                 <div class="p-6 bg-gradient-to-br from-indigo-50 to-sky-50 rounded-2xl">
                                     <p class="text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-indigo-600">Chaos theory</span> adalah pendekatan
-                                        pengembangan karier yang melihat karier sebagai proses yang kompleks, dinamis, dan
-                                        tidak dapat diprediksi, yang dipengaruhi oleh banyak faktor yang terus berubah.
+                                        <span class="font-bold text-indigo-600">Chaos theory</span> Chaos theory of career  merupakan sebuah teori yang berfokus pada tindakan dan 
+                                        memberikan sebuah kerangka yang menyeluruh, yang menekankan pada pengembangan karir 
+                                        serta proses pengambilan keputusan untuk setiap individu. Dimana chaos theory of career ini membantu kita 
+                                        dalam pengembangan karier dan penentuan tujuan karier yang lebih fleksibel kedepannya dengan memperhatikan faktor dari luar diri juga.
                                     </p>
                                 </div>
                             </div>
@@ -255,11 +256,94 @@
                                 <h3 class="mb-4 text-2xl font-bold text-gray-900">Tujuan Chaos Theory</h3>
                                 <div class="p-6 bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl">
                                     <p class="text-base leading-relaxed text-gray-700">
-                                        <span class="font-bold text-sky-600">Tujuan chaos theory</span> adalah untuk
-                                        membantu individu menavigasi ketidakpastian dan kompleksitas karier dengan
-                                        menanamkan pola pikir yang adaptif, tangguh, dan fleksibel.
+                                        <span class="font-bold text-sky-600">Tujuan Chaos Theory</span> of Careers adalah untuk membekali peserta didik dengan keterampilan untuk menghadapi tantangan 
+                                        baru di abad ke-21., seperti mengajarkan peserta didik untuk mengurangi penekanan pada pentingnya komitmen terhadap 
+                                        suatu tujuan atau sasaran, menekankan pentingnya pengembangan keterampilan untuk memahami pola yang komplek atau rumit dalam perencanaan karier, untuk memahami 
+                                        sifat perubahan dan peluang dalam perencanaan karier, serta pentingnya mengajarkan peserta didik untuk memiliki keterampilan berinovasi, berubah, dan tangguh. 
                                     </p>
                                 </div>
+                            </div>
+
+                            <div>
+                                <h3 class="mb-4 text-2xl font-bold text-gray-900">Pernyataan Chaos Theory</h3>
+                                <div class="overflow-hidden border border-blue-100 shadow-md rounded-xl">
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-sm text-left">
+                                            <thead
+                                                class="text-xs font-semibold text-blue-700 uppercase bg-gradient-to-r from-blue-100 to-indigo-100">
+                                                <tr>
+                                                    <th scope="col" class="px-6 py-4 whitespace-nowrap">Konstruksi Dasar</th>
+                                                    <th scope="col" class="px-6 py-4 whitespace-nowrap">Penjelasan/Definisi</th>
+                                                    <th scope="col" class="px-6 py-4 text-center whitespace-nowrap">Pernyataan
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-100">
+                                                <tr class="transition-colors duration-200 hover:bg-blue-50">
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Complexity (Kompleksitas)
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Pengembangan karier akan dipengaruhi beragam faktor, maka dari itu kita harus menerima bahwa kehidupan karir kita merupakan perjalanan yang kompleks dan penuh dengan ketidakpastian.
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        <ol class="list-inside space-y-2 list-decimal">
+                                                            <li>Bidang manakah yang menurutmu masih bisa eksis 10-20 tahun kedepannya?</li>
+                                                            <li>Bidang manakah yang akan tetap berjalan berdampingan dengan kemajuan teknologi?</li>
+                                                            <li>Bidang manakah yang tetap bisa dikerjaan mekipun terjadi pandemi yang bekelanjutan?</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr class="transition-colors duration-200 hover:bg-blue-50">
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Change (Perubahan)
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Perubahan karier bisa bersifat tidak linier. Beberapa perubahan diakibatkan sesuatu yang kecil yang dianggap sepele yang berpotensi menyebabkan individu menyimpang dari jalur yang benar.
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        <ol class="list-inside space-y-2 list-decimal">
+                                                            <li>Bidang manakah yang bisa memberikan prospek gaji yang baik?</li>
+                                                            <li>Bidang manakah yang memberikan kesejahteraan mental lebih baik?</li>
+                                                            <li>Bidang manakah yang menyediakan lingkungan kerja impian anda?</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr class="transition-colors duration-200 hover:bg-blue-50">
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Chance (Kebetulan)
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Tujuan dari peluang dan perubahan adalah membantu individu untuk membingkai ulang risiko, menempatkan diri dalam situasi untuk belajar lebih banyak, dan mendapatkan kenyamanan dengan ketidakpastian
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        <ol class="list-inside space-y-2 list-decimal">
+                                                            <li>Bidang manakah yang memberi ruang untuk lebih banyak mengeksplor hal baru?</li>
+                                                            <li>Bidang manakah yang membawamu untuk bertemu dengan orang-orang inspiratif?</li>
+                                                            <li>Bidang manakan yang akan memberimu banyak peluang untuk mengembangkan program kerja </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                                <tr class="transition-colors duration-200 hover:bg-blue-50">
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Construction (Konstrusi)
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        Kurangnya kendali mutlak kita dalam merencanakan karier yang semakin tidak dapat diprediksi, hal ini membuat kesempatan atau peluang bagi kita untuk melakukan perencanaan karier yang lebih fleksibel tidak selalu mengandung hubungan sebab-akibat.
+                                                    </td>
+                                                    <td class="px-6 py-4 text-gray-700">
+                                                        <ol class="list-inside space-y-2 list-decimal">
+                                                            <li>Bidang manakah yang keterampilannya dapat diterapkan ke banyak bidang lain?</li>
+                                                            <li>Bidang manakah yang dapat menyedikan kemungkinan pembelajaran keterampilan baru?</li>
+                                                            <li>Bidang manakah yang akan tetap kamu pilih meskipun bidang tersebut sulit dipelajari?</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <a href="https://claude.ai/public/artifacts/9aff926b-36a5-4296-8e01-6a5d60c5d35b" target="_blank" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-4 mt-8 text-center cursor-pointer block">Bandingkan Jenis Pekerjaan</a>
                             </div>
                         </div>
 
